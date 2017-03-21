@@ -369,8 +369,9 @@ Public Class Form1
             roiState = True
             BtnShowRoi.Text = "隐藏框"
         End If
+        AxIpeDspCtrl1.UpdateDisplay()
 
-        AxIpeDspCtrl1.Refresh()
+        'AxIpeDspCtrl1.Refresh()
     End Sub
 
     Private Sub BtnModify_Click(sender As Object, e As EventArgs) Handles BtnModify.Click
@@ -394,6 +395,7 @@ Public Class Form1
         Label16.Show()
         If e.KeyChar = Chr(Keys.Enter) Then
             nErr = hSherlock.VarSetDouble("DETECTED_CELL_SIZE_LEVEL_MM", Val(Text0.Text))
+            Label16.Hide()
         End If
     End Sub
 
@@ -416,6 +418,7 @@ Public Class Form1
         Label17.Show()
         If e.KeyChar = Chr(Keys.Enter) Then
             nErr = hSherlock.VarSetDouble("DETECTED_CELL_HEIGHT_LEVEL_MM", Val(Text1.Text))
+            Label17.Hide()
         End If
     End Sub
 
@@ -423,6 +426,7 @@ Public Class Form1
         Label18.Show()
         If e.KeyChar = Chr(Keys.Enter) Then
             nErr = hSherlock.VarSetDouble("DETECTED_CELL_WIDTH_LEVEL_MM", Val(Text2.Text))
+            Label18.Hide()
         End If
     End Sub
 
@@ -430,6 +434,7 @@ Public Class Form1
         Label19.Show()
         If e.KeyChar = Chr(Keys.Enter) Then
             nErr = hSherlock.VarSetDouble("SCREEN_ROTATE_ERROR_LEVEL", Val(Text3.Text))
+            Label19.Hide()
         End If
     End Sub
 
@@ -437,6 +442,7 @@ Public Class Form1
         Label20.Show()
         If e.KeyChar = Chr(Keys.Enter) Then
             nErr = hSherlock.VarSetDouble("SCREEN_SHIFT_ERROR_LEVEL_MM", Val(Text4.Text))
+            Label20.Hide()
         End If
     End Sub
 
@@ -444,6 +450,7 @@ Public Class Form1
         Label21.Show()
         If e.KeyChar = Chr(Keys.Enter) Then
             nErr = hSherlock.VarSetDouble("EDGE_ERROR_LEVEL_PIX", Val(Text5.Text))
+            Label21.Hide()
         End If
     End Sub
 
@@ -451,6 +458,7 @@ Public Class Form1
         Label22.Show()
         If e.KeyChar = Chr(Keys.Enter) Then
             nErr = hSherlock.VarSetDouble("CORNER_ERROR_LEVEL_PIX", Val(Text6.Text))
+            Label22.Hide()
         End If
     End Sub
 
@@ -458,6 +466,7 @@ Public Class Form1
         Label23.Show()
         If e.KeyChar = Chr(Keys.Enter) Then
             nErr = hSherlock.VarSetDouble("EDGE_BREAKAGE_LEVEL_PIX", Val(Text7.Text))
+            Label23.Hide()
         End If
     End Sub
 
@@ -465,6 +474,7 @@ Public Class Form1
         Label24.Show()
         If e.KeyChar = Chr(Keys.Enter) Then
             nErr = hSherlock.VarSetDouble("INSPECT_ROI_DIAGONLA_WIDTH_PIX", Val(Text8.Text))
+            Label24.Hide()
         End If
     End Sub
 
@@ -472,6 +482,7 @@ Public Class Form1
         Label25.Show()
         If e.KeyChar = Chr(Keys.Enter) Then
             nErr = hSherlock.VarSetDouble("CORNER_BREAKAGE_LEVEL_PIX", Val(Text9.Text))
+            Label25.Hide()
         End If
     End Sub
 
@@ -479,6 +490,38 @@ Public Class Form1
         Label26.Show()
         If e.KeyChar = Chr(Keys.Enter) Then
             nErr = hSherlock.VarSetDouble("INSPECT_INNER_ERROR_THRESHOLD", Val(Text10.Text))
+            Label26.Hide()
+        End If
+    End Sub
+
+    Private Sub CheckBox1_Click(sender As Object, e As EventArgs) Handles CheckBox1.Click
+        If CheckBox1.CheckState = CheckState.Checked Then
+            hSherlock.VarSetDouble("IMAGE_ALL_SAVE_FTP", 0)
+        ElseIf CheckBox1.CheckState = CheckState.Unchecked Then
+            hSherlock.VarSetDouble("IMAGE_ALL_SAVE_FTP", 1)
+        End If
+    End Sub
+
+    Private Sub CheckBox2_Click(sender As Object, e As EventArgs) Handles CheckBox2.Click
+        If CheckBox2.CheckState = CheckState.Checked Then
+            hSherlock.VarSetDouble("NG_IMAGE_SAVE_FTP", 0)
+        ElseIf CheckBox2.CheckState = CheckState.Unchecked Then
+            hSherlock.VarSetDouble("NG_IMAGE_SAVE_FTP", 1)
+        End If
+    End Sub
+
+    Private Sub CheckBox3_Click(sender As Object, e As EventArgs) Handles CheckBox3.Click
+        If CheckBox3.CheckState = CheckState.Checked Then
+            hSherlock.VarSetDouble("NG_IMAGE_GRAP_SAVE_FTP", 0)
+        ElseIf CheckBox3.CheckState = CheckState.Unchecked Then
+            hSherlock.VarSetDouble("NG_IMAGE_GRAP_SAVE_FTP", 1)
+        End If
+    End Sub
+
+    Private Sub CamShutter_KeyPress(sender As Object, e As KeyPressEventArgs) Handles CamShutter.KeyPress
+        If e.KeyChar = Chr(Keys.Enter) Then
+            nErr = hSherlock.VarSetDouble("EXPOSURE_TIME", Val(CamShutter.Text))
+            nErr = hSherlock.VarSetDouble("ExposureTime", Val(CamShutter.Text))
         End If
     End Sub
 
@@ -578,7 +621,10 @@ Public Class Form1
         End If
         'hSherlock.RoiShowAnnotSet(CmbSelRoi.Text, True)
         hSherlock.EngExecuteSub("Inspect")
-        AxIpeDspCtrl1.Refresh()
+        hSherlock.RoiShowOutlineSet(CmbSelRoi.Text, True)
+        hSherlock.RoiSelectedSet(CmbSelRoi.Text, True)
+        AxIpeDspCtrl1.UpdateDisplay()
+        'AxIpeDspCtrl1.Refresh()
     End Sub
 
     Private Sub BtnSetVariable_Click(sender As Object, e As EventArgs) Handles BtnSetVariable.Click

@@ -45,7 +45,6 @@ Partial Class Form1
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
-        Me.AxIpeDspCtrl1 = New AxIpeDspCtrlLib.AxIpeDspCtrl()
         Me.ChkALive = New System.Windows.Forms.CheckBox()
         Me.Timer3 = New System.Windows.Forms.Timer(Me.components)
         Me.Timer4 = New System.Windows.Forms.Timer(Me.components)
@@ -53,6 +52,16 @@ Partial Class Form1
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.BtnSetVariable = New System.Windows.Forms.Button()
         Me.GroupBoxSetVariable = New System.Windows.Forms.GroupBox()
+        Me.Label36 = New System.Windows.Forms.Label()
+        Me.Label35 = New System.Windows.Forms.Label()
+        Me.Label34 = New System.Windows.Forms.Label()
+        Me.Label33 = New System.Windows.Forms.Label()
+        Me.Label32 = New System.Windows.Forms.Label()
+        Me.Label31 = New System.Windows.Forms.Label()
+        Me.Label30 = New System.Windows.Forms.Label()
+        Me.Label29 = New System.Windows.Forms.Label()
+        Me.Label28 = New System.Windows.Forms.Label()
+        Me.Label27 = New System.Windows.Forms.Label()
         Me.Button8 = New System.Windows.Forms.Button()
         Me.Label26 = New System.Windows.Forms.Label()
         Me.Label25 = New System.Windows.Forms.Label()
@@ -95,19 +104,13 @@ Partial Class Form1
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label27 = New System.Windows.Forms.Label()
-        Me.Label28 = New System.Windows.Forms.Label()
-        Me.Label29 = New System.Windows.Forms.Label()
-        Me.Label30 = New System.Windows.Forms.Label()
-        Me.Label31 = New System.Windows.Forms.Label()
-        Me.Label32 = New System.Windows.Forms.Label()
-        Me.Label33 = New System.Windows.Forms.Label()
-        Me.Label34 = New System.Windows.Forms.Label()
-        Me.Label35 = New System.Windows.Forms.Label()
-        Me.Label36 = New System.Windows.Forms.Label()
+        Me.AxIpeDspCtrl1 = New AxIpeDspCtrlLib.AxIpeDspCtrl()
+        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox2 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox3 = New System.Windows.Forms.CheckBox()
         Me.GroupBox1.SuspendLayout()
-        CType(Me.AxIpeDspCtrl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBoxSetVariable.SuspendLayout()
+        CType(Me.AxIpeDspCtrl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'BtnStart
@@ -297,15 +300,6 @@ Partial Class Form1
         '
         Me.Timer2.Interval = 10
         '
-        'AxIpeDspCtrl1
-        '
-        Me.AxIpeDspCtrl1.Enabled = True
-        Me.AxIpeDspCtrl1.Location = New System.Drawing.Point(0, 87)
-        Me.AxIpeDspCtrl1.Name = "AxIpeDspCtrl1"
-        Me.AxIpeDspCtrl1.OcxState = CType(resources.GetObject("AxIpeDspCtrl1.OcxState"), System.Windows.Forms.AxHost.State)
-        Me.AxIpeDspCtrl1.Size = New System.Drawing.Size(739, 556)
-        Me.AxIpeDspCtrl1.TabIndex = 10
-        '
         'ChkALive
         '
         Me.ChkALive.AutoSize = True
@@ -330,7 +324,7 @@ Partial Class Form1
         Me.BtnSolutoon.Name = "BtnSolutoon"
         Me.BtnSolutoon.Size = New System.Drawing.Size(101, 55)
         Me.BtnSolutoon.TabIndex = 12
-        Me.BtnSolutoon.Text = "方案"
+        Me.BtnSolutoon.Text = "加载程序"
         Me.BtnSolutoon.UseVisualStyleBackColor = True
         '
         'OpenFileDialog1
@@ -348,6 +342,9 @@ Partial Class Form1
         '
         'GroupBoxSetVariable
         '
+        Me.GroupBoxSetVariable.Controls.Add(Me.CheckBox3)
+        Me.GroupBoxSetVariable.Controls.Add(Me.CheckBox2)
+        Me.GroupBoxSetVariable.Controls.Add(Me.CheckBox1)
         Me.GroupBoxSetVariable.Controls.Add(Me.Label36)
         Me.GroupBoxSetVariable.Controls.Add(Me.Label35)
         Me.GroupBoxSetVariable.Controls.Add(Me.Label34)
@@ -407,9 +404,99 @@ Partial Class Form1
         Me.GroupBoxSetVariable.TabStop = False
         Me.GroupBoxSetVariable.Text = "参数设定"
         '
+        'Label36
+        '
+        Me.Label36.AutoSize = True
+        Me.Label36.Location = New System.Drawing.Point(614, 245)
+        Me.Label36.Name = "Label36"
+        Me.Label36.Size = New System.Drawing.Size(17, 12)
+        Me.Label36.TabIndex = 65
+        Me.Label36.Text = "mm"
+        '
+        'Label35
+        '
+        Me.Label35.AutoSize = True
+        Me.Label35.Location = New System.Drawing.Point(614, 194)
+        Me.Label35.Name = "Label35"
+        Me.Label35.Size = New System.Drawing.Size(17, 12)
+        Me.Label35.TabIndex = 64
+        Me.Label35.Text = "mm"
+        '
+        'Label34
+        '
+        Me.Label34.AutoSize = True
+        Me.Label34.Location = New System.Drawing.Point(614, 145)
+        Me.Label34.Name = "Label34"
+        Me.Label34.Size = New System.Drawing.Size(17, 12)
+        Me.Label34.TabIndex = 63
+        Me.Label34.Text = "mm"
+        '
+        'Label33
+        '
+        Me.Label33.AutoSize = True
+        Me.Label33.Location = New System.Drawing.Point(614, 92)
+        Me.Label33.Name = "Label33"
+        Me.Label33.Size = New System.Drawing.Size(17, 12)
+        Me.Label33.TabIndex = 62
+        Me.Label33.Text = "mm"
+        '
+        'Label32
+        '
+        Me.Label32.AutoSize = True
+        Me.Label32.Location = New System.Drawing.Point(614, 41)
+        Me.Label32.Name = "Label32"
+        Me.Label32.Size = New System.Drawing.Size(17, 12)
+        Me.Label32.TabIndex = 61
+        Me.Label32.Text = "mm"
+        '
+        'Label31
+        '
+        Me.Label31.AutoSize = True
+        Me.Label31.Location = New System.Drawing.Point(252, 237)
+        Me.Label31.Name = "Label31"
+        Me.Label31.Size = New System.Drawing.Size(17, 12)
+        Me.Label31.TabIndex = 60
+        Me.Label31.Text = "°"
+        '
+        'Label30
+        '
+        Me.Label30.AutoSize = True
+        Me.Label30.Location = New System.Drawing.Point(252, 188)
+        Me.Label30.Name = "Label30"
+        Me.Label30.Size = New System.Drawing.Size(17, 12)
+        Me.Label30.TabIndex = 59
+        Me.Label30.Text = "mm"
+        '
+        'Label29
+        '
+        Me.Label29.AutoSize = True
+        Me.Label29.Location = New System.Drawing.Point(252, 143)
+        Me.Label29.Name = "Label29"
+        Me.Label29.Size = New System.Drawing.Size(17, 12)
+        Me.Label29.TabIndex = 58
+        Me.Label29.Text = "mm"
+        '
+        'Label28
+        '
+        Me.Label28.AutoSize = True
+        Me.Label28.Location = New System.Drawing.Point(252, 92)
+        Me.Label28.Name = "Label28"
+        Me.Label28.Size = New System.Drawing.Size(17, 12)
+        Me.Label28.TabIndex = 57
+        Me.Label28.Text = "mm"
+        '
+        'Label27
+        '
+        Me.Label27.AutoSize = True
+        Me.Label27.Location = New System.Drawing.Point(252, 41)
+        Me.Label27.Name = "Label27"
+        Me.Label27.Size = New System.Drawing.Size(17, 12)
+        Me.Label27.TabIndex = 56
+        Me.Label27.Text = "mm"
+        '
         'Button8
         '
-        Me.Button8.Location = New System.Drawing.Point(512, 379)
+        Me.Button8.Location = New System.Drawing.Point(512, 382)
         Me.Button8.Name = "Button8"
         Me.Button8.Size = New System.Drawing.Size(130, 62)
         Me.Button8.TabIndex = 55
@@ -638,9 +725,9 @@ Partial Class Form1
         'Button7
         '
         Me.Button7.BackColor = System.Drawing.Color.Lime
-        Me.Button7.Location = New System.Drawing.Point(169, 291)
+        Me.Button7.Location = New System.Drawing.Point(169, 293)
         Me.Button7.Name = "Button7"
-        Me.Button7.Size = New System.Drawing.Size(100, 23)
+        Me.Button7.Size = New System.Drawing.Size(82, 21)
         Me.Button7.TabIndex = 31
         Me.Button7.Text = "切除"
         Me.Button7.UseVisualStyleBackColor = False
@@ -815,101 +902,53 @@ Partial Class Form1
         Me.Label1.TabIndex = 14
         Me.Label1.Text = "电池片尺寸误差"
         '
-        'Label27
+        'AxIpeDspCtrl1
         '
-        Me.Label27.AutoSize = True
-        Me.Label27.Location = New System.Drawing.Point(252, 41)
-        Me.Label27.Name = "Label27"
-        Me.Label27.Size = New System.Drawing.Size(17, 12)
-        Me.Label27.TabIndex = 56
-        Me.Label27.Text = "mm"
+        Me.AxIpeDspCtrl1.Enabled = True
+        Me.AxIpeDspCtrl1.Location = New System.Drawing.Point(0, 87)
+        Me.AxIpeDspCtrl1.Name = "AxIpeDspCtrl1"
+        Me.AxIpeDspCtrl1.OcxState = CType(resources.GetObject("AxIpeDspCtrl1.OcxState"), System.Windows.Forms.AxHost.State)
+        Me.AxIpeDspCtrl1.Size = New System.Drawing.Size(739, 556)
+        Me.AxIpeDspCtrl1.TabIndex = 10
         '
-        'Label28
+        'CheckBox1
         '
-        Me.Label28.AutoSize = True
-        Me.Label28.Location = New System.Drawing.Point(252, 92)
-        Me.Label28.Name = "Label28"
-        Me.Label28.Size = New System.Drawing.Size(17, 12)
-        Me.Label28.TabIndex = 57
-        Me.Label28.Text = "mm"
+        Me.CheckBox1.AutoSize = True
+        Me.CheckBox1.BackColor = System.Drawing.SystemColors.Control
+        Me.CheckBox1.Location = New System.Drawing.Point(25, 342)
+        Me.CheckBox1.Name = "CheckBox1"
+        Me.CheckBox1.Size = New System.Drawing.Size(96, 16)
+        Me.CheckBox1.TabIndex = 66
+        Me.CheckBox1.Text = "保存所有图像"
+        Me.CheckBox1.UseVisualStyleBackColor = False
         '
-        'Label29
+        'CheckBox2
         '
-        Me.Label29.AutoSize = True
-        Me.Label29.Location = New System.Drawing.Point(252, 143)
-        Me.Label29.Name = "Label29"
-        Me.Label29.Size = New System.Drawing.Size(17, 12)
-        Me.Label29.TabIndex = 58
-        Me.Label29.Text = "mm"
+        Me.CheckBox2.AutoSize = True
+        Me.CheckBox2.Location = New System.Drawing.Point(199, 342)
+        Me.CheckBox2.Name = "CheckBox2"
+        Me.CheckBox2.Size = New System.Drawing.Size(108, 16)
+        Me.CheckBox2.TabIndex = 67
+        Me.CheckBox2.Text = "保存NG原始图像"
+        Me.CheckBox2.UseVisualStyleBackColor = True
         '
-        'Label30
+        'CheckBox3
         '
-        Me.Label30.AutoSize = True
-        Me.Label30.Location = New System.Drawing.Point(252, 188)
-        Me.Label30.Name = "Label30"
-        Me.Label30.Size = New System.Drawing.Size(17, 12)
-        Me.Label30.TabIndex = 59
-        Me.Label30.Text = "mm"
-        '
-        'Label31
-        '
-        Me.Label31.AutoSize = True
-        Me.Label31.Location = New System.Drawing.Point(252, 237)
-        Me.Label31.Name = "Label31"
-        Me.Label31.Size = New System.Drawing.Size(17, 12)
-        Me.Label31.TabIndex = 60
-        Me.Label31.Text = "°"
-        '
-        'Label32
-        '
-        Me.Label32.AutoSize = True
-        Me.Label32.Location = New System.Drawing.Point(614, 41)
-        Me.Label32.Name = "Label32"
-        Me.Label32.Size = New System.Drawing.Size(17, 12)
-        Me.Label32.TabIndex = 61
-        Me.Label32.Text = "mm"
-        '
-        'Label33
-        '
-        Me.Label33.AutoSize = True
-        Me.Label33.Location = New System.Drawing.Point(614, 92)
-        Me.Label33.Name = "Label33"
-        Me.Label33.Size = New System.Drawing.Size(17, 12)
-        Me.Label33.TabIndex = 62
-        Me.Label33.Text = "mm"
-        '
-        'Label34
-        '
-        Me.Label34.AutoSize = True
-        Me.Label34.Location = New System.Drawing.Point(614, 145)
-        Me.Label34.Name = "Label34"
-        Me.Label34.Size = New System.Drawing.Size(17, 12)
-        Me.Label34.TabIndex = 63
-        Me.Label34.Text = "mm"
-        '
-        'Label35
-        '
-        Me.Label35.AutoSize = True
-        Me.Label35.Location = New System.Drawing.Point(614, 194)
-        Me.Label35.Name = "Label35"
-        Me.Label35.Size = New System.Drawing.Size(17, 12)
-        Me.Label35.TabIndex = 64
-        Me.Label35.Text = "mm"
-        '
-        'Label36
-        '
-        Me.Label36.AutoSize = True
-        Me.Label36.Location = New System.Drawing.Point(614, 245)
-        Me.Label36.Name = "Label36"
-        Me.Label36.Size = New System.Drawing.Size(17, 12)
-        Me.Label36.TabIndex = 65
-        Me.Label36.Text = "mm"
+        Me.CheckBox3.AutoSize = True
+        Me.CheckBox3.Location = New System.Drawing.Point(385, 342)
+        Me.CheckBox3.Name = "CheckBox3"
+        Me.CheckBox3.Size = New System.Drawing.Size(108, 16)
+        Me.CheckBox3.TabIndex = 68
+        Me.CheckBox3.Text = "保存NG检测图像"
+        Me.CheckBox3.UseVisualStyleBackColor = True
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.SystemColors.Control
         Me.ClientSize = New System.Drawing.Size(997, 655)
+        Me.ControlBox = False
         Me.Controls.Add(Me.GroupBoxSetVariable)
         Me.Controls.Add(Me.BtnSetVariable)
         Me.Controls.Add(Me.BtnSolutoon)
@@ -920,14 +959,18 @@ Partial Class Form1
         Me.Controls.Add(Me.BtnStart)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.AxIpeDspCtrl1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "Form1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Vision"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
-        CType(Me.AxIpeDspCtrl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBoxSetVariable.ResumeLayout(False)
         Me.GroupBoxSetVariable.PerformLayout()
+        CType(Me.AxIpeDspCtrl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1013,4 +1056,7 @@ Partial Class Form1
     Friend WithEvents Label29 As Label
     Friend WithEvents Label28 As Label
     Friend WithEvents Label27 As Label
+    Friend WithEvents CheckBox3 As CheckBox
+    Friend WithEvents CheckBox2 As CheckBox
+    Friend WithEvents CheckBox1 As CheckBox
 End Class
