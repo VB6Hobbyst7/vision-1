@@ -127,6 +127,7 @@ Public Class Form1
         ChkALive.CheckState = CheckState.Unchecked
         ChkALive.Enabled = False
         BtnSetVariable.Enabled = False
+        BtnSolutoon.Enabled = False
     End Sub
     Private Sub BtnStop_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnStop.Click
         nErr = hSherlock.InvModeSet(IpeEngCtrlLib.I_MODE.I_EXE_MODE_HALT_AFTER_ITERATION)
@@ -142,6 +143,7 @@ Public Class Form1
         Btnparameter.Enabled = True
         ChkALive.Enabled = True
         BtnSetVariable.Enabled = True
+        BtnSolutoon.Enabled = True
     End Sub
 
     Private Sub BtnEscInter_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnEscInter.Click
@@ -649,7 +651,7 @@ Public Class Form1
             AxIpeDspCtrl1.Show()
             ChkALive.Show()
             GroupBoxSetVariable.Hide()
-            GroupBox1.Enabled = True
+            'GroupBox1.Enabled = True
             BtnSolutoon.Enabled = True
             BtnStart.Enabled = True
             BtnStop.Enabled = True

@@ -52,6 +52,9 @@ Partial Class Form1
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.BtnSetVariable = New System.Windows.Forms.Button()
         Me.GroupBoxSetVariable = New System.Windows.Forms.GroupBox()
+        Me.CheckBox3 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox2 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
         Me.Label36 = New System.Windows.Forms.Label()
         Me.Label35 = New System.Windows.Forms.Label()
         Me.Label34 = New System.Windows.Forms.Label()
@@ -105,9 +108,6 @@ Partial Class Form1
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.AxIpeDspCtrl1 = New AxIpeDspCtrlLib.AxIpeDspCtrl()
-        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox2 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox3 = New System.Windows.Forms.CheckBox()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBoxSetVariable.SuspendLayout()
         CType(Me.AxIpeDspCtrl1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -403,6 +403,37 @@ Partial Class Form1
         Me.GroupBoxSetVariable.TabIndex = 14
         Me.GroupBoxSetVariable.TabStop = False
         Me.GroupBoxSetVariable.Text = "参数设定"
+        '
+        'CheckBox3
+        '
+        Me.CheckBox3.AutoSize = True
+        Me.CheckBox3.Location = New System.Drawing.Point(385, 342)
+        Me.CheckBox3.Name = "CheckBox3"
+        Me.CheckBox3.Size = New System.Drawing.Size(108, 16)
+        Me.CheckBox3.TabIndex = 68
+        Me.CheckBox3.Text = "保存NG检测图像"
+        Me.CheckBox3.UseVisualStyleBackColor = True
+        '
+        'CheckBox2
+        '
+        Me.CheckBox2.AutoSize = True
+        Me.CheckBox2.Location = New System.Drawing.Point(199, 342)
+        Me.CheckBox2.Name = "CheckBox2"
+        Me.CheckBox2.Size = New System.Drawing.Size(108, 16)
+        Me.CheckBox2.TabIndex = 67
+        Me.CheckBox2.Text = "保存NG原始图像"
+        Me.CheckBox2.UseVisualStyleBackColor = True
+        '
+        'CheckBox1
+        '
+        Me.CheckBox1.AutoSize = True
+        Me.CheckBox1.BackColor = System.Drawing.SystemColors.Control
+        Me.CheckBox1.Location = New System.Drawing.Point(25, 342)
+        Me.CheckBox1.Name = "CheckBox1"
+        Me.CheckBox1.Size = New System.Drawing.Size(96, 16)
+        Me.CheckBox1.TabIndex = 66
+        Me.CheckBox1.Text = "保存所有图像"
+        Me.CheckBox1.UseVisualStyleBackColor = False
         '
         'Label36
         '
@@ -910,37 +941,6 @@ Partial Class Form1
         Me.AxIpeDspCtrl1.OcxState = CType(resources.GetObject("AxIpeDspCtrl1.OcxState"), System.Windows.Forms.AxHost.State)
         Me.AxIpeDspCtrl1.Size = New System.Drawing.Size(739, 556)
         Me.AxIpeDspCtrl1.TabIndex = 10
-        '
-        'CheckBox1
-        '
-        Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.BackColor = System.Drawing.SystemColors.Control
-        Me.CheckBox1.Location = New System.Drawing.Point(25, 342)
-        Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(96, 16)
-        Me.CheckBox1.TabIndex = 66
-        Me.CheckBox1.Text = "保存所有图像"
-        Me.CheckBox1.UseVisualStyleBackColor = False
-        '
-        'CheckBox2
-        '
-        Me.CheckBox2.AutoSize = True
-        Me.CheckBox2.Location = New System.Drawing.Point(199, 342)
-        Me.CheckBox2.Name = "CheckBox2"
-        Me.CheckBox2.Size = New System.Drawing.Size(108, 16)
-        Me.CheckBox2.TabIndex = 67
-        Me.CheckBox2.Text = "保存NG原始图像"
-        Me.CheckBox2.UseVisualStyleBackColor = True
-        '
-        'CheckBox3
-        '
-        Me.CheckBox3.AutoSize = True
-        Me.CheckBox3.Location = New System.Drawing.Point(385, 342)
-        Me.CheckBox3.Name = "CheckBox3"
-        Me.CheckBox3.Size = New System.Drawing.Size(108, 16)
-        Me.CheckBox3.TabIndex = 68
-        Me.CheckBox3.Text = "保存NG检测图像"
-        Me.CheckBox3.UseVisualStyleBackColor = True
         '
         'Form1
         '
