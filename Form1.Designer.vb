@@ -52,6 +52,8 @@ Partial Class Form1
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.BtnSetVariable = New System.Windows.Forms.Button()
         Me.GroupBoxSetVariable = New System.Windows.Forms.GroupBox()
+        Me.CCDPath = New System.Windows.Forms.Label()
+        Me.Label37 = New System.Windows.Forms.Label()
         Me.CheckBox3 = New System.Windows.Forms.CheckBox()
         Me.CheckBox2 = New System.Windows.Forms.CheckBox()
         Me.CheckBox1 = New System.Windows.Forms.CheckBox()
@@ -342,6 +344,8 @@ Partial Class Form1
         '
         'GroupBoxSetVariable
         '
+        Me.GroupBoxSetVariable.Controls.Add(Me.CCDPath)
+        Me.GroupBoxSetVariable.Controls.Add(Me.Label37)
         Me.GroupBoxSetVariable.Controls.Add(Me.CheckBox3)
         Me.GroupBoxSetVariable.Controls.Add(Me.CheckBox2)
         Me.GroupBoxSetVariable.Controls.Add(Me.CheckBox1)
@@ -404,12 +408,33 @@ Partial Class Form1
         Me.GroupBoxSetVariable.TabStop = False
         Me.GroupBoxSetVariable.Text = "参数设定"
         '
+        'CCDPath
+        '
+        Me.CCDPath.AutoSize = True
+        Me.CCDPath.Font = New System.Drawing.Font("宋体", 10.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
+        Me.CCDPath.Location = New System.Drawing.Point(134, 392)
+        Me.CCDPath.Name = "CCDPath"
+        Me.CCDPath.Size = New System.Drawing.Size(91, 14)
+        Me.CCDPath.TabIndex = 70
+        Me.CCDPath.Text = "current path"
+        '
+        'Label37
+        '
+        Me.Label37.AutoSize = True
+        Me.Label37.Font = New System.Drawing.Font("宋体", 10.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
+        Me.Label37.Location = New System.Drawing.Point(24, 392)
+        Me.Label37.Name = "Label37"
+        Me.Label37.Size = New System.Drawing.Size(105, 14)
+        Me.Label37.TabIndex = 69
+        Me.Label37.Text = "当前程序路径："
+        '
         'CheckBox3
         '
         Me.CheckBox3.AutoSize = True
+        Me.CheckBox3.Font = New System.Drawing.Font("宋体", 10.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.CheckBox3.Location = New System.Drawing.Point(385, 342)
         Me.CheckBox3.Name = "CheckBox3"
-        Me.CheckBox3.Size = New System.Drawing.Size(108, 16)
+        Me.CheckBox3.Size = New System.Drawing.Size(124, 18)
         Me.CheckBox3.TabIndex = 68
         Me.CheckBox3.Text = "保存NG检测图像"
         Me.CheckBox3.UseVisualStyleBackColor = True
@@ -417,9 +442,10 @@ Partial Class Form1
         'CheckBox2
         '
         Me.CheckBox2.AutoSize = True
+        Me.CheckBox2.Font = New System.Drawing.Font("宋体", 10.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.CheckBox2.Location = New System.Drawing.Point(199, 342)
         Me.CheckBox2.Name = "CheckBox2"
-        Me.CheckBox2.Size = New System.Drawing.Size(108, 16)
+        Me.CheckBox2.Size = New System.Drawing.Size(124, 18)
         Me.CheckBox2.TabIndex = 67
         Me.CheckBox2.Text = "保存NG原始图像"
         Me.CheckBox2.UseVisualStyleBackColor = True
@@ -428,9 +454,10 @@ Partial Class Form1
         '
         Me.CheckBox1.AutoSize = True
         Me.CheckBox1.BackColor = System.Drawing.SystemColors.Control
+        Me.CheckBox1.Font = New System.Drawing.Font("宋体", 10.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.CheckBox1.Location = New System.Drawing.Point(25, 342)
         Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(96, 16)
+        Me.CheckBox1.Size = New System.Drawing.Size(110, 18)
         Me.CheckBox1.TabIndex = 66
         Me.CheckBox1.Text = "保存所有图像"
         Me.CheckBox1.UseVisualStyleBackColor = False
@@ -527,9 +554,10 @@ Partial Class Form1
         '
         'Button8
         '
-        Me.Button8.Location = New System.Drawing.Point(512, 382)
+        Me.Button8.Font = New System.Drawing.Font("宋体", 10.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
+        Me.Button8.Location = New System.Drawing.Point(528, 421)
         Me.Button8.Name = "Button8"
-        Me.Button8.Size = New System.Drawing.Size(130, 62)
+        Me.Button8.Size = New System.Drawing.Size(101, 48)
         Me.Button8.TabIndex = 55
         Me.Button8.Text = "保存设定"
         Me.Button8.UseVisualStyleBackColor = True
@@ -1059,4 +1087,6 @@ Partial Class Form1
     Friend WithEvents CheckBox3 As CheckBox
     Friend WithEvents CheckBox2 As CheckBox
     Friend WithEvents CheckBox1 As CheckBox
+    Friend WithEvents CCDPath As Label
+    Friend WithEvents Label37 As Label
 End Class

@@ -64,6 +64,7 @@ Public Class Form1
         hSherlock.VarGetDouble("ROTATE90_ERROR_SKIP", Rotate90Enable)
         hSherlock.VarGetDouble("EDGE_ERROR_SKIP", EdgeInspectEnalbe)
         hSherlock.VarGetDouble("CORNER_ERROR_SKIP", CornerInspectEnalbe)
+        CCDPath.Text = sNowSolutionPath
         If SizeHeightEnalbe = 0 Then
             Button1.BackColor = Color.Lime
         Else
@@ -186,7 +187,7 @@ Public Class Form1
         CamShutter.Text = CStr(vbExposureTime)
         CmbImg.Items.Clear()
         CmbImg.Items.Insert(0, "检测工位")
-        CmbImg.Items.Insert(1, "校准工位")
+        'CmbImg.Items.Insert(1, "校准工位")
         CmbImg.SelectedIndex = 0
     End Sub
     Dim ROINames(), ImgFilter As String
@@ -195,9 +196,9 @@ Public Class Form1
             Case 0
                 ImgFilter = "检测窗口"
                 AxIpeDspCtrl1.ConnectImgWindow("检测窗口")
-            Case 1
-                ImgFilter = "imgB"
-                AxIpeDspCtrl1.ConnectImgWindow("imgB")
+                'Case 1
+                '    ImgFilter = "imgB"
+                '    AxIpeDspCtrl1.ConnectImgWindow("imgB")
 
         End Select
         nErr = hSherlock.RoiGetNames(ImgFilter, ROINames)
