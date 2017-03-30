@@ -29,6 +29,7 @@ Partial Class Form1
         Me.Btnparameter = New System.Windows.Forms.Button()
         Me.BtnEscInter = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.BtnRun = New System.Windows.Forms.Button()
         Me.BtnModify = New System.Windows.Forms.Button()
         Me.BtnAnnotations = New System.Windows.Forms.Button()
         Me.BtnShowRoi = New System.Windows.Forms.Button()
@@ -110,7 +111,6 @@ Partial Class Form1
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.AxIpeDspCtrl1 = New AxIpeDspCtrlLib.AxIpeDspCtrl()
-        Me.BtnRun = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBoxSetVariable.SuspendLayout()
         CType(Me.AxIpeDspCtrl1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -174,6 +174,15 @@ Partial Class Form1
         Me.GroupBox1.TabIndex = 7
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "检测设定"
+        '
+        'BtnRun
+        '
+        Me.BtnRun.Location = New System.Drawing.Point(19, 471)
+        Me.BtnRun.Name = "BtnRun"
+        Me.BtnRun.Size = New System.Drawing.Size(85, 42)
+        Me.BtnRun.TabIndex = 37
+        Me.BtnRun.Text = "测试"
+        Me.BtnRun.UseVisualStyleBackColor = True
         '
         'BtnModify
         '
@@ -252,7 +261,7 @@ Partial Class Form1
         'ColumnHeader3
         '
         Me.ColumnHeader3.Text = "编号"
-        Me.ColumnHeader3.Width = 67
+        Me.ColumnHeader3.Width = 66
         '
         'ColumnHeader4
         '
@@ -971,15 +980,6 @@ Partial Class Form1
         Me.AxIpeDspCtrl1.OcxState = CType(resources.GetObject("AxIpeDspCtrl1.OcxState"), System.Windows.Forms.AxHost.State)
         Me.AxIpeDspCtrl1.Size = New System.Drawing.Size(739, 556)
         Me.AxIpeDspCtrl1.TabIndex = 10
-        '
-        'BtnRun
-        '
-        Me.BtnRun.Location = New System.Drawing.Point(19, 471)
-        Me.BtnRun.Name = "BtnRun"
-        Me.BtnRun.Size = New System.Drawing.Size(85, 42)
-        Me.BtnRun.TabIndex = 37
-        Me.BtnRun.Text = "测试"
-        Me.BtnRun.UseVisualStyleBackColor = True
         '
         'Form1
         '
