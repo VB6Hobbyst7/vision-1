@@ -110,6 +110,7 @@ Partial Class Form1
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.AxIpeDspCtrl1 = New AxIpeDspCtrlLib.AxIpeDspCtrl()
+        Me.BtnRun = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBoxSetVariable.SuspendLayout()
         CType(Me.AxIpeDspCtrl1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -153,6 +154,7 @@ Partial Class Form1
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.BtnRun)
         Me.GroupBox1.Controls.Add(Me.BtnModify)
         Me.GroupBox1.Controls.Add(Me.BtnAnnotations)
         Me.GroupBox1.Controls.Add(Me.BtnShowRoi)
@@ -171,7 +173,7 @@ Partial Class Form1
         Me.GroupBox1.Size = New System.Drawing.Size(246, 556)
         Me.GroupBox1.TabIndex = 7
         Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "参数设定"
+        Me.GroupBox1.Text = "检测设定"
         '
         'BtnModify
         '
@@ -277,7 +279,7 @@ Partial Class Form1
         '
         'BtnSave1
         '
-        Me.BtnSave1.Location = New System.Drawing.Point(69, 492)
+        Me.BtnSave1.Location = New System.Drawing.Point(144, 471)
         Me.BtnSave1.Name = "BtnSave1"
         Me.BtnSave1.Size = New System.Drawing.Size(85, 42)
         Me.BtnSave1.TabIndex = 8
@@ -307,9 +309,9 @@ Partial Class Form1
         Me.ChkALive.AutoSize = True
         Me.ChkALive.Location = New System.Drawing.Point(650, 93)
         Me.ChkALive.Name = "ChkALive"
-        Me.ChkALive.Size = New System.Drawing.Size(78, 16)
+        Me.ChkALive.Size = New System.Drawing.Size(72, 16)
         Me.ChkALive.TabIndex = 11
-        Me.ChkALive.Text = "A实时图像"
+        Me.ChkALive.Text = "实时图像"
         Me.ChkALive.UseVisualStyleBackColor = True
         '
         'Timer3
@@ -414,9 +416,9 @@ Partial Class Form1
         Me.CCDPath.Font = New System.Drawing.Font("宋体", 10.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.CCDPath.Location = New System.Drawing.Point(134, 392)
         Me.CCDPath.Name = "CCDPath"
-        Me.CCDPath.Size = New System.Drawing.Size(91, 14)
+        Me.CCDPath.Size = New System.Drawing.Size(77, 14)
         Me.CCDPath.TabIndex = 70
-        Me.CCDPath.Text = "current path"
+        Me.CCDPath.Text = "未加载程序"
         '
         'Label37
         '
@@ -555,7 +557,7 @@ Partial Class Form1
         'Button8
         '
         Me.Button8.Font = New System.Drawing.Font("宋体", 10.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.Button8.Location = New System.Drawing.Point(528, 421)
+        Me.Button8.Location = New System.Drawing.Point(530, 435)
         Me.Button8.Name = "Button8"
         Me.Button8.Size = New System.Drawing.Size(101, 48)
         Me.Button8.TabIndex = 55
@@ -970,6 +972,15 @@ Partial Class Form1
         Me.AxIpeDspCtrl1.Size = New System.Drawing.Size(739, 556)
         Me.AxIpeDspCtrl1.TabIndex = 10
         '
+        'BtnRun
+        '
+        Me.BtnRun.Location = New System.Drawing.Point(19, 471)
+        Me.BtnRun.Name = "BtnRun"
+        Me.BtnRun.Size = New System.Drawing.Size(85, 42)
+        Me.BtnRun.TabIndex = 37
+        Me.BtnRun.Text = "测试"
+        Me.BtnRun.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
@@ -1089,4 +1100,5 @@ Partial Class Form1
     Friend WithEvents CheckBox1 As CheckBox
     Friend WithEvents CCDPath As Label
     Friend WithEvents Label37 As Label
+    Friend WithEvents BtnRun As Button
 End Class

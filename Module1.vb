@@ -2,7 +2,7 @@
     Public ROIName() As String
     Public ROISelected As String
     Public pathname As String, ROItype As String
-
+    Public startScreenState As Boolean
     '定义Rect和Spoke调整ROI使用的变量
     Public ROIFlag As Boolean
     Public ROILTFlag As Boolean, ROIRDFlag As Boolean, ROIRTFlag As Boolean, ROILDFlag As Boolean

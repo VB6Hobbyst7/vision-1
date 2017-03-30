@@ -13,6 +13,7 @@ Public Class Form1
     Public sNowSolutionPath As String
     Public SizeHeightEnalbe, SizeWidthEnalbe, ScreenRotateEnalbe, ScreenShiftEnalbe, Rotate90Enable, EdgeInspectEnalbe, CornerInspectEnalbe As Double
     Private Sub Form1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        startScreenState = True
         StartScreen.Show()
         roiState = False
         annoState = False
@@ -30,6 +31,7 @@ Public Class Form1
         Else
             Call Load_Pro()
         End If
+        startScreenState = False
         StartScreen.Close()
         Timer3.Interval = 1000
         Timer3.Start()
@@ -65,6 +67,7 @@ Public Class Form1
         hSherlock.VarGetDouble("EDGE_ERROR_SKIP", EdgeInspectEnalbe)
         hSherlock.VarGetDouble("CORNER_ERROR_SKIP", CornerInspectEnalbe)
         CCDPath.Text = sNowSolutionPath
+        BtnStop.Enabled = False
         If SizeHeightEnalbe = 0 Then
             Button1.BackColor = Color.Lime
         Else
@@ -192,18 +195,18 @@ Public Class Form1
     End Sub
     Dim ROINames(), ImgFilter As String
     Private Sub CmbImg_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CmbImg.SelectedIndexChanged
-        Select Case CmbImg.SelectedIndex
-            Case 0
-                ImgFilter = "检测窗口"
-                AxIpeDspCtrl1.ConnectImgWindow("检测窗口")
-                'Case 1
-                '    ImgFilter = "imgB"
-                '    AxIpeDspCtrl1.ConnectImgWindow("imgB")
+        'Select Case CmbImg.SelectedIndex
+        'Case 0
+        ImgFilter = "检测窗口"
+        AxIpeDspCtrl1.ConnectImgWindow("检测窗口")
+        'Case 1
+        '    ImgFilter = "imgB"
+        '    AxIpeDspCtrl1.ConnectImgWindow("imgB")
 
-        End Select
+        'End Select
         nErr = hSherlock.RoiGetNames(ImgFilter, ROINames)
         CmbSelRoi.Items.Clear()
-        For J = 0 To UBound(ROINames)
+        For J = 0 To (UBound(ROINames) - 8)
             CmbSelRoi.Items.Insert(J, ROINames(J))
         Next (J)
         If CmbSelRoi.Items.Count > 0 Then
@@ -528,6 +531,10 @@ Public Class Form1
         End If
     End Sub
 
+    Private Sub BtnRun_Click(sender As Object, e As EventArgs) Handles BtnRun.Click
+        hSherlock.EngExecuteSub("Inspect")
+    End Sub
+
     Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
         If SizeHeightEnalbe = 0 Then
             hSherlock.VarSetDouble("DETECTED_CELL_HEIGHT_SKIP", 1)
@@ -655,7 +662,7 @@ Public Class Form1
             'GroupBox1.Enabled = True
             BtnSolutoon.Enabled = True
             BtnStart.Enabled = True
-            BtnStop.Enabled = True
+            BtnStop.Enabled = False
             Btnparameter.Enabled = True
             BtnSetVariable.Text = "参数设定"
             setVarState = False
