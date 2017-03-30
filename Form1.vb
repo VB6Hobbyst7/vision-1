@@ -19,6 +19,7 @@ Public Class Form1
         annoState = False
         setVarState = False
         modifyState = False
+        ListBox1.Items.Add("拖动文件至此")
         'create engine object
         hSherlock = CreateObject("IpeEngCtrl.EngineNg")
         'initialize object
@@ -132,6 +133,7 @@ Public Class Form1
         ChkALive.Enabled = False
         BtnSetVariable.Enabled = False
         BtnSolutoon.Enabled = False
+        ListBox1.Enabled = False
     End Sub
     Private Sub BtnStop_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnStop.Click
         nErr = hSherlock.InvModeSet(IpeEngCtrlLib.I_MODE.I_EXE_MODE_HALT_AFTER_ITERATION)
@@ -148,6 +150,7 @@ Public Class Form1
         ChkALive.Enabled = True
         BtnSetVariable.Enabled = True
         BtnSolutoon.Enabled = True
+        ListBox1.Enabled = True
     End Sub
 
     Private Sub BtnEscInter_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnEscInter.Click
@@ -336,10 +339,21 @@ Public Class Form1
         If (ChkALive.CheckState = CheckState.Checked) Then
             AxIpeDspCtrl1.ConnectImgWindow("imgA")
             nErr = hSherlock.SoLiveSet("imgA", 1)
+            ListBox1.Enabled = False
+            GroupBox1.Enabled = False
+            Btnparameter.Enabled = False
+            BtnSetVariable.Enabled = False
+            BtnSolutoon.Enabled = False
+            BtnStart.Enabled = False
         End If
         If (ChkALive.CheckState = CheckState.Unchecked) Then
             AxIpeDspCtrl1.ConnectImgWindow("检测窗口")
             nErr = hSherlock.SoLiveSet("imgA", 0)
+            ListBox1.Enabled = True
+            Btnparameter.Enabled = True
+            BtnSetVariable.Enabled = True
+            BtnSolutoon.Enabled = True
+            BtnStart.Enabled = True
         End If
     End Sub
     Private Sub Timer3_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer3.Tick
@@ -533,6 +547,20 @@ Public Class Form1
 
     Private Sub BtnRun_Click(sender As Object, e As EventArgs) Handles BtnRun.Click
         hSherlock.EngExecuteSub("Inspect")
+    End Sub
+
+    Private Sub ListBox1_DragEnter(sender As Object, e As DragEventArgs) Handles ListBox1.DragEnter
+        e.Effect = DragDropEffects.Link
+    End Sub
+
+    Private Sub ListBox1_DragDrop(sender As Object, e As DragEventArgs) Handles ListBox1.DragDrop
+        sender.Items.Clear() '清理列表
+        sender.Items.Add("拖动文件至此")
+        For Each sNowSolutionPath In e.Data.GetData(DataFormats.FileDrop) '循环枚举数据
+            sender.Items.Add(sNowSolutionPath) '添加到表
+            Call WriteIniStr("Config", "SolutionPath", CStr(sNowSolutionPath), My.Application.Info.DirectoryPath & "\config.ini")
+            Call Load_Pro()
+        Next
     End Sub
 
     Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click

@@ -110,6 +110,7 @@ Partial Class Form1
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.ListBox1 = New System.Windows.Forms.ListBox()
         Me.AxIpeDspCtrl1 = New AxIpeDspCtrlLib.AxIpeDspCtrl()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBoxSetVariable.SuspendLayout()
@@ -972,6 +973,18 @@ Partial Class Form1
         Me.Label1.TabIndex = 14
         Me.Label1.Text = "电池片尺寸误差"
         '
+        'ListBox1
+        '
+        Me.ListBox1.AllowDrop = True
+        Me.ListBox1.BackColor = System.Drawing.SystemColors.Control
+        Me.ListBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.ListBox1.FormattingEnabled = True
+        Me.ListBox1.ItemHeight = 12
+        Me.ListBox1.Location = New System.Drawing.Point(744, 13)
+        Me.ListBox1.Name = "ListBox1"
+        Me.ListBox1.Size = New System.Drawing.Size(247, 50)
+        Me.ListBox1.TabIndex = 15
+        '
         'AxIpeDspCtrl1
         '
         Me.AxIpeDspCtrl1.Enabled = True
@@ -988,6 +1001,7 @@ Partial Class Form1
         Me.BackColor = System.Drawing.SystemColors.Control
         Me.ClientSize = New System.Drawing.Size(997, 655)
         Me.ControlBox = False
+        Me.Controls.Add(Me.ListBox1)
         Me.Controls.Add(Me.GroupBoxSetVariable)
         Me.Controls.Add(Me.BtnSetVariable)
         Me.Controls.Add(Me.BtnSolutoon)
@@ -1101,4 +1115,5 @@ Partial Class Form1
     Friend WithEvents CCDPath As Label
     Friend WithEvents Label37 As Label
     Friend WithEvents BtnRun As Button
+    Friend WithEvents ListBox1 As ListBox
 End Class
