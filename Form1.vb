@@ -134,6 +134,7 @@ Public Class Form1
         BtnSetVariable.Enabled = False
         BtnSolutoon.Enabled = False
         ListBox1.Enabled = False
+        BtnOnce.Enabled = False
     End Sub
     Private Sub BtnStop_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnStop.Click
         nErr = hSherlock.InvModeSet(IpeEngCtrlLib.I_MODE.I_EXE_MODE_HALT_AFTER_ITERATION)
@@ -151,6 +152,7 @@ Public Class Form1
         BtnSetVariable.Enabled = True
         BtnSolutoon.Enabled = True
         ListBox1.Enabled = True
+        BtnOnce.Enabled = True
     End Sub
 
     Private Sub BtnEscInter_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnEscInter.Click
@@ -230,6 +232,9 @@ Public Class Form1
         'modifyState = Convert.ToBoolean(n)
         hSherlock.RoiShowAnnotGet(CmbSelRoi.Text, annoState)
         'annoState = Convert.ToBoolean(n)
+        hSherlock.RoiShowOutlineSet(CmbSelRoi.Text, True)
+        AxIpeDspCtrl1.UpdateDisplay()
+        roiState = True
         If roiState = True Then
             BtnShowRoi.Text = "隐藏框"
         Else
@@ -345,6 +350,7 @@ Public Class Form1
             BtnSetVariable.Enabled = False
             BtnSolutoon.Enabled = False
             BtnStart.Enabled = False
+            BtnOnce.Enabled = False
         End If
         If (ChkALive.CheckState = CheckState.Unchecked) Then
             AxIpeDspCtrl1.ConnectImgWindow("检测窗口")
@@ -354,6 +360,7 @@ Public Class Form1
             BtnSetVariable.Enabled = True
             BtnSolutoon.Enabled = True
             BtnStart.Enabled = True
+            BtnOnce.Enabled = True
         End If
     End Sub
     Private Sub Timer3_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer3.Tick
@@ -547,6 +554,9 @@ Public Class Form1
 
     Private Sub BtnRun_Click(sender As Object, e As EventArgs) Handles BtnRun.Click
         hSherlock.EngExecuteSub("Inspect")
+        hSherlock.RoiShowOutlineSet(CmbSelRoi.Text, True)
+        AxIpeDspCtrl1.UpdateDisplay()
+        roiState = True
     End Sub
 
     Private Sub ListBox1_DragEnter(sender As Object, e As DragEventArgs) Handles ListBox1.DragEnter
@@ -561,6 +571,11 @@ Public Class Form1
             Call WriteIniStr("Config", "SolutionPath", CStr(sNowSolutionPath), My.Application.Info.DirectoryPath & "\config.ini")
             Call Load_Pro()
         Next
+    End Sub
+
+    Private Sub BtnOnce_Click(sender As Object, e As EventArgs) Handles BtnOnce.Click
+        nErr = hSherlock.InvModeSet(IpeEngCtrlLib.I_MODE.I_EXE_MODE_ONCE)
+        AxIpeDspCtrl1.ConnectImgWindow("检测窗口")
     End Sub
 
     Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
@@ -676,6 +691,7 @@ Public Class Form1
             BtnStop.Enabled = False
             Btnparameter.Enabled = False
             ListBox1.Enabled = False
+            BtnOnce.Enabled = False
             BtnSetVariable.Text = "返回主页"
             setVarState = True
             '
@@ -694,6 +710,7 @@ Public Class Form1
             BtnStop.Enabled = False
             Btnparameter.Enabled = True
             ListBox1.Enabled = True
+            BtnOnce.Enabled = True
             BtnSetVariable.Text = "参数设定"
             setVarState = False
         End If

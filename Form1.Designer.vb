@@ -112,6 +112,7 @@ Partial Class Form1
         Me.Label1 = New System.Windows.Forms.Label()
         Me.ListBox1 = New System.Windows.Forms.ListBox()
         Me.AxIpeDspCtrl1 = New AxIpeDspCtrlLib.AxIpeDspCtrl()
+        Me.BtnOnce = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBoxSetVariable.SuspendLayout()
         CType(Me.AxIpeDspCtrl1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -119,7 +120,7 @@ Partial Class Form1
         '
         'BtnStart
         '
-        Me.BtnStart.Location = New System.Drawing.Point(137, 11)
+        Me.BtnStart.Location = New System.Drawing.Point(134, 11)
         Me.BtnStart.Name = "BtnStart"
         Me.BtnStart.Size = New System.Drawing.Size(101, 55)
         Me.BtnStart.TabIndex = 1
@@ -128,7 +129,7 @@ Partial Class Form1
         '
         'BtnStop
         '
-        Me.BtnStop.Location = New System.Drawing.Point(262, 11)
+        Me.BtnStop.Location = New System.Drawing.Point(256, 11)
         Me.BtnStop.Name = "BtnStop"
         Me.BtnStop.Size = New System.Drawing.Size(101, 55)
         Me.BtnStop.TabIndex = 2
@@ -137,7 +138,7 @@ Partial Class Form1
         '
         'Btnparameter
         '
-        Me.Btnparameter.Location = New System.Drawing.Point(387, 11)
+        Me.Btnparameter.Location = New System.Drawing.Point(500, 11)
         Me.Btnparameter.Name = "Btnparameter"
         Me.Btnparameter.Size = New System.Drawing.Size(101, 55)
         Me.Btnparameter.TabIndex = 3
@@ -146,7 +147,7 @@ Partial Class Form1
         '
         'BtnEscInter
         '
-        Me.BtnEscInter.Location = New System.Drawing.Point(637, 11)
+        Me.BtnEscInter.Location = New System.Drawing.Point(744, 11)
         Me.BtnEscInter.Name = "BtnEscInter"
         Me.BtnEscInter.Size = New System.Drawing.Size(101, 55)
         Me.BtnEscInter.TabIndex = 4
@@ -347,7 +348,7 @@ Partial Class Form1
         '
         'BtnSetVariable
         '
-        Me.BtnSetVariable.Location = New System.Drawing.Point(512, 11)
+        Me.BtnSetVariable.Location = New System.Drawing.Point(622, 11)
         Me.BtnSetVariable.Name = "BtnSetVariable"
         Me.BtnSetVariable.Size = New System.Drawing.Size(101, 55)
         Me.BtnSetVariable.TabIndex = 13
@@ -980,9 +981,9 @@ Partial Class Form1
         Me.ListBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.ListBox1.FormattingEnabled = True
         Me.ListBox1.ItemHeight = 12
-        Me.ListBox1.Location = New System.Drawing.Point(744, 13)
+        Me.ListBox1.Location = New System.Drawing.Point(866, 13)
         Me.ListBox1.Name = "ListBox1"
-        Me.ListBox1.Size = New System.Drawing.Size(247, 50)
+        Me.ListBox1.Size = New System.Drawing.Size(125, 50)
         Me.ListBox1.TabIndex = 15
         '
         'AxIpeDspCtrl1
@@ -994,6 +995,15 @@ Partial Class Form1
         Me.AxIpeDspCtrl1.Size = New System.Drawing.Size(739, 556)
         Me.AxIpeDspCtrl1.TabIndex = 10
         '
+        'BtnOnce
+        '
+        Me.BtnOnce.Location = New System.Drawing.Point(378, 11)
+        Me.BtnOnce.Name = "BtnOnce"
+        Me.BtnOnce.Size = New System.Drawing.Size(101, 55)
+        Me.BtnOnce.TabIndex = 16
+        Me.BtnOnce.Text = "单次触发"
+        Me.BtnOnce.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
@@ -1001,6 +1011,7 @@ Partial Class Form1
         Me.BackColor = System.Drawing.SystemColors.Control
         Me.ClientSize = New System.Drawing.Size(997, 655)
         Me.ControlBox = False
+        Me.Controls.Add(Me.BtnOnce)
         Me.Controls.Add(Me.ListBox1)
         Me.Controls.Add(Me.GroupBoxSetVariable)
         Me.Controls.Add(Me.BtnSetVariable)
@@ -1116,4 +1127,5 @@ Partial Class Form1
     Friend WithEvents Label37 As Label
     Friend WithEvents BtnRun As Button
     Friend WithEvents ListBox1 As ListBox
+    Friend WithEvents BtnOnce As Button
 End Class
