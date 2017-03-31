@@ -675,6 +675,7 @@ Public Class Form1
             BtnStart.Enabled = False
             BtnStop.Enabled = False
             Btnparameter.Enabled = False
+            ListBox1.Enabled = False
             BtnSetVariable.Text = "返回主页"
             setVarState = True
             '
@@ -692,6 +693,7 @@ Public Class Form1
             BtnStart.Enabled = True
             BtnStop.Enabled = False
             Btnparameter.Enabled = True
+            ListBox1.Enabled = True
             BtnSetVariable.Text = "参数设定"
             setVarState = False
         End If
