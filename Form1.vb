@@ -39,7 +39,7 @@ Public Class Form1
     End Sub
     'Dim sNowSolutionPath As String
     Private Sub BtnSolutoon_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnSolutoon.Click
-        OpenFileDialog1.Filter = "Sherlock Files" & "(*.ivx;*.ivs)|*.ivx;*.ivs"
+        OpenFileDialog1.Filter = "Sherlock Files" & "(*.ivs)|*.ivs"
         OpenFileDialog1.FileName = ""
         OpenFileDialog1.ShowDialog()
         If OpenFileDialog1.FileName <> "" Then
@@ -68,7 +68,12 @@ Public Class Form1
         hSherlock.VarGetDouble("EDGE_ERROR_SKIP", EdgeInspectEnalbe)
         hSherlock.VarGetDouble("CORNER_ERROR_SKIP", CornerInspectEnalbe)
         CCDPath.Text = sNowSolutionPath
+
         BtnStop.Enabled = False
+        CheckBox1.Checked = False
+        CheckBox2.Checked = False
+        CheckBox3.Checked = False
+
         If SizeHeightEnalbe = 0 Then
             Button1.BackColor = Color.Lime
         Else
@@ -576,6 +581,17 @@ Public Class Form1
     Private Sub BtnOnce_Click(sender As Object, e As EventArgs) Handles BtnOnce.Click
         nErr = hSherlock.InvModeSet(IpeEngCtrlLib.I_MODE.I_EXE_MODE_ONCE)
         AxIpeDspCtrl1.ConnectImgWindow("检测窗口")
+    End Sub
+
+    Private Sub BtnSetZero_Click(sender As Object, e As EventArgs) Handles BtnSetZero.Click
+        hSherlock.VarSetDouble("OKNumber", 0)
+        hSherlock.VarSetDouble("NGNumber", 0)
+        hSherlock.VarSetString("OKNumber_str", "0")
+        hSherlock.VarSetString("NGNumber_str", "0")
+    End Sub
+
+    Private Sub BtnSetZero_MouseEnter(sender As Object, e As EventArgs) Handles BtnSetZero.MouseEnter
+        ToolTip1.SetToolTip(BtnSetZero, "计数清零")
     End Sub
 
     Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click

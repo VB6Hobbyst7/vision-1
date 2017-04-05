@@ -113,6 +113,8 @@ Partial Class Form1
         Me.ListBox1 = New System.Windows.Forms.ListBox()
         Me.AxIpeDspCtrl1 = New AxIpeDspCtrlLib.AxIpeDspCtrl()
         Me.BtnOnce = New System.Windows.Forms.Button()
+        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.BtnSetZero = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBoxSetVariable.SuspendLayout()
         CType(Me.AxIpeDspCtrl1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -1004,6 +1006,15 @@ Partial Class Form1
         Me.BtnOnce.Text = "单次触发"
         Me.BtnOnce.UseVisualStyleBackColor = True
         '
+        'BtnSetZero
+        '
+        Me.BtnSetZero.Image = Global.Vision.My.Resources.Resources.clockwise_arrow2
+        Me.BtnSetZero.Location = New System.Drawing.Point(100, 90)
+        Me.BtnSetZero.Name = "BtnSetZero"
+        Me.BtnSetZero.Size = New System.Drawing.Size(23, 23)
+        Me.BtnSetZero.TabIndex = 17
+        Me.BtnSetZero.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
@@ -1011,9 +1022,9 @@ Partial Class Form1
         Me.BackColor = System.Drawing.SystemColors.Control
         Me.ClientSize = New System.Drawing.Size(997, 655)
         Me.ControlBox = False
+        Me.Controls.Add(Me.GroupBoxSetVariable)
         Me.Controls.Add(Me.BtnOnce)
         Me.Controls.Add(Me.ListBox1)
-        Me.Controls.Add(Me.GroupBoxSetVariable)
         Me.Controls.Add(Me.BtnSetVariable)
         Me.Controls.Add(Me.BtnSolutoon)
         Me.Controls.Add(Me.ChkALive)
@@ -1022,6 +1033,7 @@ Partial Class Form1
         Me.Controls.Add(Me.BtnStop)
         Me.Controls.Add(Me.BtnStart)
         Me.Controls.Add(Me.GroupBox1)
+        Me.Controls.Add(Me.BtnSetZero)
         Me.Controls.Add(Me.AxIpeDspCtrl1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -1128,4 +1140,6 @@ Partial Class Form1
     Friend WithEvents BtnRun As Button
     Friend WithEvents ListBox1 As ListBox
     Friend WithEvents BtnOnce As Button
+    Friend WithEvents BtnSetZero As Button
+    Friend WithEvents ToolTip1 As ToolTip
 End Class

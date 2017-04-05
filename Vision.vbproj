@@ -206,6 +206,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="4160.ico" />
+    <Content Include="Resources\clockwise-arrow.png" />
+    <None Include="Resources\clockwise-arrow2.png" />
+    <None Include="Resources\clockwise-arrow1.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
