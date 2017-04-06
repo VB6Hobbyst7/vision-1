@@ -45,6 +45,8 @@ Public Class Form1
         OpenFileDialog1.FileName = ""
         OpenFileDialog1.ShowDialog()
         If OpenFileDialog1.FileName <> "" Then
+            ListBox1.Items.Clear() '清理列表
+            ListBox1.Items.Add("拖动文件至此")
             sNowSolutionPath = Me.OpenFileDialog1.FileName
             Call WriteIniStr("Config", "SolutionPath", CStr(sNowSolutionPath), My.Application.Info.DirectoryPath & "\config.ini")
             Call Load_Pro()
@@ -426,6 +428,7 @@ Public Class Form1
     End Sub
 
     Private Sub DETECTED_CELL_SIZE_LEVEL_MM_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Text0.KeyPress
+        Label16.ForeColor = Color.Red
         Label16.Show()
         buttonState = True
         Button8.Enabled = True
@@ -438,33 +441,41 @@ Public Class Form1
 
     Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
         Label16.Hide()
-        Label16.ForeColor = Color.Red
+        'Label16.ForeColor = Color.Red
         Label17.Hide()
-        Label17.ForeColor = Color.Red
+        'Label17.ForeColor = Color.Red
         Label18.Hide()
-        Label18.ForeColor = Color.Red
+        'Label18.ForeColor = Color.Red
         Label19.Hide()
-        Label19.ForeColor = Color.Red
+        'Label19.ForeColor = Color.Red
         Label20.Hide()
-        Label20.ForeColor = Color.Red
+        'Label20.ForeColor = Color.Red
         Label21.Hide()
-        Label21.ForeColor = Color.Red
+        'Label21.ForeColor = Color.Red
         Label22.Hide()
-        Label22.ForeColor = Color.Red
+        'Label22.ForeColor = Color.Red
         Label23.Hide()
-        Label23.ForeColor = Color.Red
+        'Label23.ForeColor = Color.Red
         Label24.Hide()
-        Label24.ForeColor = Color.Red
+        'Label24.ForeColor = Color.Red
         Label25.Hide()
-        Label25.ForeColor = Color.Red
+        'Label25.ForeColor = Color.Red
         Label26.Hide()
-        Label26.ForeColor = Color.Red
+        'Label26.ForeColor = Color.Red
+        Label38.Hide()
+        Label39.Hide()
+        Label40.Hide()
+        Label41.Hide()
+        Label42.Hide()
+        Label43.Hide()
+        Label44.Hide()
         nErr = hSherlock.InvSave(sNowSolutionPath)
         Button8.Enabled = False
         buttonState = False
     End Sub
 
     Private Sub DETECTED_CELL_HEIGHT_LEVEL_MM_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Text1.KeyPress
+        Label17.ForeColor = Color.Red
         Label17.Show()
         buttonState = True
         Button8.Enabled = True
@@ -476,6 +487,7 @@ Public Class Form1
     End Sub
 
     Private Sub DETECTED_CELL_WIDTH_LEVEL_MM_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Text2.KeyPress
+        Label18.ForeColor = Color.Red
         Label18.Show()
         buttonState = True
         Button8.Enabled = True
@@ -487,6 +499,7 @@ Public Class Form1
     End Sub
 
     Private Sub SCREEN_ROTATE_ERROR_LEVEL_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Text3.KeyPress
+        Label19.ForeColor = Color.Red
         Label19.Show()
         buttonState = True
         Button8.Enabled = True
@@ -498,6 +511,7 @@ Public Class Form1
     End Sub
 
     Private Sub SCREEN_SHIFT_ERROR_LEVEL_MM_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Text4.KeyPress
+        Label20.ForeColor = Color.Red
         Label20.Show()
         buttonState = True
         Button8.Enabled = True
@@ -509,6 +523,7 @@ Public Class Form1
     End Sub
 
     Private Sub EDGE_ERROR_LEVEL_PIX_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Text5.KeyPress
+        Label21.ForeColor = Color.Red
         Label21.Show()
         buttonState = True
         Button8.Enabled = True
@@ -520,6 +535,7 @@ Public Class Form1
     End Sub
 
     Private Sub CORNER_ERROR_LEVEL_PIX_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Text6.KeyPress
+        Label22.ForeColor = Color.Red
         Label22.Show()
         buttonState = True
         Button8.Enabled = True
@@ -531,6 +547,7 @@ Public Class Form1
     End Sub
 
     Private Sub EDGE_BREAKAGE_LEVEL_PIX_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Text7.KeyPress
+        Label23.ForeColor = Color.Red
         Label23.Show()
         buttonState = True
         Button8.Enabled = True
@@ -542,6 +559,7 @@ Public Class Form1
     End Sub
 
     Private Sub INSPECT_ROI_DIAGONLA_WIDTH_PIX_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Text8.KeyPress
+        Label24.ForeColor = Color.Red
         Label24.Show()
         buttonState = True
         Button8.Enabled = True
@@ -553,6 +571,7 @@ Public Class Form1
     End Sub
 
     Private Sub CORNER_BREAKAGE_LEVEL_PIX_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Text9.KeyPress
+        Label25.ForeColor = Color.Red
         Label25.Show()
         buttonState = True
         Button8.Enabled = True
@@ -564,6 +583,7 @@ Public Class Form1
     End Sub
 
     Private Sub INSPECT_INNER_ERROR_THRESHOLD_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Text10.KeyPress
+        Label26.ForeColor = Color.Red
         Label26.Show()
         buttonState = True
         Button8.Enabled = True
@@ -633,6 +653,7 @@ Public Class Form1
     End Sub
 
     Private Sub BtnOnce_Click(sender As Object, e As EventArgs) Handles BtnOnce.Click
+        GroupBox1.Enabled = False
         nErr = hSherlock.InvModeSet(IpeEngCtrlLib.I_MODE.I_EXE_MODE_ONCE)
         AxIpeDspCtrl1.ConnectImgWindow("检测窗口")
     End Sub
@@ -660,6 +681,7 @@ Public Class Form1
         End If
         buttonState = True
         Button8.Enabled = True
+        Label38.Show()
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
@@ -674,6 +696,7 @@ Public Class Form1
         End If
         buttonState = True
         Button8.Enabled = True
+        Label39.Show()
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
@@ -688,6 +711,7 @@ Public Class Form1
         End If
         buttonState = True
         Button8.Enabled = True
+        Label40.Show()
     End Sub
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
@@ -702,6 +726,7 @@ Public Class Form1
         End If
         buttonState = True
         Button8.Enabled = True
+        Label41.Show()
     End Sub
 
     Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
@@ -716,6 +741,7 @@ Public Class Form1
         End If
         buttonState = True
         Button8.Enabled = True
+        Label44.Show()
     End Sub
 
     Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
@@ -730,6 +756,7 @@ Public Class Form1
         End If
         buttonState = True
         Button8.Enabled = True
+        Label42.Show()
     End Sub
 
     Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
@@ -744,6 +771,7 @@ Public Class Form1
         End If
         buttonState = True
         Button8.Enabled = True
+        Label43.Show()
     End Sub
 
     Private Sub BtnAnnotations_Click(sender As Object, e As EventArgs) Handles BtnAnnotations.Click

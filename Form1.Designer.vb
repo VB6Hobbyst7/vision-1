@@ -115,6 +115,13 @@ Partial Class Form1
         Me.BtnOnce = New System.Windows.Forms.Button()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.BtnSetZero = New System.Windows.Forms.Button()
+        Me.Label38 = New System.Windows.Forms.Label()
+        Me.Label39 = New System.Windows.Forms.Label()
+        Me.Label40 = New System.Windows.Forms.Label()
+        Me.Label41 = New System.Windows.Forms.Label()
+        Me.Label42 = New System.Windows.Forms.Label()
+        Me.Label43 = New System.Windows.Forms.Label()
+        Me.Label44 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBoxSetVariable.SuspendLayout()
         CType(Me.AxIpeDspCtrl1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -359,6 +366,13 @@ Partial Class Form1
         '
         'GroupBoxSetVariable
         '
+        Me.GroupBoxSetVariable.Controls.Add(Me.Label44)
+        Me.GroupBoxSetVariable.Controls.Add(Me.Label43)
+        Me.GroupBoxSetVariable.Controls.Add(Me.Label42)
+        Me.GroupBoxSetVariable.Controls.Add(Me.Label41)
+        Me.GroupBoxSetVariable.Controls.Add(Me.Label40)
+        Me.GroupBoxSetVariable.Controls.Add(Me.Label39)
+        Me.GroupBoxSetVariable.Controls.Add(Me.Label38)
         Me.GroupBoxSetVariable.Controls.Add(Me.CCDPath)
         Me.GroupBoxSetVariable.Controls.Add(Me.Label37)
         Me.GroupBoxSetVariable.Controls.Add(Me.CheckBox3)
@@ -416,9 +430,9 @@ Partial Class Form1
         Me.GroupBoxSetVariable.Controls.Add(Me.Label6)
         Me.GroupBoxSetVariable.Controls.Add(Me.Label4)
         Me.GroupBoxSetVariable.Controls.Add(Me.Label1)
-        Me.GroupBoxSetVariable.Location = New System.Drawing.Point(0, 89)
+        Me.GroupBoxSetVariable.Location = New System.Drawing.Point(0, 87)
         Me.GroupBoxSetVariable.Name = "GroupBoxSetVariable"
-        Me.GroupBoxSetVariable.Size = New System.Drawing.Size(738, 554)
+        Me.GroupBoxSetVariable.Size = New System.Drawing.Size(743, 556)
         Me.GroupBoxSetVariable.TabIndex = 14
         Me.GroupBoxSetVariable.TabStop = False
         Me.GroupBoxSetVariable.Text = "参数设定"
@@ -799,9 +813,9 @@ Partial Class Form1
         'Button7
         '
         Me.Button7.BackColor = System.Drawing.Color.Lime
-        Me.Button7.Location = New System.Drawing.Point(169, 293)
+        Me.Button7.Location = New System.Drawing.Point(169, 291)
         Me.Button7.Name = "Button7"
-        Me.Button7.Size = New System.Drawing.Size(82, 21)
+        Me.Button7.Size = New System.Drawing.Size(82, 23)
         Me.Button7.TabIndex = 31
         Me.Button7.Text = "切除"
         Me.Button7.UseVisualStyleBackColor = False
@@ -1015,6 +1029,83 @@ Partial Class Form1
         Me.BtnSetZero.TabIndex = 17
         Me.BtnSetZero.UseVisualStyleBackColor = True
         '
+        'Label38
+        '
+        Me.Label38.AutoSize = True
+        Me.Label38.ForeColor = System.Drawing.Color.Aqua
+        Me.Label38.Location = New System.Drawing.Point(365, 87)
+        Me.Label38.Name = "Label38"
+        Me.Label38.Size = New System.Drawing.Size(11, 12)
+        Me.Label38.TabIndex = 71
+        Me.Label38.Text = "*"
+        Me.Label38.Visible = False
+        '
+        'Label39
+        '
+        Me.Label39.AutoSize = True
+        Me.Label39.ForeColor = System.Drawing.Color.Aqua
+        Me.Label39.Location = New System.Drawing.Point(365, 139)
+        Me.Label39.Name = "Label39"
+        Me.Label39.Size = New System.Drawing.Size(11, 12)
+        Me.Label39.TabIndex = 72
+        Me.Label39.Text = "*"
+        Me.Label39.Visible = False
+        '
+        'Label40
+        '
+        Me.Label40.AutoSize = True
+        Me.Label40.ForeColor = System.Drawing.Color.Aqua
+        Me.Label40.Location = New System.Drawing.Point(365, 185)
+        Me.Label40.Name = "Label40"
+        Me.Label40.Size = New System.Drawing.Size(11, 12)
+        Me.Label40.TabIndex = 73
+        Me.Label40.Text = "*"
+        Me.Label40.Visible = False
+        '
+        'Label41
+        '
+        Me.Label41.AutoSize = True
+        Me.Label41.ForeColor = System.Drawing.Color.Aqua
+        Me.Label41.Location = New System.Drawing.Point(365, 234)
+        Me.Label41.Name = "Label41"
+        Me.Label41.Size = New System.Drawing.Size(11, 12)
+        Me.Label41.TabIndex = 74
+        Me.Label41.Text = "*"
+        Me.Label41.Visible = False
+        '
+        'Label42
+        '
+        Me.Label42.AutoSize = True
+        Me.Label42.ForeColor = System.Drawing.Color.Aqua
+        Me.Label42.Location = New System.Drawing.Point(727, 36)
+        Me.Label42.Name = "Label42"
+        Me.Label42.Size = New System.Drawing.Size(11, 12)
+        Me.Label42.TabIndex = 75
+        Me.Label42.Text = "*"
+        Me.Label42.Visible = False
+        '
+        'Label43
+        '
+        Me.Label43.AutoSize = True
+        Me.Label43.ForeColor = System.Drawing.Color.Aqua
+        Me.Label43.Location = New System.Drawing.Point(726, 87)
+        Me.Label43.Name = "Label43"
+        Me.Label43.Size = New System.Drawing.Size(11, 12)
+        Me.Label43.TabIndex = 72
+        Me.Label43.Text = "*"
+        Me.Label43.Visible = False
+        '
+        'Label44
+        '
+        Me.Label44.AutoSize = True
+        Me.Label44.ForeColor = System.Drawing.Color.Aqua
+        Me.Label44.Location = New System.Drawing.Point(252, 294)
+        Me.Label44.Name = "Label44"
+        Me.Label44.Size = New System.Drawing.Size(11, 12)
+        Me.Label44.TabIndex = 76
+        Me.Label44.Text = "*"
+        Me.Label44.Visible = False
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
@@ -1142,4 +1233,11 @@ Partial Class Form1
     Friend WithEvents BtnOnce As Button
     Friend WithEvents BtnSetZero As Button
     Friend WithEvents ToolTip1 As ToolTip
+    Friend WithEvents Label44 As Label
+    Friend WithEvents Label43 As Label
+    Friend WithEvents Label42 As Label
+    Friend WithEvents Label41 As Label
+    Friend WithEvents Label40 As Label
+    Friend WithEvents Label39 As Label
+    Friend WithEvents Label38 As Label
 End Class
