@@ -11,6 +11,7 @@ Public Class Form1
     Public variables()
     Public textBoxes() As MaskedTextBox
     Public sNowSolutionPath As String
+    Public buttonState As Boolean
     Public SizeHeightEnalbe, SizeWidthEnalbe, ScreenRotateEnalbe, ScreenShiftEnalbe, Rotate90Enable, EdgeInspectEnalbe, CornerInspectEnalbe As Double
     Private Sub Form1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         startScreenState = True
@@ -19,6 +20,7 @@ Public Class Form1
         annoState = False
         setVarState = False
         modifyState = False
+        buttonState = False
         ListBox1.Items.Add("拖动文件至此")
         'create engine object
         hSherlock = CreateObject("IpeEngCtrl.EngineNg")
@@ -425,104 +427,150 @@ Public Class Form1
 
     Private Sub DETECTED_CELL_SIZE_LEVEL_MM_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Text0.KeyPress
         Label16.Show()
+        buttonState = True
+        Button8.Enabled = True
         If e.KeyChar = Chr(Keys.Enter) Then
             nErr = hSherlock.VarSetDouble("DETECTED_CELL_SIZE_LEVEL_MM", Val(Text0.Text))
-            Label16.Hide()
+            'Label16.Hide()
+            Label16.ForeColor = Color.Aqua
         End If
     End Sub
 
     Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
         Label16.Hide()
+        Label16.ForeColor = Color.Red
         Label17.Hide()
+        Label17.ForeColor = Color.Red
         Label18.Hide()
+        Label18.ForeColor = Color.Red
         Label19.Hide()
+        Label19.ForeColor = Color.Red
         Label20.Hide()
+        Label20.ForeColor = Color.Red
         Label21.Hide()
+        Label21.ForeColor = Color.Red
         Label22.Hide()
+        Label22.ForeColor = Color.Red
         Label23.Hide()
+        Label23.ForeColor = Color.Red
         Label24.Hide()
+        Label24.ForeColor = Color.Red
         Label25.Hide()
+        Label25.ForeColor = Color.Red
         Label26.Hide()
+        Label26.ForeColor = Color.Red
         nErr = hSherlock.InvSave(sNowSolutionPath)
+        Button8.Enabled = False
+        buttonState = False
     End Sub
 
     Private Sub DETECTED_CELL_HEIGHT_LEVEL_MM_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Text1.KeyPress
         Label17.Show()
+        buttonState = True
+        Button8.Enabled = True
         If e.KeyChar = Chr(Keys.Enter) Then
             nErr = hSherlock.VarSetDouble("DETECTED_CELL_HEIGHT_LEVEL_MM", Val(Text1.Text))
-            Label17.Hide()
+            'Label17.Hide()
+            Label17.ForeColor = Color.Aqua
         End If
     End Sub
 
     Private Sub DETECTED_CELL_WIDTH_LEVEL_MM_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Text2.KeyPress
         Label18.Show()
+        buttonState = True
+        Button8.Enabled = True
         If e.KeyChar = Chr(Keys.Enter) Then
             nErr = hSherlock.VarSetDouble("DETECTED_CELL_WIDTH_LEVEL_MM", Val(Text2.Text))
-            Label18.Hide()
+            'Label18.Hide()
+            Label18.ForeColor = Color.Aqua
         End If
     End Sub
 
     Private Sub SCREEN_ROTATE_ERROR_LEVEL_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Text3.KeyPress
         Label19.Show()
+        buttonState = True
+        Button8.Enabled = True
         If e.KeyChar = Chr(Keys.Enter) Then
             nErr = hSherlock.VarSetDouble("SCREEN_ROTATE_ERROR_LEVEL", Val(Text3.Text))
-            Label19.Hide()
+            'Label19.Hide()
+            Label19.ForeColor = Color.Aqua
         End If
     End Sub
 
     Private Sub SCREEN_SHIFT_ERROR_LEVEL_MM_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Text4.KeyPress
         Label20.Show()
+        buttonState = True
+        Button8.Enabled = True
         If e.KeyChar = Chr(Keys.Enter) Then
             nErr = hSherlock.VarSetDouble("SCREEN_SHIFT_ERROR_LEVEL_MM", Val(Text4.Text))
-            Label20.Hide()
+            'Label20.Hide()
+            Label20.ForeColor = Color.Aqua
         End If
     End Sub
 
     Private Sub EDGE_ERROR_LEVEL_PIX_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Text5.KeyPress
         Label21.Show()
+        buttonState = True
+        Button8.Enabled = True
         If e.KeyChar = Chr(Keys.Enter) Then
             nErr = hSherlock.VarSetDouble("EDGE_ERROR_LEVEL_PIX", Val(Text5.Text))
-            Label21.Hide()
+            'Label21.Hide()
+            Label21.ForeColor = Color.Aqua
         End If
     End Sub
 
     Private Sub CORNER_ERROR_LEVEL_PIX_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Text6.KeyPress
         Label22.Show()
+        buttonState = True
+        Button8.Enabled = True
         If e.KeyChar = Chr(Keys.Enter) Then
             nErr = hSherlock.VarSetDouble("CORNER_ERROR_LEVEL_PIX", Val(Text6.Text))
-            Label22.Hide()
+            'Label22.Hide()
+            Label22.ForeColor = Color.Aqua
         End If
     End Sub
 
     Private Sub EDGE_BREAKAGE_LEVEL_PIX_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Text7.KeyPress
         Label23.Show()
+        buttonState = True
+        Button8.Enabled = True
         If e.KeyChar = Chr(Keys.Enter) Then
             nErr = hSherlock.VarSetDouble("EDGE_BREAKAGE_LEVEL_PIX", Val(Text7.Text))
-            Label23.Hide()
+            'Label23.Hide()
+            Label23.ForeColor = Color.Aqua
         End If
     End Sub
 
     Private Sub INSPECT_ROI_DIAGONLA_WIDTH_PIX_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Text8.KeyPress
         Label24.Show()
+        buttonState = True
+        Button8.Enabled = True
         If e.KeyChar = Chr(Keys.Enter) Then
             nErr = hSherlock.VarSetDouble("INSPECT_ROI_DIAGONLA_WIDTH_PIX", Val(Text8.Text))
-            Label24.Hide()
+            'Label24.Hide()
+            Label24.ForeColor = Color.Aqua
         End If
     End Sub
 
     Private Sub CORNER_BREAKAGE_LEVEL_PIX_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Text9.KeyPress
         Label25.Show()
+        buttonState = True
+        Button8.Enabled = True
         If e.KeyChar = Chr(Keys.Enter) Then
             nErr = hSherlock.VarSetDouble("CORNER_BREAKAGE_LEVEL_PIX", Val(Text9.Text))
-            Label25.Hide()
+            'Label25.Hide()
+            Label25.ForeColor = Color.Aqua
         End If
     End Sub
 
     Private Sub INSPECT_INNER_ERROR_THRESHOLD_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Text10.KeyPress
         Label26.Show()
+        buttonState = True
+        Button8.Enabled = True
         If e.KeyChar = Chr(Keys.Enter) Then
             nErr = hSherlock.VarSetDouble("INSPECT_INNER_ERROR_THRESHOLD", Val(Text10.Text))
-            Label26.Hide()
+            'Label26.Hide()
+            Label26.ForeColor = Color.Aqua
         End If
     End Sub
 
@@ -532,6 +580,8 @@ Public Class Form1
         ElseIf CheckBox1.CheckState = CheckState.Unchecked Then
             hSherlock.VarSetDouble("IMAGE_ALL_SAVE_FTP", 1)
         End If
+        Button8.Enabled = True
+        buttonState = True
     End Sub
 
     Private Sub CheckBox2_Click(sender As Object, e As EventArgs) Handles CheckBox2.Click
@@ -540,6 +590,8 @@ Public Class Form1
         ElseIf CheckBox2.CheckState = CheckState.Unchecked Then
             hSherlock.VarSetDouble("NG_IMAGE_SAVE_FTP", 1)
         End If
+        Button8.Enabled = True
+        buttonState = True
     End Sub
 
     Private Sub CheckBox3_Click(sender As Object, e As EventArgs) Handles CheckBox3.Click
@@ -548,6 +600,8 @@ Public Class Form1
         ElseIf CheckBox3.CheckState = CheckState.Unchecked Then
             hSherlock.VarSetDouble("NG_IMAGE_GRAP_SAVE_FTP", 1)
         End If
+        Button8.Enabled = True
+        buttonState = True
     End Sub
 
     Private Sub CamShutter_KeyPress(sender As Object, e As KeyPressEventArgs) Handles CamShutter.KeyPress
@@ -604,6 +658,8 @@ Public Class Form1
             SizeHeightEnalbe = 0
             Button1.BackColor = Color.Lime
         End If
+        buttonState = True
+        Button8.Enabled = True
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
@@ -616,6 +672,8 @@ Public Class Form1
             SizeWidthEnalbe = 0
             Button2.BackColor = Color.Lime
         End If
+        buttonState = True
+        Button8.Enabled = True
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
@@ -628,6 +686,8 @@ Public Class Form1
             ScreenRotateEnalbe = 0
             Button3.BackColor = Color.Lime
         End If
+        buttonState = True
+        Button8.Enabled = True
     End Sub
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
@@ -640,6 +700,8 @@ Public Class Form1
             ScreenShiftEnalbe = 0
             Button4.BackColor = Color.Lime
         End If
+        buttonState = True
+        Button8.Enabled = True
     End Sub
 
     Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
@@ -652,6 +714,8 @@ Public Class Form1
             Rotate90Enable = 0
             Button7.BackColor = Color.Lime
         End If
+        buttonState = True
+        Button8.Enabled = True
     End Sub
 
     Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
@@ -664,6 +728,8 @@ Public Class Form1
             EdgeInspectEnalbe = 0
             Button5.BackColor = Color.Lime
         End If
+        buttonState = True
+        Button8.Enabled = True
     End Sub
 
     Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
@@ -676,6 +742,8 @@ Public Class Form1
             CornerInspectEnalbe = 0
             Button6.BackColor = Color.Lime
         End If
+        buttonState = True
+        Button8.Enabled = True
     End Sub
 
     Private Sub BtnAnnotations_Click(sender As Object, e As EventArgs) Handles BtnAnnotations.Click
@@ -710,6 +778,11 @@ Public Class Form1
             BtnOnce.Enabled = False
             BtnSetVariable.Text = "返回主页"
             setVarState = True
+            If buttonState = False Then
+                Button8.Enabled = False
+            Else
+                Button8.Enabled = True
+            End If
             '
             'Dim n As Integer
             For i = 0 To 10
