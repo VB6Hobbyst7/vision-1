@@ -441,27 +441,16 @@ Public Class Form1
 
     Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
         Label16.Hide()
-        'Label16.ForeColor = Color.Red
         Label17.Hide()
-        'Label17.ForeColor = Color.Red
         Label18.Hide()
-        'Label18.ForeColor = Color.Red
         Label19.Hide()
-        'Label19.ForeColor = Color.Red
         Label20.Hide()
-        'Label20.ForeColor = Color.Red
         Label21.Hide()
-        'Label21.ForeColor = Color.Red
         Label22.Hide()
-        'Label22.ForeColor = Color.Red
         Label23.Hide()
-        'Label23.ForeColor = Color.Red
         Label24.Hide()
-        'Label24.ForeColor = Color.Red
         Label25.Hide()
-        'Label25.ForeColor = Color.Red
         Label26.Hide()
-        'Label26.ForeColor = Color.Red
         Label38.Hide()
         Label39.Hide()
         Label40.Hide()
