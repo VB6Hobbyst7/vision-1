@@ -53,6 +53,13 @@ Partial Class Form1
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.BtnSetVariable = New System.Windows.Forms.Button()
         Me.GroupBoxSetVariable = New System.Windows.Forms.GroupBox()
+        Me.Label44 = New System.Windows.Forms.Label()
+        Me.Label43 = New System.Windows.Forms.Label()
+        Me.Label42 = New System.Windows.Forms.Label()
+        Me.Label41 = New System.Windows.Forms.Label()
+        Me.Label40 = New System.Windows.Forms.Label()
+        Me.Label39 = New System.Windows.Forms.Label()
+        Me.Label38 = New System.Windows.Forms.Label()
         Me.CCDPath = New System.Windows.Forms.Label()
         Me.Label37 = New System.Windows.Forms.Label()
         Me.CheckBox3 = New System.Windows.Forms.CheckBox()
@@ -115,13 +122,7 @@ Partial Class Form1
         Me.BtnOnce = New System.Windows.Forms.Button()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.BtnSetZero = New System.Windows.Forms.Button()
-        Me.Label38 = New System.Windows.Forms.Label()
-        Me.Label39 = New System.Windows.Forms.Label()
-        Me.Label40 = New System.Windows.Forms.Label()
-        Me.Label41 = New System.Windows.Forms.Label()
-        Me.Label42 = New System.Windows.Forms.Label()
-        Me.Label43 = New System.Windows.Forms.Label()
-        Me.Label44 = New System.Windows.Forms.Label()
+        Me.Timer5 = New System.Windows.Forms.Timer(Me.components)
         Me.GroupBox1.SuspendLayout()
         Me.GroupBoxSetVariable.SuspendLayout()
         CType(Me.AxIpeDspCtrl1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -436,6 +437,83 @@ Partial Class Form1
         Me.GroupBoxSetVariable.TabIndex = 14
         Me.GroupBoxSetVariable.TabStop = False
         Me.GroupBoxSetVariable.Text = "参数设定"
+        '
+        'Label44
+        '
+        Me.Label44.AutoSize = True
+        Me.Label44.ForeColor = System.Drawing.Color.Aqua
+        Me.Label44.Location = New System.Drawing.Point(252, 294)
+        Me.Label44.Name = "Label44"
+        Me.Label44.Size = New System.Drawing.Size(11, 12)
+        Me.Label44.TabIndex = 76
+        Me.Label44.Text = "*"
+        Me.Label44.Visible = False
+        '
+        'Label43
+        '
+        Me.Label43.AutoSize = True
+        Me.Label43.ForeColor = System.Drawing.Color.Aqua
+        Me.Label43.Location = New System.Drawing.Point(726, 87)
+        Me.Label43.Name = "Label43"
+        Me.Label43.Size = New System.Drawing.Size(11, 12)
+        Me.Label43.TabIndex = 72
+        Me.Label43.Text = "*"
+        Me.Label43.Visible = False
+        '
+        'Label42
+        '
+        Me.Label42.AutoSize = True
+        Me.Label42.ForeColor = System.Drawing.Color.Aqua
+        Me.Label42.Location = New System.Drawing.Point(727, 36)
+        Me.Label42.Name = "Label42"
+        Me.Label42.Size = New System.Drawing.Size(11, 12)
+        Me.Label42.TabIndex = 75
+        Me.Label42.Text = "*"
+        Me.Label42.Visible = False
+        '
+        'Label41
+        '
+        Me.Label41.AutoSize = True
+        Me.Label41.ForeColor = System.Drawing.Color.Aqua
+        Me.Label41.Location = New System.Drawing.Point(365, 234)
+        Me.Label41.Name = "Label41"
+        Me.Label41.Size = New System.Drawing.Size(11, 12)
+        Me.Label41.TabIndex = 74
+        Me.Label41.Text = "*"
+        Me.Label41.Visible = False
+        '
+        'Label40
+        '
+        Me.Label40.AutoSize = True
+        Me.Label40.ForeColor = System.Drawing.Color.Aqua
+        Me.Label40.Location = New System.Drawing.Point(365, 185)
+        Me.Label40.Name = "Label40"
+        Me.Label40.Size = New System.Drawing.Size(11, 12)
+        Me.Label40.TabIndex = 73
+        Me.Label40.Text = "*"
+        Me.Label40.Visible = False
+        '
+        'Label39
+        '
+        Me.Label39.AutoSize = True
+        Me.Label39.ForeColor = System.Drawing.Color.Aqua
+        Me.Label39.Location = New System.Drawing.Point(365, 139)
+        Me.Label39.Name = "Label39"
+        Me.Label39.Size = New System.Drawing.Size(11, 12)
+        Me.Label39.TabIndex = 72
+        Me.Label39.Text = "*"
+        Me.Label39.Visible = False
+        '
+        'Label38
+        '
+        Me.Label38.AutoSize = True
+        Me.Label38.ForeColor = System.Drawing.Color.Aqua
+        Me.Label38.Location = New System.Drawing.Point(365, 87)
+        Me.Label38.Name = "Label38"
+        Me.Label38.Size = New System.Drawing.Size(11, 12)
+        Me.Label38.TabIndex = 71
+        Me.Label38.Text = "*"
+        Me.Label38.Visible = False
         '
         'CCDPath
         '
@@ -1029,82 +1107,8 @@ Partial Class Form1
         Me.BtnSetZero.TabIndex = 17
         Me.BtnSetZero.UseVisualStyleBackColor = True
         '
-        'Label38
+        'Timer5
         '
-        Me.Label38.AutoSize = True
-        Me.Label38.ForeColor = System.Drawing.Color.Aqua
-        Me.Label38.Location = New System.Drawing.Point(365, 87)
-        Me.Label38.Name = "Label38"
-        Me.Label38.Size = New System.Drawing.Size(11, 12)
-        Me.Label38.TabIndex = 71
-        Me.Label38.Text = "*"
-        Me.Label38.Visible = False
-        '
-        'Label39
-        '
-        Me.Label39.AutoSize = True
-        Me.Label39.ForeColor = System.Drawing.Color.Aqua
-        Me.Label39.Location = New System.Drawing.Point(365, 139)
-        Me.Label39.Name = "Label39"
-        Me.Label39.Size = New System.Drawing.Size(11, 12)
-        Me.Label39.TabIndex = 72
-        Me.Label39.Text = "*"
-        Me.Label39.Visible = False
-        '
-        'Label40
-        '
-        Me.Label40.AutoSize = True
-        Me.Label40.ForeColor = System.Drawing.Color.Aqua
-        Me.Label40.Location = New System.Drawing.Point(365, 185)
-        Me.Label40.Name = "Label40"
-        Me.Label40.Size = New System.Drawing.Size(11, 12)
-        Me.Label40.TabIndex = 73
-        Me.Label40.Text = "*"
-        Me.Label40.Visible = False
-        '
-        'Label41
-        '
-        Me.Label41.AutoSize = True
-        Me.Label41.ForeColor = System.Drawing.Color.Aqua
-        Me.Label41.Location = New System.Drawing.Point(365, 234)
-        Me.Label41.Name = "Label41"
-        Me.Label41.Size = New System.Drawing.Size(11, 12)
-        Me.Label41.TabIndex = 74
-        Me.Label41.Text = "*"
-        Me.Label41.Visible = False
-        '
-        'Label42
-        '
-        Me.Label42.AutoSize = True
-        Me.Label42.ForeColor = System.Drawing.Color.Aqua
-        Me.Label42.Location = New System.Drawing.Point(727, 36)
-        Me.Label42.Name = "Label42"
-        Me.Label42.Size = New System.Drawing.Size(11, 12)
-        Me.Label42.TabIndex = 75
-        Me.Label42.Text = "*"
-        Me.Label42.Visible = False
-        '
-        'Label43
-        '
-        Me.Label43.AutoSize = True
-        Me.Label43.ForeColor = System.Drawing.Color.Aqua
-        Me.Label43.Location = New System.Drawing.Point(726, 87)
-        Me.Label43.Name = "Label43"
-        Me.Label43.Size = New System.Drawing.Size(11, 12)
-        Me.Label43.TabIndex = 72
-        Me.Label43.Text = "*"
-        Me.Label43.Visible = False
-        '
-        'Label44
-        '
-        Me.Label44.AutoSize = True
-        Me.Label44.ForeColor = System.Drawing.Color.Aqua
-        Me.Label44.Location = New System.Drawing.Point(252, 294)
-        Me.Label44.Name = "Label44"
-        Me.Label44.Size = New System.Drawing.Size(11, 12)
-        Me.Label44.TabIndex = 76
-        Me.Label44.Text = "*"
-        Me.Label44.Visible = False
         '
         'Form1
         '
@@ -1240,4 +1244,5 @@ Partial Class Form1
     Friend WithEvents Label40 As Label
     Friend WithEvents Label39 As Label
     Friend WithEvents Label38 As Label
+    Friend WithEvents Timer5 As Timer
 End Class

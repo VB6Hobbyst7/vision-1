@@ -13,6 +13,8 @@ Public Class Form1
     Public sNowSolutionPath As String
     Public buttonState As Boolean
     Public SizeHeightEnalbe, SizeWidthEnalbe, ScreenRotateEnalbe, ScreenShiftEnalbe, Rotate90Enable, EdgeInspectEnalbe, CornerInspectEnalbe As Double
+    Public state As Boolean
+    Public n As Double
     Private Sub Form1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         startScreenState = True
         StartScreen.Show()
@@ -21,6 +23,8 @@ Public Class Form1
         setVarState = False
         modifyState = False
         buttonState = False
+        state = False
+        n = 0
         ListBox1.Items.Add("拖动文件至此")
         'create engine object
         hSherlock = CreateObject("IpeEngCtrl.EngineNg")
@@ -432,6 +436,7 @@ Public Class Form1
         Label16.Show()
         buttonState = True
         Button8.Enabled = True
+        state = True
         If e.KeyChar = Chr(Keys.Enter) Then
             nErr = hSherlock.VarSetDouble("DETECTED_CELL_SIZE_LEVEL_MM", Val(Text0.Text))
             'Label16.Hide()
@@ -461,6 +466,8 @@ Public Class Form1
         nErr = hSherlock.InvSave(sNowSolutionPath)
         Button8.Enabled = False
         buttonState = False
+        state = False
+        Timer5.Stop()
     End Sub
 
     Private Sub DETECTED_CELL_HEIGHT_LEVEL_MM_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Text1.KeyPress
@@ -468,6 +475,7 @@ Public Class Form1
         Label17.Show()
         buttonState = True
         Button8.Enabled = True
+        state = True
         If e.KeyChar = Chr(Keys.Enter) Then
             nErr = hSherlock.VarSetDouble("DETECTED_CELL_HEIGHT_LEVEL_MM", Val(Text1.Text))
             'Label17.Hide()
@@ -480,6 +488,7 @@ Public Class Form1
         Label18.Show()
         buttonState = True
         Button8.Enabled = True
+        state = True
         If e.KeyChar = Chr(Keys.Enter) Then
             nErr = hSherlock.VarSetDouble("DETECTED_CELL_WIDTH_LEVEL_MM", Val(Text2.Text))
             'Label18.Hide()
@@ -492,6 +501,7 @@ Public Class Form1
         Label19.Show()
         buttonState = True
         Button8.Enabled = True
+        state = True
         If e.KeyChar = Chr(Keys.Enter) Then
             nErr = hSherlock.VarSetDouble("SCREEN_ROTATE_ERROR_LEVEL", Val(Text3.Text))
             'Label19.Hide()
@@ -504,6 +514,7 @@ Public Class Form1
         Label20.Show()
         buttonState = True
         Button8.Enabled = True
+        state = True
         If e.KeyChar = Chr(Keys.Enter) Then
             nErr = hSherlock.VarSetDouble("SCREEN_SHIFT_ERROR_LEVEL_MM", Val(Text4.Text))
             'Label20.Hide()
@@ -516,6 +527,7 @@ Public Class Form1
         Label21.Show()
         buttonState = True
         Button8.Enabled = True
+        state = True
         If e.KeyChar = Chr(Keys.Enter) Then
             nErr = hSherlock.VarSetDouble("EDGE_ERROR_LEVEL_PIX", Val(Text5.Text))
             'Label21.Hide()
@@ -528,6 +540,7 @@ Public Class Form1
         Label22.Show()
         buttonState = True
         Button8.Enabled = True
+        state = True
         If e.KeyChar = Chr(Keys.Enter) Then
             nErr = hSherlock.VarSetDouble("CORNER_ERROR_LEVEL_PIX", Val(Text6.Text))
             'Label22.Hide()
@@ -540,6 +553,7 @@ Public Class Form1
         Label23.Show()
         buttonState = True
         Button8.Enabled = True
+        state = True
         If e.KeyChar = Chr(Keys.Enter) Then
             nErr = hSherlock.VarSetDouble("EDGE_BREAKAGE_LEVEL_PIX", Val(Text7.Text))
             'Label23.Hide()
@@ -552,6 +566,7 @@ Public Class Form1
         Label24.Show()
         buttonState = True
         Button8.Enabled = True
+        state = True
         If e.KeyChar = Chr(Keys.Enter) Then
             nErr = hSherlock.VarSetDouble("INSPECT_ROI_DIAGONLA_WIDTH_PIX", Val(Text8.Text))
             'Label24.Hide()
@@ -564,6 +579,7 @@ Public Class Form1
         Label25.Show()
         buttonState = True
         Button8.Enabled = True
+        state = True
         If e.KeyChar = Chr(Keys.Enter) Then
             nErr = hSherlock.VarSetDouble("CORNER_BREAKAGE_LEVEL_PIX", Val(Text9.Text))
             'Label25.Hide()
@@ -576,6 +592,7 @@ Public Class Form1
         Label26.Show()
         buttonState = True
         Button8.Enabled = True
+        state = True
         If e.KeyChar = Chr(Keys.Enter) Then
             nErr = hSherlock.VarSetDouble("INSPECT_INNER_ERROR_THRESHOLD", Val(Text10.Text))
             'Label26.Hide()
@@ -589,8 +606,8 @@ Public Class Form1
         ElseIf CheckBox1.CheckState = CheckState.Unchecked Then
             hSherlock.VarSetDouble("IMAGE_ALL_SAVE_FTP", 1)
         End If
-        Button8.Enabled = True
-        buttonState = True
+        'Button8.Enabled = True
+        'buttonState = True
     End Sub
 
     Private Sub CheckBox2_Click(sender As Object, e As EventArgs) Handles CheckBox2.Click
@@ -599,8 +616,8 @@ Public Class Form1
         ElseIf CheckBox2.CheckState = CheckState.Unchecked Then
             hSherlock.VarSetDouble("NG_IMAGE_SAVE_FTP", 1)
         End If
-        Button8.Enabled = True
-        buttonState = True
+        'Button8.Enabled = True
+        'buttonState = True
     End Sub
 
     Private Sub CheckBox3_Click(sender As Object, e As EventArgs) Handles CheckBox3.Click
@@ -609,8 +626,8 @@ Public Class Form1
         ElseIf CheckBox3.CheckState = CheckState.Unchecked Then
             hSherlock.VarSetDouble("NG_IMAGE_GRAP_SAVE_FTP", 1)
         End If
-        Button8.Enabled = True
-        buttonState = True
+        'Button8.Enabled = True
+        'buttonState = True
     End Sub
 
     Private Sub CamShutter_KeyPress(sender As Object, e As KeyPressEventArgs) Handles CamShutter.KeyPress
@@ -658,6 +675,15 @@ Public Class Form1
         ToolTip1.SetToolTip(BtnSetZero, "计数清零")
     End Sub
 
+    Private Sub Timer5_Tick(sender As Object, e As EventArgs) Handles Timer5.Tick
+        If n Mod 2 = 1 Then
+            BtnSetVariable.Text = "参数设定"
+        Else
+            BtnSetVariable.Text = "参数设定*"
+        End If
+        n += 1
+    End Sub
+
     Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
         If SizeHeightEnalbe = 0 Then
             hSherlock.VarSetDouble("DETECTED_CELL_HEIGHT_SKIP", 1)
@@ -671,6 +697,7 @@ Public Class Form1
         buttonState = True
         Button8.Enabled = True
         Label38.Show()
+        state = True
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
@@ -686,6 +713,7 @@ Public Class Form1
         buttonState = True
         Button8.Enabled = True
         Label39.Show()
+        state = True
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
@@ -701,6 +729,7 @@ Public Class Form1
         buttonState = True
         Button8.Enabled = True
         Label40.Show()
+        state = True
     End Sub
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
@@ -716,6 +745,7 @@ Public Class Form1
         buttonState = True
         Button8.Enabled = True
         Label41.Show()
+        state = True
     End Sub
 
     Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
@@ -731,6 +761,7 @@ Public Class Form1
         buttonState = True
         Button8.Enabled = True
         Label44.Show()
+        state = True
     End Sub
 
     Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
@@ -746,6 +777,7 @@ Public Class Form1
         buttonState = True
         Button8.Enabled = True
         Label42.Show()
+        state = True
     End Sub
 
     Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
@@ -761,6 +793,7 @@ Public Class Form1
         buttonState = True
         Button8.Enabled = True
         Label43.Show()
+        state = True
     End Sub
 
     Private Sub BtnAnnotations_Click(sender As Object, e As EventArgs) Handles BtnAnnotations.Click
@@ -806,6 +839,7 @@ Public Class Form1
                 nErr = hSherlock.VarGetDouble(variables(i), temp)
                 textBoxes(i).Text = temp.ToString
             Next
+            Timer5.Stop()
         Else
             AxIpeDspCtrl1.Show()
             ChkALive.Show()
@@ -819,6 +853,10 @@ Public Class Form1
             BtnOnce.Enabled = True
             BtnSetVariable.Text = "参数设定"
             setVarState = False
+            If state = True Then
+                Timer5.Interval = 800
+                Timer5.Start()
+            End If
         End If
 
     End Sub
