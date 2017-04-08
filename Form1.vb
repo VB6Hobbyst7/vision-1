@@ -677,9 +677,11 @@ Public Class Form1
 
     Private Sub Timer5_Tick(sender As Object, e As EventArgs) Handles Timer5.Tick
         If n Mod 2 = 1 Then
-            BtnSetVariable.Text = "参数设定"
+            'BtnSetVariable.Text = "参数设定"
+            BtnSetVariable.ForeColor = Color.Black
         Else
-            BtnSetVariable.Text = "参数设定*"
+            'BtnSetVariable.Text = "参数设定*"
+            BtnSetVariable.ForeColor = Color.Red
         End If
         n += 1
     End Sub
