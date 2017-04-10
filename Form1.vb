@@ -231,20 +231,12 @@ Public Class Form1
         CamShutter.Text = CStr(vbExposureTime)
         CmbImg.Items.Clear()
         CmbImg.Items.Insert(0, "检测工位")
-        'CmbImg.Items.Insert(1, "校准工位")
         CmbImg.SelectedIndex = 0
     End Sub
     Dim ROINames(), ImgFilter As String
     Private Sub CmbImg_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CmbImg.SelectedIndexChanged
-        'Select Case CmbImg.SelectedIndex
-        'Case 0
         ImgFilter = "检测窗口"
         AxIpeDspCtrl1.ConnectImgWindow("检测窗口")
-        'Case 1
-        '    ImgFilter = "imgB"
-        '    AxIpeDspCtrl1.ConnectImgWindow("imgB")
-
-        'End Select
         nErr = hSherlock.RoiGetNames(ImgFilter, ROINames)
         CmbSelRoi.Items.Clear()
         For J = 0 To (UBound(ROINames) - 8)
@@ -258,16 +250,9 @@ Public Class Form1
     Private Sub cmbSelRoi_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CmbSelRoi.SelectedIndexChanged
         Dim I As Integer, j As Integer
         Dim ROIProc(I) As String
-        'roiState = False
-        'annoState = False
-        'modifyState = False
-        'Dim n As Integer
         hSherlock.RoiShowOutlineGet(CmbSelRoi.Text, roiState)
-        'roiState = Convert.ToBoolean(n)
         hSherlock.RoiFlagsGet(CmbSelRoi.Text, modifyState)
-        'modifyState = Convert.ToBoolean(n)
         hSherlock.RoiShowAnnotGet(CmbSelRoi.Text, annoState)
-        'annoState = Convert.ToBoolean(n)
         hSherlock.RoiShowOutlineSet(CmbSelRoi.Text, True)
         AxIpeDspCtrl1.UpdateDisplay()
         roiState = True
@@ -289,15 +274,12 @@ Public Class Form1
             BtnAnnotations.Text = "显示点"
         End If
 
-        'BtnShowRoi.Text = "显示框"
-        'BtnAnnotations.Text = "显示点"
         '读取ROI内的处理程序
         hSherlock.RoiGetProc(CmbSelRoi.Text, ROIProc)
         ROIProcess.Columns.Clear()
         ROIProcess.Items.Clear()
         ROIProcess.Columns.Add("编号", 50)
         ROIProcess.Columns.Add("ROI工具", 140)
-        ' lvProcess.Items.Clear()
         j = 0
         For I = 0 To UBound(ROIProc)
             ROIProcess.Items.Add(CStr(I))
@@ -434,7 +416,6 @@ Public Class Form1
         End If
         AxIpeDspCtrl1.UpdateDisplay()
 
-        'AxIpeDspCtrl1.Refresh()
     End Sub
 
     Private Sub BtnModify_Click(sender As Object, e As EventArgs) Handles BtnModify.Click
@@ -451,7 +432,6 @@ Public Class Form1
         hSherlock.RoiShowOutlineSet(CmbSelRoi.Text, True)
         hSherlock.RoiSelectedSet(CmbSelRoi.Text, True)
         AxIpeDspCtrl1.UpdateDisplay()
-        'AxIpeDspCtrl1.Refresh()
     End Sub
 
     Private Sub DETECTED_CELL_SIZE_LEVEL_MM_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Text0.KeyPress
@@ -462,7 +442,6 @@ Public Class Form1
         state = True
         If e.KeyChar = Chr(Keys.Enter) Then
             nErr = hSherlock.VarSetDouble("DETECTED_CELL_SIZE_LEVEL_MM", Val(Text0.Text))
-            'Label16.Hide()
             Label16.ForeColor = Color.Aqua
         End If
     End Sub
@@ -501,7 +480,6 @@ Public Class Form1
         state = True
         If e.KeyChar = Chr(Keys.Enter) Then
             nErr = hSherlock.VarSetDouble("DETECTED_CELL_HEIGHT_LEVEL_MM", Val(Text1.Text))
-            'Label17.Hide()
             Label17.ForeColor = Color.Aqua
         End If
     End Sub
@@ -514,7 +492,6 @@ Public Class Form1
         state = True
         If e.KeyChar = Chr(Keys.Enter) Then
             nErr = hSherlock.VarSetDouble("DETECTED_CELL_WIDTH_LEVEL_MM", Val(Text2.Text))
-            'Label18.Hide()
             Label18.ForeColor = Color.Aqua
         End If
     End Sub
@@ -527,7 +504,6 @@ Public Class Form1
         state = True
         If e.KeyChar = Chr(Keys.Enter) Then
             nErr = hSherlock.VarSetDouble("SCREEN_ROTATE_ERROR_LEVEL", Val(Text3.Text))
-            'Label19.Hide()
             Label19.ForeColor = Color.Aqua
         End If
     End Sub
@@ -540,7 +516,6 @@ Public Class Form1
         state = True
         If e.KeyChar = Chr(Keys.Enter) Then
             nErr = hSherlock.VarSetDouble("SCREEN_SHIFT_ERROR_LEVEL_MM", Val(Text4.Text))
-            'Label20.Hide()
             Label20.ForeColor = Color.Aqua
         End If
     End Sub
@@ -553,7 +528,6 @@ Public Class Form1
         state = True
         If e.KeyChar = Chr(Keys.Enter) Then
             nErr = hSherlock.VarSetDouble("EDGE_ERROR_LEVEL_PIX", Val(Text5.Text))
-            'Label21.Hide()
             Label21.ForeColor = Color.Aqua
         End If
     End Sub
@@ -566,7 +540,6 @@ Public Class Form1
         state = True
         If e.KeyChar = Chr(Keys.Enter) Then
             nErr = hSherlock.VarSetDouble("CORNER_ERROR_LEVEL_PIX", Val(Text6.Text))
-            'Label22.Hide()
             Label22.ForeColor = Color.Aqua
         End If
     End Sub
@@ -579,7 +552,6 @@ Public Class Form1
         state = True
         If e.KeyChar = Chr(Keys.Enter) Then
             nErr = hSherlock.VarSetDouble("EDGE_BREAKAGE_LEVEL_PIX", Val(Text7.Text))
-            'Label23.Hide()
             Label23.ForeColor = Color.Aqua
         End If
     End Sub
@@ -592,7 +564,6 @@ Public Class Form1
         state = True
         If e.KeyChar = Chr(Keys.Enter) Then
             nErr = hSherlock.VarSetDouble("INSPECT_ROI_DIAGONLA_WIDTH_PIX", Val(Text8.Text))
-            'Label24.Hide()
             Label24.ForeColor = Color.Aqua
         End If
     End Sub
@@ -605,7 +576,6 @@ Public Class Form1
         state = True
         If e.KeyChar = Chr(Keys.Enter) Then
             nErr = hSherlock.VarSetDouble("CORNER_BREAKAGE_LEVEL_PIX", Val(Text9.Text))
-            'Label25.Hide()
             Label25.ForeColor = Color.Aqua
         End If
     End Sub
@@ -618,7 +588,6 @@ Public Class Form1
         state = True
         If e.KeyChar = Chr(Keys.Enter) Then
             nErr = hSherlock.VarSetDouble("INSPECT_INNER_ERROR_THRESHOLD", Val(Text10.Text))
-            'Label26.Hide()
             Label26.ForeColor = Color.Aqua
         End If
     End Sub
@@ -629,8 +598,6 @@ Public Class Form1
         ElseIf CheckBox1.CheckState = CheckState.Unchecked Then
             hSherlock.VarSetDouble("IMAGE_ALL_SAVE_FTP", 1)
         End If
-        'Button8.Enabled = True
-        'buttonState = True
     End Sub
 
     Private Sub CheckBox2_Click(sender As Object, e As EventArgs) Handles CheckBox2.Click
@@ -639,8 +606,6 @@ Public Class Form1
         ElseIf CheckBox2.CheckState = CheckState.Unchecked Then
             hSherlock.VarSetDouble("NG_IMAGE_SAVE_FTP", 1)
         End If
-        'Button8.Enabled = True
-        'buttonState = True
     End Sub
 
     Private Sub CheckBox3_Click(sender As Object, e As EventArgs) Handles CheckBox3.Click
@@ -649,8 +614,6 @@ Public Class Form1
         ElseIf CheckBox3.CheckState = CheckState.Unchecked Then
             hSherlock.VarSetDouble("NG_IMAGE_GRAP_SAVE_FTP", 1)
         End If
-        'Button8.Enabled = True
-        'buttonState = True
     End Sub
 
     Private Sub CamShutter_KeyPress(sender As Object, e As KeyPressEventArgs) Handles CamShutter.KeyPress
@@ -723,10 +686,8 @@ Public Class Form1
 
     Private Sub Timer5_Tick(sender As Object, e As EventArgs) Handles Timer5.Tick
         If n Mod 2 = 1 Then
-            'BtnSetVariable.Text = "参数设定"
             BtnSetVariable.ForeColor = Color.Black
         Else
-            'BtnSetVariable.Text = "参数设定*"
             BtnSetVariable.ForeColor = Color.Red
         End If
         n += 1
@@ -857,12 +818,10 @@ Public Class Form1
             annoState = True
             BtnAnnotations.Text = "隐藏点"
         End If
-        'hSherlock.RoiShowAnnotSet(CmbSelRoi.Text, True)
         hSherlock.EngExecuteSub("Inspect")
         hSherlock.RoiShowOutlineSet(CmbSelRoi.Text, True)
         hSherlock.RoiSelectedSet(CmbSelRoi.Text, True)
         AxIpeDspCtrl1.UpdateDisplay()
-        'AxIpeDspCtrl1.Refresh()
     End Sub
 
     Private Sub BtnSetVariable_Click(sender As Object, e As EventArgs) Handles BtnSetVariable.Click
@@ -895,7 +854,6 @@ Public Class Form1
             AxIpeDspCtrl1.Show()
             ChkALive.Show()
             GroupBoxSetVariable.Hide()
-            'GroupBox1.Enabled = True
             BtnSolutoon.Enabled = True
             BtnStart.Enabled = True
             BtnStop.Enabled = False
