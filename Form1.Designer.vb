@@ -118,11 +118,11 @@ Partial Class Form1
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.ListBox1 = New System.Windows.Forms.ListBox()
-        Me.AxIpeDspCtrl1 = New AxIpeDspCtrlLib.AxIpeDspCtrl()
         Me.BtnOnce = New System.Windows.Forms.Button()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.BtnSetZero = New System.Windows.Forms.Button()
         Me.Timer5 = New System.Windows.Forms.Timer(Me.components)
+        Me.AxIpeDspCtrl1 = New AxIpeDspCtrlLib.AxIpeDspCtrl()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBoxSetVariable.SuspendLayout()
         CType(Me.AxIpeDspCtrl1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -1080,15 +1080,6 @@ Partial Class Form1
         Me.ListBox1.Size = New System.Drawing.Size(125, 50)
         Me.ListBox1.TabIndex = 15
         '
-        'AxIpeDspCtrl1
-        '
-        Me.AxIpeDspCtrl1.Enabled = True
-        Me.AxIpeDspCtrl1.Location = New System.Drawing.Point(0, 87)
-        Me.AxIpeDspCtrl1.Name = "AxIpeDspCtrl1"
-        Me.AxIpeDspCtrl1.OcxState = CType(resources.GetObject("AxIpeDspCtrl1.OcxState"), System.Windows.Forms.AxHost.State)
-        Me.AxIpeDspCtrl1.Size = New System.Drawing.Size(739, 556)
-        Me.AxIpeDspCtrl1.TabIndex = 10
-        '
         'BtnOnce
         '
         Me.BtnOnce.Location = New System.Drawing.Point(378, 11)
@@ -1100,6 +1091,10 @@ Partial Class Form1
         '
         'BtnSetZero
         '
+        Me.BtnSetZero.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control
+        Me.BtnSetZero.FlatAppearance.BorderSize = 0
+        Me.BtnSetZero.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGray
+        Me.BtnSetZero.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Control
         Me.BtnSetZero.Image = Global.Vision.My.Resources.Resources.clockwise_arrow2
         Me.BtnSetZero.Location = New System.Drawing.Point(100, 90)
         Me.BtnSetZero.Name = "BtnSetZero"
@@ -1109,6 +1104,15 @@ Partial Class Form1
         '
         'Timer5
         '
+        '
+        'AxIpeDspCtrl1
+        '
+        Me.AxIpeDspCtrl1.Enabled = True
+        Me.AxIpeDspCtrl1.Location = New System.Drawing.Point(0, 87)
+        Me.AxIpeDspCtrl1.Name = "AxIpeDspCtrl1"
+        Me.AxIpeDspCtrl1.OcxState = CType(resources.GetObject("AxIpeDspCtrl1.OcxState"), System.Windows.Forms.AxHost.State)
+        Me.AxIpeDspCtrl1.Size = New System.Drawing.Size(739, 556)
+        Me.AxIpeDspCtrl1.TabIndex = 10
         '
         'Form1
         '

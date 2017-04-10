@@ -55,6 +55,29 @@ Public Class Form1
             Call WriteIniStr("Config", "SolutionPath", CStr(sNowSolutionPath), My.Application.Info.DirectoryPath & "\config.ini")
             Call Load_Pro()
         End If
+        If state = True Then
+            Label16.Hide()
+            Label17.Hide()
+            Label18.Hide()
+            Label19.Hide()
+            Label20.Hide()
+            Label21.Hide()
+            Label22.Hide()
+            Label23.Hide()
+            Label24.Hide()
+            Label25.Hide()
+            Label26.Hide()
+            Label38.Hide()
+            Label39.Hide()
+            Label40.Hide()
+            Label41.Hide()
+            Label42.Hide()
+            Label43.Hide()
+            Label44.Hide()
+            state = False
+            BtnSetVariable.ForeColor = Color.Black
+            Timer5.Stop()
+        End If
     End Sub
     Dim Flag_Prog As Boolean
     Private Sub Load_Pro()
@@ -656,6 +679,29 @@ Public Class Form1
             Call WriteIniStr("Config", "SolutionPath", CStr(sNowSolutionPath), My.Application.Info.DirectoryPath & "\config.ini")
             Call Load_Pro()
         Next
+        If state = True Then
+            Label16.Hide()
+            Label17.Hide()
+            Label18.Hide()
+            Label19.Hide()
+            Label20.Hide()
+            Label21.Hide()
+            Label22.Hide()
+            Label23.Hide()
+            Label24.Hide()
+            Label25.Hide()
+            Label26.Hide()
+            Label38.Hide()
+            Label39.Hide()
+            Label40.Hide()
+            Label41.Hide()
+            Label42.Hide()
+            Label43.Hide()
+            Label44.Hide()
+            state = False
+            BtnSetVariable.ForeColor = Color.Black
+            Timer5.Stop()
+        End If
     End Sub
 
     Private Sub BtnOnce_Click(sender As Object, e As EventArgs) Handles BtnOnce.Click
@@ -684,6 +730,9 @@ Public Class Form1
             BtnSetVariable.ForeColor = Color.Red
         End If
         n += 1
+        If n = 10000 Then
+            n = 0
+        End If
     End Sub
 
     Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
@@ -835,12 +884,12 @@ Public Class Form1
             Else
                 Button8.Enabled = True
             End If
-            '
-            'Dim n As Integer
+
             For i = 0 To 10
                 nErr = hSherlock.VarGetDouble(variables(i), temp)
                 textBoxes(i).Text = temp.ToString
             Next
+            BtnSetVariable.ForeColor = Color.Black
             Timer5.Stop()
         Else
             AxIpeDspCtrl1.Show()
