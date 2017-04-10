@@ -284,7 +284,7 @@ Partial Class Form1
         'CmbImg
         '
         Me.CmbImg.FormattingEnabled = True
-        Me.CmbImg.Location = New System.Drawing.Point(87, 20)
+        Me.CmbImg.Location = New System.Drawing.Point(87, 35)
         Me.CmbImg.Name = "CmbImg"
         Me.CmbImg.Size = New System.Drawing.Size(142, 20)
         Me.CmbImg.TabIndex = 11
@@ -292,7 +292,7 @@ Partial Class Form1
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(6, 22)
+        Me.Label5.Location = New System.Drawing.Point(6, 38)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(53, 12)
         Me.Label5.TabIndex = 10
@@ -310,7 +310,7 @@ Partial Class Form1
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(4, 85)
+        Me.Label2.Location = New System.Drawing.Point(6, 85)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(77, 12)
         Me.Label2.TabIndex = 1
