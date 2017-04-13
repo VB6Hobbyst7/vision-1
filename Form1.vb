@@ -43,7 +43,6 @@ Public Class Form1
         Timer3.Interval = 1000
         Timer3.Start()
     End Sub
-    'Dim sNowSolutionPath As String
     Private Sub BtnSolutoon_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnSolutoon.Click
         OpenFileDialog1.Filter = "Sherlock Files" & "(*.ivs)|*.ivs"
         OpenFileDialog1.FileName = ""
@@ -404,7 +403,6 @@ Public Class Form1
     Dim vbExposureTime As Double
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles BtnShowRoi.Click
-        'hSherlock.RoiShowOutlineSet(CmbSelRoi.Text, True)
         If roiState = True Then
             hSherlock.RoiShowOutlineSet(CmbSelRoi.Text, False)
             roiState = False
