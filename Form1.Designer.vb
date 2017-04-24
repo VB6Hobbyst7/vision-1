@@ -123,6 +123,7 @@ Partial Class Form1
         Me.BtnSetZero = New System.Windows.Forms.Button()
         Me.Timer5 = New System.Windows.Forms.Timer(Me.components)
         Me.AxIpeDspCtrl1 = New AxIpeDspCtrlLib.AxIpeDspCtrl()
+        Me.Timer6 = New System.Windows.Forms.Timer(Me.components)
         Me.GroupBox1.SuspendLayout()
         Me.GroupBoxSetVariable.SuspendLayout()
         CType(Me.AxIpeDspCtrl1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -300,6 +301,7 @@ Partial Class Form1
         '
         'BtnSave1
         '
+        Me.BtnSave1.Enabled = False
         Me.BtnSave1.Location = New System.Drawing.Point(144, 471)
         Me.BtnSave1.Name = "BtnSave1"
         Me.BtnSave1.Size = New System.Drawing.Size(85, 42)
@@ -1114,6 +1116,9 @@ Partial Class Form1
         Me.AxIpeDspCtrl1.Size = New System.Drawing.Size(739, 556)
         Me.AxIpeDspCtrl1.TabIndex = 10
         '
+        'Timer6
+        '
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
@@ -1249,4 +1254,5 @@ Partial Class Form1
     Friend WithEvents Label39 As Label
     Friend WithEvents Label38 As Label
     Friend WithEvents Timer5 As Timer
+    Friend WithEvents Timer6 As Timer
 End Class

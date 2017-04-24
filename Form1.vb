@@ -14,7 +14,8 @@ Public Class Form1
     Public buttonState As Boolean
     Public SizeHeightEnalbe, SizeWidthEnalbe, ScreenRotateEnalbe, ScreenShiftEnalbe, Rotate90Enable, EdgeInspectEnalbe, CornerInspectEnalbe As Double
     Public state As Boolean
-    Public n As Double
+    Public n, m As Double
+    Public btnSaveStete As Boolean
     Private Sub Form1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         startScreenState = True
         StartScreen.Show()
@@ -24,7 +25,9 @@ Public Class Form1
         modifyState = False
         buttonState = False
         state = False
+        btnSaveStete = False
         n = 0
+        m = 0
         ListBox1.Items.Add("拖动文件至此")
         'create engine object
         hSherlock = CreateObject("IpeEngCtrl.EngineNg")
@@ -223,6 +226,11 @@ Public Class Form1
     End Sub
     Private Sub BtnSave1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnSave1.Click
         nErr = hSherlock.InvSave(sNowSolutionPath)
+        BtnSave1.Enabled = False
+        btnSaveStete = False
+        Timer6.Stop()
+        Btnparameter.ForeColor = Color.Black
+        BtnSave1.ForeColor = Color.Black
     End Sub
     Private Sub Btnparameter_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Btnparameter.Click
         GroupBox1.Enabled = True
@@ -299,6 +307,12 @@ Public Class Form1
                 nErr = hSherlock.InstrCommand(tempStr, IpeEngCtrlLib.I_INSTR_COMMANDS.INSTR_SHOW_PARMS_DLG, 0)
             End If
         End If
+        BtnSave1.Enabled = True
+        If btnSaveStete = False Then
+            Timer6.Interval = 800
+            Timer6.Start()
+        End If
+        btnSaveStete = True
     End Sub
     Private Sub AxIpeDspCtrl1_LButtonDown(ByVal sender As Object, ByVal e As AxIpeDspCtrlLib._DIpeDspCtrlEvents_LButtonDownEvent) Handles AxIpeDspCtrl1.LButtonDown
         nErr = hSherlock.RoiRotationGet(CmbSelRoi.Text, ROIAngle)
@@ -413,7 +427,12 @@ Public Class Form1
             BtnShowRoi.Text = "隐藏框"
         End If
         AxIpeDspCtrl1.UpdateDisplay()
-
+        BtnSave1.Enabled = True
+        If btnSaveStete = False Then
+            Timer6.Interval = 800
+            Timer6.Start()
+        End If
+        btnSaveStete = True
     End Sub
 
     Private Sub BtnModify_Click(sender As Object, e As EventArgs) Handles BtnModify.Click
@@ -430,6 +449,12 @@ Public Class Form1
         hSherlock.RoiShowOutlineSet(CmbSelRoi.Text, True)
         hSherlock.RoiSelectedSet(CmbSelRoi.Text, True)
         AxIpeDspCtrl1.UpdateDisplay()
+        BtnSave1.Enabled = True
+        If btnSaveStete = False Then
+            Timer6.Interval = 800
+            Timer6.Start()
+        End If
+        btnSaveStete = True
     End Sub
 
     Private Sub DETECTED_CELL_SIZE_LEVEL_MM_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Text0.KeyPress
@@ -619,6 +644,12 @@ Public Class Form1
             nErr = hSherlock.VarSetDouble("EXPOSURE_TIME", Val(CamShutter.Text))
             nErr = hSherlock.VarSetDouble("ExposureTime", Val(CamShutter.Text))
         End If
+        BtnSave1.Enabled = True
+        If btnSaveStete = False Then
+            Timer6.Interval = 800
+            Timer6.Start()
+        End If
+        btnSaveStete = True
     End Sub
 
     Private Sub BtnRun_Click(sender As Object, e As EventArgs) Handles BtnRun.Click
@@ -691,6 +722,20 @@ Public Class Form1
         n += 1
         If n = 10000 Then
             n = 0
+        End If
+    End Sub
+
+    Private Sub Timer6_Tick(sender As Object, e As EventArgs) Handles Timer6.Tick
+        If m Mod 2 = 1 Then
+            BtnSave1.ForeColor = Color.Black
+            Btnparameter.ForeColor = Color.Black
+        Else
+            BtnSave1.ForeColor = Color.Red
+            Btnparameter.ForeColor = Color.Red
+        End If
+        m += 1
+        If m = 10000 Then
+            m = 0
         End If
     End Sub
 
@@ -820,6 +865,12 @@ Public Class Form1
         hSherlock.RoiShowOutlineSet(CmbSelRoi.Text, True)
         hSherlock.RoiSelectedSet(CmbSelRoi.Text, True)
         AxIpeDspCtrl1.UpdateDisplay()
+        BtnSave1.Enabled = True
+        If btnSaveStete = False Then
+            Timer6.Interval = 800
+            Timer6.Start()
+        End If
+        btnSaveStete = True
     End Sub
 
     Private Sub BtnSetVariable_Click(sender As Object, e As EventArgs) Handles BtnSetVariable.Click
@@ -876,5 +927,11 @@ Public Class Form1
         ChkALive.CheckState = CheckState.Checked
         AxIpeDspCtrl1.UpdateDisplay()
         ButShutter.Enabled = True
+        BtnSave1.Enabled = True
+        If btnSaveStete = False Then
+            Timer6.Interval = 800
+            Timer6.Start()
+        End If
+        btnSaveStete = True
     End Sub
 End Class
