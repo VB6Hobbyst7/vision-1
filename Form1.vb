@@ -15,6 +15,7 @@ Public Class Form1
     Public SizeHeightEnalbe, SizeWidthEnalbe, ScreenRotateEnalbe, ScreenShiftEnalbe, Rotate90Enable, EdgeInspectEnalbe, CornerInspectEnalbe As Double
     Public state As Boolean
     Public n, m As Double
+    Public F As Double
     Public btnSaveStete As Boolean
     Private Sub Form1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         startScreenState = True
@@ -100,6 +101,8 @@ Public Class Form1
         hSherlock.VarGetDouble("ROTATE90_ERROR_SKIP", Rotate90Enable)
         hSherlock.VarGetDouble("EDGE_ERROR_SKIP", EdgeInspectEnalbe)
         hSherlock.VarGetDouble("CORNER_ERROR_SKIP", CornerInspectEnalbe)
+        hSherlock.VarGetDouble("F", F)
+        Label46.Text = F
         CCDPath.Text = sNowSolutionPath
 
         BtnStop.Enabled = False

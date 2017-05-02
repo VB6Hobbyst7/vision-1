@@ -124,6 +124,8 @@ Partial Class Form1
         Me.Timer5 = New System.Windows.Forms.Timer(Me.components)
         Me.AxIpeDspCtrl1 = New AxIpeDspCtrlLib.AxIpeDspCtrl()
         Me.Timer6 = New System.Windows.Forms.Timer(Me.components)
+        Me.Label45 = New System.Windows.Forms.Label()
+        Me.Label46 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBoxSetVariable.SuspendLayout()
         CType(Me.AxIpeDspCtrl1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -369,6 +371,8 @@ Partial Class Form1
         '
         'GroupBoxSetVariable
         '
+        Me.GroupBoxSetVariable.Controls.Add(Me.Label46)
+        Me.GroupBoxSetVariable.Controls.Add(Me.Label45)
         Me.GroupBoxSetVariable.Controls.Add(Me.Label44)
         Me.GroupBoxSetVariable.Controls.Add(Me.Label43)
         Me.GroupBoxSetVariable.Controls.Add(Me.Label42)
@@ -521,7 +525,7 @@ Partial Class Form1
         '
         Me.CCDPath.AutoSize = True
         Me.CCDPath.Font = New System.Drawing.Font("宋体", 10.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.CCDPath.Location = New System.Drawing.Point(134, 392)
+        Me.CCDPath.Location = New System.Drawing.Point(131, 392)
         Me.CCDPath.Name = "CCDPath"
         Me.CCDPath.Size = New System.Drawing.Size(77, 14)
         Me.CCDPath.TabIndex = 70
@@ -531,7 +535,7 @@ Partial Class Form1
         '
         Me.Label37.AutoSize = True
         Me.Label37.Font = New System.Drawing.Font("宋体", 10.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.Label37.Location = New System.Drawing.Point(24, 392)
+        Me.Label37.Location = New System.Drawing.Point(22, 392)
         Me.Label37.Name = "Label37"
         Me.Label37.Size = New System.Drawing.Size(105, 14)
         Me.Label37.TabIndex = 69
@@ -1119,6 +1123,26 @@ Partial Class Form1
         'Timer6
         '
         '
+        'Label45
+        '
+        Me.Label45.AutoSize = True
+        Me.Label45.Font = New System.Drawing.Font("宋体", 10.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
+        Me.Label45.Location = New System.Drawing.Point(22, 435)
+        Me.Label45.Name = "Label45"
+        Me.Label45.Size = New System.Drawing.Size(91, 14)
+        Me.Label45.TabIndex = 77
+        Me.Label45.Text = "像素分辨率："
+        '
+        'Label46
+        '
+        Me.Label46.AutoSize = True
+        Me.Label46.Font = New System.Drawing.Font("宋体", 10.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
+        Me.Label46.Location = New System.Drawing.Point(131, 435)
+        Me.Label46.Name = "Label46"
+        Me.Label46.Size = New System.Drawing.Size(56, 14)
+        Me.Label46.TabIndex = 78
+        Me.Label46.Text = "Label46"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
@@ -1255,4 +1279,6 @@ Partial Class Form1
     Friend WithEvents Label38 As Label
     Friend WithEvents Timer5 As Timer
     Friend WithEvents Timer6 As Timer
+    Friend WithEvents Label45 As Label
+    Friend WithEvents Label46 As Label
 End Class
