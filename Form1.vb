@@ -762,6 +762,24 @@ Public Class Form1
         End If
     End Sub
 
+    Private Sub PictureBox1_MouseLeave(sender As Object, e As EventArgs) Handles PictureBox1.MouseLeave
+        PictureBox4.Hide()
+    End Sub
+
+    Private Sub PictureBox1_MouseEnter(sender As Object, e As EventArgs) Handles PictureBox1.MouseEnter
+        ToolTip1.SetToolTip(PictureBox1, "角部缩进")
+        PictureBox4.Show()
+    End Sub
+
+    Private Sub PictureBox2_MouseEnter(sender As Object, e As EventArgs) Handles PictureBox2.MouseEnter
+        ToolTip1.SetToolTip(PictureBox2, "角部宽度")
+        PictureBox3.Show()
+    End Sub
+
+    Private Sub PictureBox2_MouseLeave(sender As Object, e As EventArgs) Handles PictureBox2.MouseLeave
+        PictureBox3.Hide()
+    End Sub
+
     Private Sub Timer6_Tick(sender As Object, e As EventArgs) Handles Timer6.Tick
         If m Mod 2 = 1 Then
             BtnSave1.ForeColor = Color.Black

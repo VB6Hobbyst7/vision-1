@@ -53,6 +53,19 @@ Partial Class Form1
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.BtnSetVariable = New System.Windows.Forms.Button()
         Me.GroupBoxSetVariable = New System.Windows.Forms.GroupBox()
+        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.Label36 = New System.Windows.Forms.Label()
+        Me.Label35 = New System.Windows.Forms.Label()
+        Me.Label24 = New System.Windows.Forms.Label()
+        Me.Text8 = New System.Windows.Forms.MaskedTextBox()
+        Me.Label25 = New System.Windows.Forms.Label()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.Text9 = New System.Windows.Forms.MaskedTextBox()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label47 = New System.Windows.Forms.Label()
         Me.Label48 = New System.Windows.Forms.Label()
         Me.Label49 = New System.Windows.Forms.Label()
@@ -75,8 +88,6 @@ Partial Class Form1
         Me.CheckBox3 = New System.Windows.Forms.CheckBox()
         Me.CheckBox2 = New System.Windows.Forms.CheckBox()
         Me.CheckBox1 = New System.Windows.Forms.CheckBox()
-        Me.Label36 = New System.Windows.Forms.Label()
-        Me.Label35 = New System.Windows.Forms.Label()
         Me.Label34 = New System.Windows.Forms.Label()
         Me.Label33 = New System.Windows.Forms.Label()
         Me.Label32 = New System.Windows.Forms.Label()
@@ -87,8 +98,6 @@ Partial Class Form1
         Me.Label27 = New System.Windows.Forms.Label()
         Me.Button8 = New System.Windows.Forms.Button()
         Me.Label26 = New System.Windows.Forms.Label()
-        Me.Label25 = New System.Windows.Forms.Label()
-        Me.Label24 = New System.Windows.Forms.Label()
         Me.Label23 = New System.Windows.Forms.Label()
         Me.Label22 = New System.Windows.Forms.Label()
         Me.Label21 = New System.Windows.Forms.Label()
@@ -98,8 +107,6 @@ Partial Class Form1
         Me.Label17 = New System.Windows.Forms.Label()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.Text10 = New System.Windows.Forms.MaskedTextBox()
-        Me.Text9 = New System.Windows.Forms.MaskedTextBox()
-        Me.Text8 = New System.Windows.Forms.MaskedTextBox()
         Me.Text7 = New System.Windows.Forms.MaskedTextBox()
         Me.Text6 = New System.Windows.Forms.MaskedTextBox()
         Me.Text5 = New System.Windows.Forms.MaskedTextBox()
@@ -117,8 +124,6 @@ Partial Class Form1
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Label14 = New System.Windows.Forms.Label()
-        Me.Label13 = New System.Windows.Forms.Label()
-        Me.Label12 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
@@ -134,13 +139,16 @@ Partial Class Form1
         Me.Timer5 = New System.Windows.Forms.Timer(Me.components)
         Me.AxIpeDspCtrl1 = New AxIpeDspCtrlLib.AxIpeDspCtrl()
         Me.Timer6 = New System.Windows.Forms.Timer(Me.components)
-        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBoxSetVariable.SuspendLayout()
-        CType(Me.AxIpeDspCtrl1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
+        Me.GroupBox2.SuspendLayout()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.AxIpeDspCtrl1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'BtnStart
@@ -383,6 +391,8 @@ Partial Class Form1
         '
         'GroupBoxSetVariable
         '
+        Me.GroupBoxSetVariable.Controls.Add(Me.PictureBox4)
+        Me.GroupBoxSetVariable.Controls.Add(Me.PictureBox3)
         Me.GroupBoxSetVariable.Controls.Add(Me.GroupBox3)
         Me.GroupBoxSetVariable.Controls.Add(Me.GroupBox2)
         Me.GroupBoxSetVariable.Controls.Add(Me.Label46)
@@ -449,6 +459,147 @@ Partial Class Form1
         Me.GroupBoxSetVariable.TabIndex = 14
         Me.GroupBoxSetVariable.TabStop = False
         Me.GroupBoxSetVariable.Text = "参数设定"
+        '
+        'GroupBox3
+        '
+        Me.GroupBox3.Controls.Add(Me.Label36)
+        Me.GroupBox3.Controls.Add(Me.Label35)
+        Me.GroupBox3.Controls.Add(Me.Label24)
+        Me.GroupBox3.Controls.Add(Me.Text8)
+        Me.GroupBox3.Controls.Add(Me.Label25)
+        Me.GroupBox3.Controls.Add(Me.Label13)
+        Me.GroupBox3.Controls.Add(Me.Label12)
+        Me.GroupBox3.Controls.Add(Me.Text9)
+        Me.GroupBox3.Location = New System.Drawing.Point(386, 291)
+        Me.GroupBox3.Name = "GroupBox3"
+        Me.GroupBox3.Size = New System.Drawing.Size(339, 102)
+        Me.GroupBox3.TabIndex = 88
+        Me.GroupBox3.TabStop = False
+        Me.GroupBox3.Text = "多晶电池片"
+        '
+        'Label36
+        '
+        Me.Label36.AutoSize = True
+        Me.Label36.Location = New System.Drawing.Point(275, 30)
+        Me.Label36.Name = "Label36"
+        Me.Label36.Size = New System.Drawing.Size(17, 12)
+        Me.Label36.TabIndex = 65
+        Me.Label36.Text = "mm"
+        '
+        'Label35
+        '
+        Me.Label35.AutoSize = True
+        Me.Label35.Location = New System.Drawing.Point(275, 70)
+        Me.Label35.Name = "Label35"
+        Me.Label35.Size = New System.Drawing.Size(17, 12)
+        Me.Label35.TabIndex = 64
+        Me.Label35.Text = "mm"
+        '
+        'Label24
+        '
+        Me.Label24.AutoSize = True
+        Me.Label24.ForeColor = System.Drawing.Color.Red
+        Me.Label24.Location = New System.Drawing.Point(294, 67)
+        Me.Label24.Name = "Label24"
+        Me.Label24.Size = New System.Drawing.Size(11, 12)
+        Me.Label24.TabIndex = 52
+        Me.Label24.Text = "*"
+        Me.Label24.Visible = False
+        '
+        'Text8
+        '
+        Me.Text8.Location = New System.Drawing.Point(189, 67)
+        Me.Text8.Name = "Text8"
+        Me.Text8.Size = New System.Drawing.Size(85, 21)
+        Me.Text8.TabIndex = 41
+        Me.Text8.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'Label25
+        '
+        Me.Label25.AutoSize = True
+        Me.Label25.ForeColor = System.Drawing.Color.Red
+        Me.Label25.Location = New System.Drawing.Point(294, 26)
+        Me.Label25.Name = "Label25"
+        Me.Label25.Size = New System.Drawing.Size(11, 12)
+        Me.Label25.TabIndex = 53
+        Me.Label25.Text = "*"
+        Me.Label25.Visible = False
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Font = New System.Drawing.Font("宋体", 10.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
+        Me.Label13.Location = New System.Drawing.Point(43, 71)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(91, 14)
+        Me.Label13.TabIndex = 23
+        Me.Label13.Text = "角部宽度上限"
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Font = New System.Drawing.Font("宋体", 10.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
+        Me.Label12.Location = New System.Drawing.Point(43, 28)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(91, 14)
+        Me.Label12.TabIndex = 22
+        Me.Label12.Text = "角部缩进上限"
+        '
+        'Text9
+        '
+        Me.Text9.Location = New System.Drawing.Point(189, 27)
+        Me.Text9.Name = "Text9"
+        Me.Text9.Size = New System.Drawing.Size(85, 21)
+        Me.Text9.TabIndex = 42
+        Me.Text9.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'GroupBox2
+        '
+        Me.GroupBox2.Controls.Add(Me.PictureBox2)
+        Me.GroupBox2.Controls.Add(Me.PictureBox1)
+        Me.GroupBox2.Controls.Add(Me.Label47)
+        Me.GroupBox2.Controls.Add(Me.Label48)
+        Me.GroupBox2.Controls.Add(Me.Label49)
+        Me.GroupBox2.Controls.Add(Me.Label50)
+        Me.GroupBox2.Controls.Add(Me.Text12)
+        Me.GroupBox2.Controls.Add(Me.Text11)
+        Me.GroupBox2.Controls.Add(Me.Label51)
+        Me.GroupBox2.Controls.Add(Me.Label52)
+        Me.GroupBox2.Location = New System.Drawing.Point(15, 291)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(339, 102)
+        Me.GroupBox2.TabIndex = 87
+        Me.GroupBox2.TabStop = False
+        Me.GroupBox2.Text = "单晶电池片"
+        '
+        'PictureBox3
+        '
+        Me.PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), System.Drawing.Image)
+        Me.PictureBox3.Location = New System.Drawing.Point(163, 311)
+        Me.PictureBox3.Name = "PictureBox3"
+        Me.PictureBox3.Size = New System.Drawing.Size(150, 150)
+        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox3.TabIndex = 89
+        Me.PictureBox3.TabStop = False
+        Me.PictureBox3.Visible = False
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
+        Me.PictureBox2.Location = New System.Drawing.Point(113, 72)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(16, 16)
+        Me.PictureBox2.TabIndex = 88
+        Me.PictureBox2.TabStop = False
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(113, 26)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(16, 16)
+        Me.PictureBox1.TabIndex = 87
+        Me.PictureBox1.TabStop = False
         '
         'Label47
         '
@@ -677,24 +828,6 @@ Partial Class Form1
         Me.CheckBox1.Text = "保存所有图像"
         Me.CheckBox1.UseVisualStyleBackColor = False
         '
-        'Label36
-        '
-        Me.Label36.AutoSize = True
-        Me.Label36.Location = New System.Drawing.Point(275, 30)
-        Me.Label36.Name = "Label36"
-        Me.Label36.Size = New System.Drawing.Size(17, 12)
-        Me.Label36.TabIndex = 65
-        Me.Label36.Text = "mm"
-        '
-        'Label35
-        '
-        Me.Label35.AutoSize = True
-        Me.Label35.Location = New System.Drawing.Point(275, 70)
-        Me.Label35.Name = "Label35"
-        Me.Label35.Size = New System.Drawing.Size(17, 12)
-        Me.Label35.TabIndex = 64
-        Me.Label35.Text = "mm"
-        '
         'Label34
         '
         Me.Label34.AutoSize = True
@@ -787,28 +920,6 @@ Partial Class Form1
         Me.Label26.TabIndex = 54
         Me.Label26.Text = "*"
         Me.Label26.Visible = False
-        '
-        'Label25
-        '
-        Me.Label25.AutoSize = True
-        Me.Label25.ForeColor = System.Drawing.Color.Red
-        Me.Label25.Location = New System.Drawing.Point(294, 26)
-        Me.Label25.Name = "Label25"
-        Me.Label25.Size = New System.Drawing.Size(11, 12)
-        Me.Label25.TabIndex = 53
-        Me.Label25.Text = "*"
-        Me.Label25.Visible = False
-        '
-        'Label24
-        '
-        Me.Label24.AutoSize = True
-        Me.Label24.ForeColor = System.Drawing.Color.Red
-        Me.Label24.Location = New System.Drawing.Point(294, 67)
-        Me.Label24.Name = "Label24"
-        Me.Label24.Size = New System.Drawing.Size(11, 12)
-        Me.Label24.TabIndex = 52
-        Me.Label24.Text = "*"
-        Me.Label24.Visible = False
         '
         'Label23
         '
@@ -905,22 +1016,6 @@ Partial Class Form1
         Me.Text10.Size = New System.Drawing.Size(85, 21)
         Me.Text10.TabIndex = 43
         Me.Text10.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-        '
-        'Text9
-        '
-        Me.Text9.Location = New System.Drawing.Point(189, 27)
-        Me.Text9.Name = "Text9"
-        Me.Text9.Size = New System.Drawing.Size(85, 21)
-        Me.Text9.TabIndex = 42
-        Me.Text9.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-        '
-        'Text8
-        '
-        Me.Text8.Location = New System.Drawing.Point(189, 67)
-        Me.Text8.Name = "Text8"
-        Me.Text8.Size = New System.Drawing.Size(85, 21)
-        Me.Text8.TabIndex = 41
-        Me.Text8.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'Text7
         '
@@ -1076,26 +1171,6 @@ Partial Class Form1
         Me.Label14.TabIndex = 24
         Me.Label14.Text = "破损二值化强度"
         '
-        'Label13
-        '
-        Me.Label13.AutoSize = True
-        Me.Label13.Font = New System.Drawing.Font("宋体", 10.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.Label13.Location = New System.Drawing.Point(43, 71)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(91, 14)
-        Me.Label13.TabIndex = 23
-        Me.Label13.Text = "角部宽度上限"
-        '
-        'Label12
-        '
-        Me.Label12.AutoSize = True
-        Me.Label12.Font = New System.Drawing.Font("宋体", 10.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.Label12.Location = New System.Drawing.Point(43, 28)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(91, 14)
-        Me.Label12.TabIndex = 22
-        Me.Label12.Text = "角部缩进上限"
-        '
         'Label11
         '
         Me.Label11.AutoSize = True
@@ -1114,7 +1189,7 @@ Partial Class Form1
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(119, 14)
         Me.Label10.TabIndex = 20
-        Me.Label10.Text = "边角破损宽度上限"
+        Me.Label10.Text = "角部破损宽度上限"
         '
         'Label9
         '
@@ -1225,39 +1300,16 @@ Partial Class Form1
         'Timer6
         '
         '
-        'GroupBox2
+        'PictureBox4
         '
-        Me.GroupBox2.Controls.Add(Me.Label47)
-        Me.GroupBox2.Controls.Add(Me.Label48)
-        Me.GroupBox2.Controls.Add(Me.Label49)
-        Me.GroupBox2.Controls.Add(Me.Label50)
-        Me.GroupBox2.Controls.Add(Me.Text12)
-        Me.GroupBox2.Controls.Add(Me.Text11)
-        Me.GroupBox2.Controls.Add(Me.Label51)
-        Me.GroupBox2.Controls.Add(Me.Label52)
-        Me.GroupBox2.Location = New System.Drawing.Point(15, 291)
-        Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(339, 102)
-        Me.GroupBox2.TabIndex = 87
-        Me.GroupBox2.TabStop = False
-        Me.GroupBox2.Text = "单晶电池片"
-        '
-        'GroupBox3
-        '
-        Me.GroupBox3.Controls.Add(Me.Label36)
-        Me.GroupBox3.Controls.Add(Me.Label35)
-        Me.GroupBox3.Controls.Add(Me.Label24)
-        Me.GroupBox3.Controls.Add(Me.Text8)
-        Me.GroupBox3.Controls.Add(Me.Label25)
-        Me.GroupBox3.Controls.Add(Me.Label13)
-        Me.GroupBox3.Controls.Add(Me.Label12)
-        Me.GroupBox3.Controls.Add(Me.Text9)
-        Me.GroupBox3.Location = New System.Drawing.Point(386, 291)
-        Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(339, 102)
-        Me.GroupBox3.TabIndex = 88
-        Me.GroupBox3.TabStop = False
-        Me.GroupBox3.Text = "多晶电池片"
+        Me.PictureBox4.Image = CType(resources.GetObject("PictureBox4.Image"), System.Drawing.Image)
+        Me.PictureBox4.Location = New System.Drawing.Point(163, 237)
+        Me.PictureBox4.Name = "PictureBox4"
+        Me.PictureBox4.Size = New System.Drawing.Size(150, 150)
+        Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox4.TabIndex = 90
+        Me.PictureBox4.TabStop = False
+        Me.PictureBox4.Visible = False
         '
         'Form1
         '
@@ -1290,11 +1342,15 @@ Partial Class Form1
         Me.GroupBox1.PerformLayout()
         Me.GroupBoxSetVariable.ResumeLayout(False)
         Me.GroupBoxSetVariable.PerformLayout()
-        CType(Me.AxIpeDspCtrl1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GroupBox2.ResumeLayout(False)
-        Me.GroupBox2.PerformLayout()
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
+        Me.GroupBox2.ResumeLayout(False)
+        Me.GroupBox2.PerformLayout()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.AxIpeDspCtrl1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1411,4 +1467,8 @@ Partial Class Form1
     Friend WithEvents Label52 As Label
     Friend WithEvents GroupBox3 As GroupBox
     Friend WithEvents GroupBox2 As GroupBox
+    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents PictureBox3 As PictureBox
+    Friend WithEvents PictureBox4 As PictureBox
 End Class
