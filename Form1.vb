@@ -497,7 +497,7 @@ Public Class Form1
         Label50.Hide()
         Dim i As Double
         For i = 0 To 12
-            hSherlock.VarSetDouble(variables(i), Val(textBoxes(i).Text))
+            hSherlock.VarSetDouble(variables(i), Val(textBoxes(i).Text) / F)
         Next
         nErr = hSherlock.InvSave(sNowSolutionPath)
         Button8.Enabled = False
@@ -561,7 +561,7 @@ Public Class Form1
         Button8.Enabled = True
         state = True
         If e.KeyChar = Chr(Keys.Enter) Then
-            nErr = hSherlock.VarSetDouble("EDGE_ERROR_LEVEL_PIX", Val(Text5.Text))
+            nErr = hSherlock.VarSetDouble("EDGE_ERROR_LEVEL_PIX", Val(Text5.Text) / F)
             Label21.ForeColor = Color.Aqua
         End If
     End Sub
@@ -573,7 +573,7 @@ Public Class Form1
         Button8.Enabled = True
         state = True
         If e.KeyChar = Chr(Keys.Enter) Then
-            nErr = hSherlock.VarSetDouble("CORNER_ERROR_LEVEL_PIX", Val(Text6.Text))
+            nErr = hSherlock.VarSetDouble("CORNER_ERROR_LEVEL_PIX", Val(Text6.Text) / F)
             Label22.ForeColor = Color.Aqua
         End If
     End Sub
@@ -585,7 +585,7 @@ Public Class Form1
         Button8.Enabled = True
         state = True
         If e.KeyChar = Chr(Keys.Enter) Then
-            nErr = hSherlock.VarSetDouble("EDGE_BREAKAGE_LEVEL_PIX", Val(Text7.Text))
+            nErr = hSherlock.VarSetDouble("EDGE_BREAKAGE_LEVEL_PIX", Val(Text7.Text) / F)
             Label23.ForeColor = Color.Aqua
         End If
     End Sub
@@ -597,7 +597,7 @@ Public Class Form1
         Button8.Enabled = True
         state = True
         If e.KeyChar = Chr(Keys.Enter) Then
-            nErr = hSherlock.VarSetDouble("INSPECT_ROI_DIAGONLA_WIDTH_PIX", Val(Text8.Text))
+            nErr = hSherlock.VarSetDouble("INSPECT_ROI_DIAGONLA_WIDTH_PIX", Val(Text8.Text) / F)
             Label24.ForeColor = Color.Aqua
         End If
     End Sub
@@ -609,7 +609,7 @@ Public Class Form1
         Button8.Enabled = True
         state = True
         If e.KeyChar = Chr(Keys.Enter) Then
-            nErr = hSherlock.VarSetDouble("CORNER_BREAKAGE_LEVEL_PIX", Val(Text9.Text))
+            nErr = hSherlock.VarSetDouble("CORNER_BREAKAGE_LEVEL_PIX", Val(Text9.Text) / F)
             Label25.ForeColor = Color.Aqua
         End If
     End Sub
@@ -745,7 +745,7 @@ Public Class Form1
         Button8.Enabled = True
         state = True
         If e.KeyChar = Chr(Keys.Enter) Then
-            nErr = hSherlock.VarSetDouble("CORNER_BREAKAGE_LEVEL_PIX_S", Val(Text11.Text))
+            nErr = hSherlock.VarSetDouble("CORNER_BREAKAGE_LEVEL_PIX_S", Val(Text11.Text) / F)
             Label50.ForeColor = Color.Aqua
         End If
     End Sub
@@ -757,7 +757,7 @@ Public Class Form1
         Button8.Enabled = True
         state = True
         If e.KeyChar = Chr(Keys.Enter) Then
-            nErr = hSherlock.VarSetDouble("INSPECT_ROI_DIAGONLA_WIDTH_PIX_S", Val(Text12.Text))
+            nErr = hSherlock.VarSetDouble("INSPECT_ROI_DIAGONLA_WIDTH_PIX_S", Val(Text12.Text) / F)
             Label49.ForeColor = Color.Aqua
         End If
     End Sub
@@ -950,6 +950,7 @@ Public Class Form1
 
             For i = 0 To 12
                 nErr = hSherlock.VarGetDouble(variables(i), temp)
+                temp *= F
                 textBoxes(i).Text = temp.ToString
             Next
             BtnSetVariable.ForeColor = Color.Black

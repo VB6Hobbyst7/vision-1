@@ -925,7 +925,7 @@ Partial Class Form1
         '
         Me.Label26.AutoSize = True
         Me.Label26.ForeColor = System.Drawing.Color.Red
-        Me.Label26.Location = New System.Drawing.Point(633, 185)
+        Me.Label26.Location = New System.Drawing.Point(633, 191)
         Me.Label26.Name = "Label26"
         Me.Label26.Size = New System.Drawing.Size(11, 12)
         Me.Label26.TabIndex = 54
@@ -980,7 +980,7 @@ Partial Class Form1
         '
         Me.Label19.AutoSize = True
         Me.Label19.ForeColor = System.Drawing.Color.Red
-        Me.Label19.Location = New System.Drawing.Point(271, 185)
+        Me.Label19.Location = New System.Drawing.Point(271, 191)
         Me.Label19.Name = "Label19"
         Me.Label19.Size = New System.Drawing.Size(11, 12)
         Me.Label19.TabIndex = 47
