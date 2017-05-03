@@ -77,6 +77,8 @@ Public Class Form1
             Label42.Hide()
             Label43.Hide()
             Label44.Hide()
+            Label49.Hide()
+            Label50.Hide()
             state = False
             BtnSetVariable.ForeColor = Color.Black
             Timer5.Stop()
@@ -92,8 +94,8 @@ Public Class Form1
         AxIpeDspCtrl1.SetZoom(-1)
         variables = {"DETECTED_CELL_SIZE_LEVEL_MM", "DETECTED_CELL_HEIGHT_LEVEL_MM", "DETECTED_CELL_WIDTH_LEVEL_MM",
             "SCREEN_ROTATE_ERROR_LEVEL", "SCREEN_SHIFT_ERROR_LEVEL_MM", "EDGE_ERROR_LEVEL_PIX", "CORNER_ERROR_LEVEL_PIX", "EDGE_BREAKAGE_LEVEL_PIX",
-            "INSPECT_ROI_DIAGONLA_WIDTH_PIX", "CORNER_BREAKAGE_LEVEL_PIX", "INSPECT_INNER_ERROR_THRESHOLD"}
-        textBoxes = {Text0, Text1, Text2, Text3, Text4, Text5, Text6, Text7, Text8, Text9, Text10}
+            "INSPECT_ROI_DIAGONLA_WIDTH_PIX", "CORNER_BREAKAGE_LEVEL_PIX", "INSPECT_INNER_ERROR_THRESHOLD", "CORNER_BREAKAGE_LEVEL_PIX_S", "INSPECT_ROI_DIAGONLA_WIDTH_PIX_S"}
+        textBoxes = {Text0, Text1, Text2, Text3, Text4, Text5, Text6, Text7, Text8, Text9, Text10, Text11, Text12}
         hSherlock.VarGetDouble("DETECTED_CELL_HEIGHT_SKIP", SizeHeightEnalbe)
         hSherlock.VarGetDouble("DETECTED_CELL_WIDTH_SKIP", SizeWidthEnalbe)
         hSherlock.VarGetDouble("SCREEN_ROTATE_ERROR_SKIP", ScreenRotateEnalbe)
@@ -491,6 +493,12 @@ Public Class Form1
         Label42.Hide()
         Label43.Hide()
         Label44.Hide()
+        Label49.Hide()
+        Label50.Hide()
+        Dim i As Double
+        For i = 0 To 12
+            hSherlock.VarSetDouble(variables(i), Val(textBoxes(i).Text))
+        Next
         nErr = hSherlock.InvSave(sNowSolutionPath)
         Button8.Enabled = False
         buttonState = False
@@ -693,6 +701,8 @@ Public Class Form1
             Label42.Hide()
             Label43.Hide()
             Label44.Hide()
+            Label49.Hide()
+            Label50.Hide()
             state = False
             BtnSetVariable.ForeColor = Color.Black
             Timer5.Stop()
@@ -725,6 +735,30 @@ Public Class Form1
         n += 1
         If n = 10000 Then
             n = 0
+        End If
+    End Sub
+
+    Private Sub Text11_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Text11.KeyPress
+        Label50.ForeColor = Color.Red
+        Label50.Show()
+        buttonState = True
+        Button8.Enabled = True
+        state = True
+        If e.KeyChar = Chr(Keys.Enter) Then
+            nErr = hSherlock.VarSetDouble("CORNER_BREAKAGE_LEVEL_PIX_S", Val(Text11.Text))
+            Label50.ForeColor = Color.Aqua
+        End If
+    End Sub
+
+    Private Sub Text12_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Text12.KeyPress
+        Label49.ForeColor = Color.Red
+        Label49.Show()
+        buttonState = True
+        Button8.Enabled = True
+        state = True
+        If e.KeyChar = Chr(Keys.Enter) Then
+            nErr = hSherlock.VarSetDouble("INSPECT_ROI_DIAGONLA_WIDTH_PIX_S", Val(Text12.Text))
+            Label49.ForeColor = Color.Aqua
         End If
     End Sub
 
@@ -896,7 +930,7 @@ Public Class Form1
                 Button8.Enabled = True
             End If
 
-            For i = 0 To 10
+            For i = 0 To 12
                 nErr = hSherlock.VarGetDouble(variables(i), temp)
                 textBoxes(i).Text = temp.ToString
             Next

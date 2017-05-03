@@ -53,6 +53,16 @@ Partial Class Form1
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.BtnSetVariable = New System.Windows.Forms.Button()
         Me.GroupBoxSetVariable = New System.Windows.Forms.GroupBox()
+        Me.Label47 = New System.Windows.Forms.Label()
+        Me.Label48 = New System.Windows.Forms.Label()
+        Me.Label49 = New System.Windows.Forms.Label()
+        Me.Label50 = New System.Windows.Forms.Label()
+        Me.Text12 = New System.Windows.Forms.MaskedTextBox()
+        Me.Text11 = New System.Windows.Forms.MaskedTextBox()
+        Me.Label51 = New System.Windows.Forms.Label()
+        Me.Label52 = New System.Windows.Forms.Label()
+        Me.Label46 = New System.Windows.Forms.Label()
+        Me.Label45 = New System.Windows.Forms.Label()
         Me.Label44 = New System.Windows.Forms.Label()
         Me.Label43 = New System.Windows.Forms.Label()
         Me.Label42 = New System.Windows.Forms.Label()
@@ -124,11 +134,13 @@ Partial Class Form1
         Me.Timer5 = New System.Windows.Forms.Timer(Me.components)
         Me.AxIpeDspCtrl1 = New AxIpeDspCtrlLib.AxIpeDspCtrl()
         Me.Timer6 = New System.Windows.Forms.Timer(Me.components)
-        Me.Label45 = New System.Windows.Forms.Label()
-        Me.Label46 = New System.Windows.Forms.Label()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBoxSetVariable.SuspendLayout()
         CType(Me.AxIpeDspCtrl1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox2.SuspendLayout()
+        Me.GroupBox3.SuspendLayout()
         Me.SuspendLayout()
         '
         'BtnStart
@@ -371,6 +383,8 @@ Partial Class Form1
         '
         'GroupBoxSetVariable
         '
+        Me.GroupBoxSetVariable.Controls.Add(Me.GroupBox3)
+        Me.GroupBoxSetVariable.Controls.Add(Me.GroupBox2)
         Me.GroupBoxSetVariable.Controls.Add(Me.Label46)
         Me.GroupBoxSetVariable.Controls.Add(Me.Label45)
         Me.GroupBoxSetVariable.Controls.Add(Me.Label44)
@@ -385,8 +399,6 @@ Partial Class Form1
         Me.GroupBoxSetVariable.Controls.Add(Me.CheckBox3)
         Me.GroupBoxSetVariable.Controls.Add(Me.CheckBox2)
         Me.GroupBoxSetVariable.Controls.Add(Me.CheckBox1)
-        Me.GroupBoxSetVariable.Controls.Add(Me.Label36)
-        Me.GroupBoxSetVariable.Controls.Add(Me.Label35)
         Me.GroupBoxSetVariable.Controls.Add(Me.Label34)
         Me.GroupBoxSetVariable.Controls.Add(Me.Label33)
         Me.GroupBoxSetVariable.Controls.Add(Me.Label32)
@@ -397,8 +409,6 @@ Partial Class Form1
         Me.GroupBoxSetVariable.Controls.Add(Me.Label27)
         Me.GroupBoxSetVariable.Controls.Add(Me.Button8)
         Me.GroupBoxSetVariable.Controls.Add(Me.Label26)
-        Me.GroupBoxSetVariable.Controls.Add(Me.Label25)
-        Me.GroupBoxSetVariable.Controls.Add(Me.Label24)
         Me.GroupBoxSetVariable.Controls.Add(Me.Label23)
         Me.GroupBoxSetVariable.Controls.Add(Me.Label22)
         Me.GroupBoxSetVariable.Controls.Add(Me.Label21)
@@ -408,8 +418,6 @@ Partial Class Form1
         Me.GroupBoxSetVariable.Controls.Add(Me.Label17)
         Me.GroupBoxSetVariable.Controls.Add(Me.Label16)
         Me.GroupBoxSetVariable.Controls.Add(Me.Text10)
-        Me.GroupBoxSetVariable.Controls.Add(Me.Text9)
-        Me.GroupBoxSetVariable.Controls.Add(Me.Text8)
         Me.GroupBoxSetVariable.Controls.Add(Me.Text7)
         Me.GroupBoxSetVariable.Controls.Add(Me.Text6)
         Me.GroupBoxSetVariable.Controls.Add(Me.Text5)
@@ -427,8 +435,6 @@ Partial Class Form1
         Me.GroupBoxSetVariable.Controls.Add(Me.Button2)
         Me.GroupBoxSetVariable.Controls.Add(Me.Button1)
         Me.GroupBoxSetVariable.Controls.Add(Me.Label14)
-        Me.GroupBoxSetVariable.Controls.Add(Me.Label13)
-        Me.GroupBoxSetVariable.Controls.Add(Me.Label12)
         Me.GroupBoxSetVariable.Controls.Add(Me.Label11)
         Me.GroupBoxSetVariable.Controls.Add(Me.Label10)
         Me.GroupBoxSetVariable.Controls.Add(Me.Label9)
@@ -444,11 +450,107 @@ Partial Class Form1
         Me.GroupBoxSetVariable.TabStop = False
         Me.GroupBoxSetVariable.Text = "参数设定"
         '
+        'Label47
+        '
+        Me.Label47.AutoSize = True
+        Me.Label47.Location = New System.Drawing.Point(268, 70)
+        Me.Label47.Name = "Label47"
+        Me.Label47.Size = New System.Drawing.Size(17, 12)
+        Me.Label47.TabIndex = 86
+        Me.Label47.Text = "mm"
+        '
+        'Label48
+        '
+        Me.Label48.AutoSize = True
+        Me.Label48.Location = New System.Drawing.Point(268, 30)
+        Me.Label48.Name = "Label48"
+        Me.Label48.Size = New System.Drawing.Size(17, 12)
+        Me.Label48.TabIndex = 85
+        Me.Label48.Text = "mm"
+        '
+        'Label49
+        '
+        Me.Label49.AutoSize = True
+        Me.Label49.ForeColor = System.Drawing.Color.Red
+        Me.Label49.Location = New System.Drawing.Point(287, 67)
+        Me.Label49.Name = "Label49"
+        Me.Label49.Size = New System.Drawing.Size(11, 12)
+        Me.Label49.TabIndex = 84
+        Me.Label49.Text = "*"
+        Me.Label49.Visible = False
+        '
+        'Label50
+        '
+        Me.Label50.AutoSize = True
+        Me.Label50.ForeColor = System.Drawing.Color.Red
+        Me.Label50.Location = New System.Drawing.Point(287, 26)
+        Me.Label50.Name = "Label50"
+        Me.Label50.Size = New System.Drawing.Size(11, 12)
+        Me.Label50.TabIndex = 83
+        Me.Label50.Text = "*"
+        Me.Label50.Visible = False
+        '
+        'Text12
+        '
+        Me.Text12.Location = New System.Drawing.Point(182, 67)
+        Me.Text12.Name = "Text12"
+        Me.Text12.Size = New System.Drawing.Size(85, 21)
+        Me.Text12.TabIndex = 82
+        Me.Text12.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'Text11
+        '
+        Me.Text11.Location = New System.Drawing.Point(182, 27)
+        Me.Text11.Name = "Text11"
+        Me.Text11.Size = New System.Drawing.Size(85, 21)
+        Me.Text11.TabIndex = 81
+        Me.Text11.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'Label51
+        '
+        Me.Label51.AutoSize = True
+        Me.Label51.Font = New System.Drawing.Font("宋体", 10.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
+        Me.Label51.Location = New System.Drawing.Point(21, 71)
+        Me.Label51.Name = "Label51"
+        Me.Label51.Size = New System.Drawing.Size(91, 14)
+        Me.Label51.TabIndex = 80
+        Me.Label51.Text = "角部宽度上限"
+        '
+        'Label52
+        '
+        Me.Label52.AutoSize = True
+        Me.Label52.Font = New System.Drawing.Font("宋体", 10.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
+        Me.Label52.Location = New System.Drawing.Point(21, 28)
+        Me.Label52.Name = "Label52"
+        Me.Label52.Size = New System.Drawing.Size(91, 14)
+        Me.Label52.TabIndex = 79
+        Me.Label52.Text = "角部缩进上限"
+        '
+        'Label46
+        '
+        Me.Label46.AutoSize = True
+        Me.Label46.Font = New System.Drawing.Font("宋体", 10.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
+        Me.Label46.Location = New System.Drawing.Point(131, 514)
+        Me.Label46.Name = "Label46"
+        Me.Label46.Size = New System.Drawing.Size(14, 14)
+        Me.Label46.TabIndex = 78
+        Me.Label46.Text = "F"
+        '
+        'Label45
+        '
+        Me.Label45.AutoSize = True
+        Me.Label45.Font = New System.Drawing.Font("宋体", 10.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
+        Me.Label45.Location = New System.Drawing.Point(23, 514)
+        Me.Label45.Name = "Label45"
+        Me.Label45.Size = New System.Drawing.Size(91, 14)
+        Me.Label45.TabIndex = 77
+        Me.Label45.Text = "像素分辨率："
+        '
         'Label44
         '
         Me.Label44.AutoSize = True
         Me.Label44.ForeColor = System.Drawing.Color.Aqua
-        Me.Label44.Location = New System.Drawing.Point(252, 294)
+        Me.Label44.Location = New System.Drawing.Point(609, 243)
         Me.Label44.Name = "Label44"
         Me.Label44.Size = New System.Drawing.Size(11, 12)
         Me.Label44.TabIndex = 76
@@ -481,7 +583,7 @@ Partial Class Form1
         '
         Me.Label41.AutoSize = True
         Me.Label41.ForeColor = System.Drawing.Color.Aqua
-        Me.Label41.Location = New System.Drawing.Point(365, 234)
+        Me.Label41.Location = New System.Drawing.Point(365, 243)
         Me.Label41.Name = "Label41"
         Me.Label41.Size = New System.Drawing.Size(11, 12)
         Me.Label41.TabIndex = 74
@@ -492,7 +594,7 @@ Partial Class Form1
         '
         Me.Label40.AutoSize = True
         Me.Label40.ForeColor = System.Drawing.Color.Aqua
-        Me.Label40.Location = New System.Drawing.Point(365, 185)
+        Me.Label40.Location = New System.Drawing.Point(365, 192)
         Me.Label40.Name = "Label40"
         Me.Label40.Size = New System.Drawing.Size(11, 12)
         Me.Label40.TabIndex = 73
@@ -503,7 +605,7 @@ Partial Class Form1
         '
         Me.Label39.AutoSize = True
         Me.Label39.ForeColor = System.Drawing.Color.Aqua
-        Me.Label39.Location = New System.Drawing.Point(365, 139)
+        Me.Label39.Location = New System.Drawing.Point(365, 141)
         Me.Label39.Name = "Label39"
         Me.Label39.Size = New System.Drawing.Size(11, 12)
         Me.Label39.TabIndex = 72
@@ -514,7 +616,7 @@ Partial Class Form1
         '
         Me.Label38.AutoSize = True
         Me.Label38.ForeColor = System.Drawing.Color.Aqua
-        Me.Label38.Location = New System.Drawing.Point(365, 87)
+        Me.Label38.Location = New System.Drawing.Point(365, 90)
         Me.Label38.Name = "Label38"
         Me.Label38.Size = New System.Drawing.Size(11, 12)
         Me.Label38.TabIndex = 71
@@ -525,7 +627,7 @@ Partial Class Form1
         '
         Me.CCDPath.AutoSize = True
         Me.CCDPath.Font = New System.Drawing.Font("宋体", 10.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.CCDPath.Location = New System.Drawing.Point(131, 392)
+        Me.CCDPath.Location = New System.Drawing.Point(131, 471)
         Me.CCDPath.Name = "CCDPath"
         Me.CCDPath.Size = New System.Drawing.Size(77, 14)
         Me.CCDPath.TabIndex = 70
@@ -535,7 +637,7 @@ Partial Class Form1
         '
         Me.Label37.AutoSize = True
         Me.Label37.Font = New System.Drawing.Font("宋体", 10.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.Label37.Location = New System.Drawing.Point(22, 392)
+        Me.Label37.Location = New System.Drawing.Point(23, 471)
         Me.Label37.Name = "Label37"
         Me.Label37.Size = New System.Drawing.Size(105, 14)
         Me.Label37.TabIndex = 69
@@ -545,7 +647,7 @@ Partial Class Form1
         '
         Me.CheckBox3.AutoSize = True
         Me.CheckBox3.Font = New System.Drawing.Font("宋体", 10.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.CheckBox3.Location = New System.Drawing.Point(385, 342)
+        Me.CheckBox3.Location = New System.Drawing.Point(383, 424)
         Me.CheckBox3.Name = "CheckBox3"
         Me.CheckBox3.Size = New System.Drawing.Size(124, 18)
         Me.CheckBox3.TabIndex = 68
@@ -556,7 +658,7 @@ Partial Class Form1
         '
         Me.CheckBox2.AutoSize = True
         Me.CheckBox2.Font = New System.Drawing.Font("宋体", 10.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.CheckBox2.Location = New System.Drawing.Point(199, 342)
+        Me.CheckBox2.Location = New System.Drawing.Point(197, 424)
         Me.CheckBox2.Name = "CheckBox2"
         Me.CheckBox2.Size = New System.Drawing.Size(124, 18)
         Me.CheckBox2.TabIndex = 67
@@ -568,7 +670,7 @@ Partial Class Form1
         Me.CheckBox1.AutoSize = True
         Me.CheckBox1.BackColor = System.Drawing.SystemColors.Control
         Me.CheckBox1.Font = New System.Drawing.Font("宋体", 10.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.CheckBox1.Location = New System.Drawing.Point(25, 342)
+        Me.CheckBox1.Location = New System.Drawing.Point(23, 424)
         Me.CheckBox1.Name = "CheckBox1"
         Me.CheckBox1.Size = New System.Drawing.Size(110, 18)
         Me.CheckBox1.TabIndex = 66
@@ -578,7 +680,7 @@ Partial Class Form1
         'Label36
         '
         Me.Label36.AutoSize = True
-        Me.Label36.Location = New System.Drawing.Point(614, 245)
+        Me.Label36.Location = New System.Drawing.Point(275, 30)
         Me.Label36.Name = "Label36"
         Me.Label36.Size = New System.Drawing.Size(17, 12)
         Me.Label36.TabIndex = 65
@@ -587,7 +689,7 @@ Partial Class Form1
         'Label35
         '
         Me.Label35.AutoSize = True
-        Me.Label35.Location = New System.Drawing.Point(614, 194)
+        Me.Label35.Location = New System.Drawing.Point(275, 70)
         Me.Label35.Name = "Label35"
         Me.Label35.Size = New System.Drawing.Size(17, 12)
         Me.Label35.TabIndex = 64
@@ -623,7 +725,7 @@ Partial Class Form1
         'Label31
         '
         Me.Label31.AutoSize = True
-        Me.Label31.Location = New System.Drawing.Point(252, 237)
+        Me.Label31.Location = New System.Drawing.Point(252, 245)
         Me.Label31.Name = "Label31"
         Me.Label31.Size = New System.Drawing.Size(17, 12)
         Me.Label31.TabIndex = 60
@@ -632,7 +734,7 @@ Partial Class Form1
         'Label30
         '
         Me.Label30.AutoSize = True
-        Me.Label30.Location = New System.Drawing.Point(252, 188)
+        Me.Label30.Location = New System.Drawing.Point(252, 194)
         Me.Label30.Name = "Label30"
         Me.Label30.Size = New System.Drawing.Size(17, 12)
         Me.Label30.TabIndex = 59
@@ -668,7 +770,7 @@ Partial Class Form1
         'Button8
         '
         Me.Button8.Font = New System.Drawing.Font("宋体", 10.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.Button8.Location = New System.Drawing.Point(530, 435)
+        Me.Button8.Location = New System.Drawing.Point(582, 480)
         Me.Button8.Name = "Button8"
         Me.Button8.Size = New System.Drawing.Size(101, 48)
         Me.Button8.TabIndex = 55
@@ -679,7 +781,7 @@ Partial Class Form1
         '
         Me.Label26.AutoSize = True
         Me.Label26.ForeColor = System.Drawing.Color.Red
-        Me.Label26.Location = New System.Drawing.Point(633, 293)
+        Me.Label26.Location = New System.Drawing.Point(633, 185)
         Me.Label26.Name = "Label26"
         Me.Label26.Size = New System.Drawing.Size(11, 12)
         Me.Label26.TabIndex = 54
@@ -690,7 +792,7 @@ Partial Class Form1
         '
         Me.Label25.AutoSize = True
         Me.Label25.ForeColor = System.Drawing.Color.Red
-        Me.Label25.Location = New System.Drawing.Point(633, 242)
+        Me.Label25.Location = New System.Drawing.Point(294, 26)
         Me.Label25.Name = "Label25"
         Me.Label25.Size = New System.Drawing.Size(11, 12)
         Me.Label25.TabIndex = 53
@@ -701,7 +803,7 @@ Partial Class Form1
         '
         Me.Label24.AutoSize = True
         Me.Label24.ForeColor = System.Drawing.Color.Red
-        Me.Label24.Location = New System.Drawing.Point(633, 191)
+        Me.Label24.Location = New System.Drawing.Point(294, 67)
         Me.Label24.Name = "Label24"
         Me.Label24.Size = New System.Drawing.Size(11, 12)
         Me.Label24.TabIndex = 52
@@ -745,7 +847,7 @@ Partial Class Form1
         '
         Me.Label20.AutoSize = True
         Me.Label20.ForeColor = System.Drawing.Color.Red
-        Me.Label20.Location = New System.Drawing.Point(271, 234)
+        Me.Label20.Location = New System.Drawing.Point(271, 242)
         Me.Label20.Name = "Label20"
         Me.Label20.Size = New System.Drawing.Size(11, 12)
         Me.Label20.TabIndex = 48
@@ -798,7 +900,7 @@ Partial Class Form1
         '
         'Text10
         '
-        Me.Text10.Location = New System.Drawing.Point(528, 293)
+        Me.Text10.Location = New System.Drawing.Point(528, 191)
         Me.Text10.Name = "Text10"
         Me.Text10.Size = New System.Drawing.Size(85, 21)
         Me.Text10.TabIndex = 43
@@ -806,7 +908,7 @@ Partial Class Form1
         '
         'Text9
         '
-        Me.Text9.Location = New System.Drawing.Point(528, 242)
+        Me.Text9.Location = New System.Drawing.Point(189, 27)
         Me.Text9.Name = "Text9"
         Me.Text9.Size = New System.Drawing.Size(85, 21)
         Me.Text9.TabIndex = 42
@@ -814,7 +916,7 @@ Partial Class Form1
         '
         'Text8
         '
-        Me.Text8.Location = New System.Drawing.Point(528, 191)
+        Me.Text8.Location = New System.Drawing.Point(189, 67)
         Me.Text8.Name = "Text8"
         Me.Text8.Size = New System.Drawing.Size(85, 21)
         Me.Text8.TabIndex = 41
@@ -846,7 +948,7 @@ Partial Class Form1
         '
         'Text4
         '
-        Me.Text4.Location = New System.Drawing.Point(169, 234)
+        Me.Text4.Location = New System.Drawing.Point(169, 242)
         Me.Text4.Name = "Text4"
         Me.Text4.Size = New System.Drawing.Size(82, 21)
         Me.Text4.TabIndex = 37
@@ -854,7 +956,7 @@ Partial Class Form1
         '
         'Text3
         '
-        Me.Text3.Location = New System.Drawing.Point(169, 185)
+        Me.Text3.Location = New System.Drawing.Point(169, 191)
         Me.Text3.Name = "Text3"
         Me.Text3.Size = New System.Drawing.Size(82, 21)
         Me.Text3.TabIndex = 36
@@ -862,7 +964,7 @@ Partial Class Form1
         '
         'Text2
         '
-        Me.Text2.Location = New System.Drawing.Point(169, 136)
+        Me.Text2.Location = New System.Drawing.Point(169, 140)
         Me.Text2.Name = "Text2"
         Me.Text2.Size = New System.Drawing.Size(82, 21)
         Me.Text2.TabIndex = 35
@@ -870,7 +972,7 @@ Partial Class Form1
         '
         'Text1
         '
-        Me.Text1.Location = New System.Drawing.Point(169, 87)
+        Me.Text1.Location = New System.Drawing.Point(169, 89)
         Me.Text1.Name = "Text1"
         Me.Text1.Size = New System.Drawing.Size(82, 21)
         Me.Text1.TabIndex = 34
@@ -888,7 +990,7 @@ Partial Class Form1
         '
         Me.Label15.AutoSize = True
         Me.Label15.Font = New System.Drawing.Font("宋体", 10.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.Label15.Location = New System.Drawing.Point(23, 294)
+        Me.Label15.Location = New System.Drawing.Point(385, 243)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(91, 14)
         Me.Label15.TabIndex = 32
@@ -897,9 +999,9 @@ Partial Class Form1
         'Button7
         '
         Me.Button7.BackColor = System.Drawing.Color.Lime
-        Me.Button7.Location = New System.Drawing.Point(169, 291)
+        Me.Button7.Location = New System.Drawing.Point(528, 240)
         Me.Button7.Name = "Button7"
-        Me.Button7.Size = New System.Drawing.Size(82, 23)
+        Me.Button7.Size = New System.Drawing.Size(75, 23)
         Me.Button7.TabIndex = 31
         Me.Button7.Text = "切除"
         Me.Button7.UseVisualStyleBackColor = False
@@ -927,7 +1029,7 @@ Partial Class Form1
         'Button4
         '
         Me.Button4.BackColor = System.Drawing.Color.Lime
-        Me.Button4.Location = New System.Drawing.Point(288, 232)
+        Me.Button4.Location = New System.Drawing.Point(288, 240)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(75, 23)
         Me.Button4.TabIndex = 28
@@ -937,7 +1039,7 @@ Partial Class Form1
         'Button3
         '
         Me.Button3.BackColor = System.Drawing.Color.Lime
-        Me.Button3.Location = New System.Drawing.Point(288, 183)
+        Me.Button3.Location = New System.Drawing.Point(288, 189)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(75, 23)
         Me.Button3.TabIndex = 27
@@ -968,7 +1070,7 @@ Partial Class Form1
         '
         Me.Label14.AutoSize = True
         Me.Label14.Font = New System.Drawing.Font("宋体", 10.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.Label14.Location = New System.Drawing.Point(383, 294)
+        Me.Label14.Location = New System.Drawing.Point(383, 192)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(105, 14)
         Me.Label14.TabIndex = 24
@@ -978,21 +1080,21 @@ Partial Class Form1
         '
         Me.Label13.AutoSize = True
         Me.Label13.Font = New System.Drawing.Font("宋体", 10.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.Label13.Location = New System.Drawing.Point(382, 243)
+        Me.Label13.Location = New System.Drawing.Point(43, 71)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(91, 14)
         Me.Label13.TabIndex = 23
-        Me.Label13.Text = "边角宽度上限"
+        Me.Label13.Text = "角部宽度上限"
         '
         'Label12
         '
         Me.Label12.AutoSize = True
         Me.Label12.Font = New System.Drawing.Font("宋体", 10.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.Label12.Location = New System.Drawing.Point(382, 192)
+        Me.Label12.Location = New System.Drawing.Point(43, 28)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(119, 14)
+        Me.Label12.Size = New System.Drawing.Size(91, 14)
         Me.Label12.TabIndex = 22
-        Me.Label12.Text = "边角区域缩进上限"
+        Me.Label12.Text = "角部缩进上限"
         '
         'Label11
         '
@@ -1123,25 +1225,39 @@ Partial Class Form1
         'Timer6
         '
         '
-        'Label45
+        'GroupBox2
         '
-        Me.Label45.AutoSize = True
-        Me.Label45.Font = New System.Drawing.Font("宋体", 10.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.Label45.Location = New System.Drawing.Point(22, 435)
-        Me.Label45.Name = "Label45"
-        Me.Label45.Size = New System.Drawing.Size(91, 14)
-        Me.Label45.TabIndex = 77
-        Me.Label45.Text = "像素分辨率："
+        Me.GroupBox2.Controls.Add(Me.Label47)
+        Me.GroupBox2.Controls.Add(Me.Label48)
+        Me.GroupBox2.Controls.Add(Me.Label49)
+        Me.GroupBox2.Controls.Add(Me.Label50)
+        Me.GroupBox2.Controls.Add(Me.Text12)
+        Me.GroupBox2.Controls.Add(Me.Text11)
+        Me.GroupBox2.Controls.Add(Me.Label51)
+        Me.GroupBox2.Controls.Add(Me.Label52)
+        Me.GroupBox2.Location = New System.Drawing.Point(15, 291)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(339, 102)
+        Me.GroupBox2.TabIndex = 87
+        Me.GroupBox2.TabStop = False
+        Me.GroupBox2.Text = "单晶电池片"
         '
-        'Label46
+        'GroupBox3
         '
-        Me.Label46.AutoSize = True
-        Me.Label46.Font = New System.Drawing.Font("宋体", 10.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.Label46.Location = New System.Drawing.Point(131, 435)
-        Me.Label46.Name = "Label46"
-        Me.Label46.Size = New System.Drawing.Size(56, 14)
-        Me.Label46.TabIndex = 78
-        Me.Label46.Text = "Label46"
+        Me.GroupBox3.Controls.Add(Me.Label36)
+        Me.GroupBox3.Controls.Add(Me.Label35)
+        Me.GroupBox3.Controls.Add(Me.Label24)
+        Me.GroupBox3.Controls.Add(Me.Text8)
+        Me.GroupBox3.Controls.Add(Me.Label25)
+        Me.GroupBox3.Controls.Add(Me.Label13)
+        Me.GroupBox3.Controls.Add(Me.Label12)
+        Me.GroupBox3.Controls.Add(Me.Text9)
+        Me.GroupBox3.Location = New System.Drawing.Point(386, 291)
+        Me.GroupBox3.Name = "GroupBox3"
+        Me.GroupBox3.Size = New System.Drawing.Size(339, 102)
+        Me.GroupBox3.TabIndex = 88
+        Me.GroupBox3.TabStop = False
+        Me.GroupBox3.Text = "多晶电池片"
         '
         'Form1
         '
@@ -1175,6 +1291,10 @@ Partial Class Form1
         Me.GroupBoxSetVariable.ResumeLayout(False)
         Me.GroupBoxSetVariable.PerformLayout()
         CType(Me.AxIpeDspCtrl1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox2.ResumeLayout(False)
+        Me.GroupBox2.PerformLayout()
+        Me.GroupBox3.ResumeLayout(False)
+        Me.GroupBox3.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1281,4 +1401,14 @@ Partial Class Form1
     Friend WithEvents Timer6 As Timer
     Friend WithEvents Label45 As Label
     Friend WithEvents Label46 As Label
+    Friend WithEvents Label47 As Label
+    Friend WithEvents Label48 As Label
+    Friend WithEvents Label49 As Label
+    Friend WithEvents Label50 As Label
+    Friend WithEvents Text12 As MaskedTextBox
+    Friend WithEvents Text11 As MaskedTextBox
+    Friend WithEvents Label51 As Label
+    Friend WithEvents Label52 As Label
+    Friend WithEvents GroupBox3 As GroupBox
+    Friend WithEvents GroupBox2 As GroupBox
 End Class
