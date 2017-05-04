@@ -6,7 +6,7 @@ Public Class Form1
     Public nErr As IpeEngCtrlLib.I_ENG_ERROR
     Public proname() As String
     Public ROIName() As String
-    Public roiState, annoState, setVarState, modifyState As Boolean
+    Public roiState, annoState, setVarState, modifyState, setInspState As Boolean
     Public temp As Double
     Public variables()
     Public textBoxes() As MaskedTextBox
@@ -24,6 +24,7 @@ Public Class Form1
         annoState = False
         setVarState = False
         modifyState = False
+        setInspState = False
         buttonState = False
         state = False
         btnSaveStete = False
@@ -178,6 +179,7 @@ Public Class Form1
         BtnSolutoon.Enabled = False
         ListBox1.Enabled = False
         BtnOnce.Enabled = False
+        Me.Text = "Vision (正在运行) - USTC"
     End Sub
     Private Sub BtnStop_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnStop.Click
         nErr = hSherlock.InvModeSet(IpeEngCtrlLib.I_MODE.I_EXE_MODE_HALT_AFTER_ITERATION)
@@ -196,6 +198,7 @@ Public Class Form1
         BtnSolutoon.Enabled = True
         ListBox1.Enabled = True
         BtnOnce.Enabled = True
+        Me.Text = "Vision - USTC"
     End Sub
 
     Private Sub BtnEscInter_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnEscInter.Click
@@ -238,12 +241,42 @@ Public Class Form1
         BtnSave1.ForeColor = Color.Black
     End Sub
     Private Sub Btnparameter_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Btnparameter.Click
-        GroupBox1.Enabled = True
-        nErr = hSherlock.VarGetDouble("ExposureTime", vbExposureTime)
-        CamShutter.Text = CStr(vbExposureTime)
-        CmbImg.Items.Clear()
-        CmbImg.Items.Insert(0, "检测工位")
-        CmbImg.SelectedIndex = 0
+        If setInspState = False Then
+            GroupBox1.Enabled = True
+            BtnSolutoon.Enabled = False
+            BtnStart.Enabled = False
+            BtnOnce.Enabled = False
+            BtnSetVariable.Enabled = False
+            ListBox1.Enabled = False
+            ChkALive.Enabled = False
+            Btnparameter.Text = "返回主页"
+            nErr = hSherlock.VarGetDouble("ExposureTime", vbExposureTime)
+            CamShutter.Text = CStr(vbExposureTime)
+            CmbImg.Items.Clear()
+            CmbImg.Items.Insert(0, "检测工位")
+            CmbImg.SelectedIndex = 0
+            setInspState = True
+            Me.Text = "Vision (检测设定) - USTC"
+        Else
+            GroupBox1.Enabled = False
+            BtnSolutoon.Enabled = True
+            BtnStart.Enabled = True
+            BtnOnce.Enabled = True
+            BtnSetVariable.Enabled = True
+            ListBox1.Enabled = True
+            ChkALive.Enabled = True
+            Btnparameter.Text = "检测设定"
+            CamShutter.Text = ""
+            CmbImg.Items.Clear()
+            CmbSelRoi.Items.Clear()
+            ROIProcess.Columns.Clear()
+            ROIProcess.Items.Clear()
+            ROIProcess.Columns.Add("编号", 66)
+            ROIProcess.Columns.Add("ROI工具", 160)
+            setInspState = False
+            Me.Text = "Vision - USTC"
+        End If
+
     End Sub
     Dim ROINames(), ImgFilter As String
     Private Sub CmbImg_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CmbImg.SelectedIndexChanged
@@ -290,8 +323,8 @@ Public Class Form1
         hSherlock.RoiGetProc(CmbSelRoi.Text, ROIProc)
         ROIProcess.Columns.Clear()
         ROIProcess.Items.Clear()
-        ROIProcess.Columns.Add("编号", 50)
-        ROIProcess.Columns.Add("ROI工具", 140)
+        ROIProcess.Columns.Add("编号", 66)
+        ROIProcess.Columns.Add("ROI工具", 160)
         j = 0
         For I = 0 To UBound(ROIProc)
             ROIProcess.Items.Add(CStr(I))
@@ -497,7 +530,11 @@ Public Class Form1
         Label50.Hide()
         Dim i As Double
         For i = 0 To 12
-            hSherlock.VarSetDouble(variables(i), Val(textBoxes(i).Text) / F)
+            If i = 5 Or i = 6 Or i = 7 Or i = 8 Or i = 9 Or i = 11 Or i = 12 Then
+                hSherlock.VarSetDouble(variables(i), Val(textBoxes(i).Text) / F)
+            Else
+                hSherlock.VarSetDouble(variables(i), Val(textBoxes(i).Text))
+            End If
         Next
         nErr = hSherlock.InvSave(sNowSolutionPath)
         Button8.Enabled = False
@@ -942,6 +979,7 @@ Public Class Form1
             BtnOnce.Enabled = False
             BtnSetVariable.Text = "返回主页"
             setVarState = True
+            Me.Text = "Vision (参数设定) - USTC"
             If buttonState = False Then
                 Button8.Enabled = False
             Else
@@ -950,7 +988,9 @@ Public Class Form1
 
             For i = 0 To 12
                 nErr = hSherlock.VarGetDouble(variables(i), temp)
-                temp *= F
+                If i = 5 Or i = 6 Or i = 7 Or i = 8 Or i = 9 Or i = 11 Or i = 12 Then
+                    temp *= F
+                End If
                 textBoxes(i).Text = temp.ToString
             Next
             BtnSetVariable.ForeColor = Color.Black
@@ -965,6 +1005,7 @@ Public Class Form1
             Btnparameter.Enabled = True
             ListBox1.Enabled = True
             BtnOnce.Enabled = True
+            Me.Text = "Vision - USTC"
             BtnSetVariable.Text = "参数设定"
             setVarState = False
             If state = True Then
