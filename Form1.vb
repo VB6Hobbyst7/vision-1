@@ -113,6 +113,14 @@ Public Class Form1
         CheckBox2.Checked = False
         CheckBox3.Checked = False
 
+        For i = 0 To 12
+            nErr = hSherlock.VarGetDouble(variables(i), temp)
+            If i = 5 Or i = 6 Or i = 7 Or i = 8 Or i = 9 Or i = 11 Or i = 12 Then
+                temp *= F
+            End If
+            textBoxes(i).Text = temp.ToString
+        Next
+
         If SizeHeightEnalbe = 0 Then
             Button1.BackColor = Color.Lime
         Else
@@ -202,17 +210,39 @@ Public Class Form1
     End Sub
 
     Private Sub BtnEscInter_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnEscInter.Click
-        nErr = hSherlock.InvModeSet(IpeEngCtrlLib.I_MODE.I_EXE_MODE_HALT_AFTER_ITERATION)
-        Dim m As IpeEngCtrlLib.I_MODE
-        Do
-            System.Windows.Forms.Application.DoEvents()
-            hSherlock.InvModeGet(m)
-        Loop Until m = IpeEngCtrlLib.I_MODE.I_EXE_MODE_HALT
-        AxIpeDspCtrl1.DisconnectImgWindow()
-        AxIpeDspCtrl1.DisconnectEngine()
-        nErr = hSherlock.EngTerminate
-        hSherlock = Nothing
-        Me.Close()
+        Dim response = vbCancel
+        Dim n = 0
+        If state = True Or btnSaveStete = True Then
+            response = MsgBox("程序未保存，是否保存", 3 + 48 + 0 + 0, "提示")
+            n = 1
+        Else
+            response = MsgBox("是否关闭程序", 4 + 32 + 0 + 0, "提示")
+            n = 0
+        End If
+        If response = vbYes Or (response = vbNo And n = 1) Then
+            If n = 1 And response = vbYes Then
+                Dim i As Double
+                For i = 0 To 12
+                    If i = 5 Or i = 6 Or i = 7 Or i = 8 Or i = 9 Or i = 11 Or i = 12 Then
+                        hSherlock.VarSetDouble(variables(i), Val(textBoxes(i).Text) / F)
+                    Else
+                        hSherlock.VarSetDouble(variables(i), Val(textBoxes(i).Text))
+                    End If
+                Next
+                nErr = hSherlock.InvSave(sNowSolutionPath)
+            End If
+            nErr = hSherlock.InvModeSet(IpeEngCtrlLib.I_MODE.I_EXE_MODE_HALT_AFTER_ITERATION)
+            Dim m As IpeEngCtrlLib.I_MODE
+            Do
+                System.Windows.Forms.Application.DoEvents()
+                hSherlock.InvModeGet(m)
+            Loop Until m = IpeEngCtrlLib.I_MODE.I_EXE_MODE_HALT
+            AxIpeDspCtrl1.DisconnectImgWindow()
+            AxIpeDspCtrl1.DisconnectEngine()
+            nErr = hSherlock.EngTerminate
+            hSherlock = Nothing
+            Me.Close()
+        End If
     End Sub
     Private Sub Timer1_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer1.Tick
         hSherlock.RoiMove(CmbSelRoi.Text, MouseCurX - MouseIniX, MouseCurY - MouseIniY)
@@ -986,13 +1016,6 @@ Public Class Form1
                 Button8.Enabled = True
             End If
 
-            For i = 0 To 12
-                nErr = hSherlock.VarGetDouble(variables(i), temp)
-                If i = 5 Or i = 6 Or i = 7 Or i = 8 Or i = 9 Or i = 11 Or i = 12 Then
-                    temp *= F
-                End If
-                textBoxes(i).Text = temp.ToString
-            Next
             BtnSetVariable.ForeColor = Color.Black
             Timer5.Stop()
         Else
