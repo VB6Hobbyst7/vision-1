@@ -84,6 +84,13 @@ Public Class Form1
             BtnSetVariable.ForeColor = Color.Black
             Timer5.Stop()
         End If
+        If btnSaveStete = True Then
+            Label54.Hide()
+            btnSaveStete = False
+            BtnSave1.ForeColor = Color.Black
+            Btnparameter.ForeColor = Color.Black
+            Timer6.Stop()
+        End If
     End Sub
     Dim Flag_Prog As Boolean
     Private Sub Load_Pro()
@@ -269,6 +276,7 @@ Public Class Form1
         Timer6.Stop()
         Btnparameter.ForeColor = Color.Black
         BtnSave1.ForeColor = Color.Black
+        Label54.Hide()
     End Sub
     Private Sub Btnparameter_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Btnparameter.Click
         If setInspState = False Then
@@ -718,9 +726,12 @@ Public Class Form1
     End Sub
 
     Private Sub CamShutter_KeyPress(sender As Object, e As KeyPressEventArgs) Handles CamShutter.KeyPress
+        Label54.ForeColor = Color.Red
+        Label54.Show()
         If e.KeyChar = Chr(Keys.Enter) Then
             nErr = hSherlock.VarSetDouble("EXPOSURE_TIME", Val(CamShutter.Text))
             nErr = hSherlock.VarSetDouble("ExposureTime", Val(CamShutter.Text))
+            Label54.ForeColor = Color.Aqua
         End If
         BtnSave1.Enabled = True
         If btnSaveStete = False Then
@@ -773,6 +784,13 @@ Public Class Form1
             state = False
             BtnSetVariable.ForeColor = Color.Black
             Timer5.Stop()
+        End If
+        If btnSaveStete = True Then
+            Label54.Hide()
+            btnSaveStete = False
+            BtnSave1.ForeColor = Color.Black
+            Btnparameter.ForeColor = Color.Black
+            Timer6.Stop()
         End If
     End Sub
 
@@ -1037,19 +1055,19 @@ Public Class Form1
 
     End Sub
 
-    Private Sub ButShutter_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ButShutter.Click
-        ButShutter.Enabled = False
-        vbExposureTime = CDbl(CamShutter.Text)
-        nErr = hSherlock.VarSetDouble("ExposureTime", vbExposureTime)
-        nErr = hSherlock.EngExecuteSub("Ini")
-        ChkALive.CheckState = CheckState.Checked
-        AxIpeDspCtrl1.UpdateDisplay()
-        ButShutter.Enabled = True
-        BtnSave1.Enabled = True
-        If btnSaveStete = False Then
-            Timer6.Interval = 800
-            Timer6.Start()
-        End If
-        btnSaveStete = True
-    End Sub
+    'Private Sub ButShutter_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ButShutter.Click
+    '    ButShutter.Enabled = False
+    '    vbExposureTime = CDbl(CamShutter.Text)
+    '    nErr = hSherlock.VarSetDouble("ExposureTime", vbExposureTime)
+    '    nErr = hSherlock.EngExecuteSub("Ini")
+    '    ChkALive.CheckState = CheckState.Checked
+    '    AxIpeDspCtrl1.UpdateDisplay()
+    '    ButShutter.Enabled = True
+    '    BtnSave1.Enabled = True
+    '    If btnSaveStete = False Then
+    '        Timer6.Interval = 800
+    '        Timer6.Start()
+    '    End If
+    '    btnSaveStete = True
+    'End Sub
 End Class

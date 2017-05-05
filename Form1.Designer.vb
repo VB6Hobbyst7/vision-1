@@ -29,11 +29,11 @@ Partial Class Form1
         Me.Btnparameter = New System.Windows.Forms.Button()
         Me.BtnEscInter = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Label53 = New System.Windows.Forms.Label()
         Me.BtnRun = New System.Windows.Forms.Button()
         Me.BtnModify = New System.Windows.Forms.Button()
         Me.BtnAnnotations = New System.Windows.Forms.Button()
         Me.BtnShowRoi = New System.Windows.Forms.Button()
-        Me.ButShutter = New System.Windows.Forms.Button()
         Me.CamShutter = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.CmbSelRoi = New System.Windows.Forms.ComboBox()
@@ -140,6 +140,7 @@ Partial Class Form1
         Me.Timer5 = New System.Windows.Forms.Timer(Me.components)
         Me.AxIpeDspCtrl1 = New AxIpeDspCtrlLib.AxIpeDspCtrl()
         Me.Timer6 = New System.Windows.Forms.Timer(Me.components)
+        Me.Label54 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBoxSetVariable.SuspendLayout()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -189,11 +190,12 @@ Partial Class Form1
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.Label54)
+        Me.GroupBox1.Controls.Add(Me.Label53)
         Me.GroupBox1.Controls.Add(Me.BtnRun)
         Me.GroupBox1.Controls.Add(Me.BtnModify)
         Me.GroupBox1.Controls.Add(Me.BtnAnnotations)
         Me.GroupBox1.Controls.Add(Me.BtnShowRoi)
-        Me.GroupBox1.Controls.Add(Me.ButShutter)
         Me.GroupBox1.Controls.Add(Me.CamShutter)
         Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.Controls.Add(Me.CmbSelRoi)
@@ -209,6 +211,16 @@ Partial Class Form1
         Me.GroupBox1.TabIndex = 7
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "检测设定"
+        '
+        'Label53
+        '
+        Me.Label53.AutoSize = True
+        Me.Label53.Font = New System.Drawing.Font("宋体", 10.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
+        Me.Label53.Location = New System.Drawing.Point(165, 339)
+        Me.Label53.Name = "Label53"
+        Me.Label53.Size = New System.Drawing.Size(21, 14)
+        Me.Label53.TabIndex = 38
+        Me.Label53.Text = "ms"
         '
         'BtnRun
         '
@@ -246,28 +258,20 @@ Partial Class Form1
         Me.BtnShowRoi.Text = "显示框"
         Me.BtnShowRoi.UseVisualStyleBackColor = True
         '
-        'ButShutter
-        '
-        Me.ButShutter.Location = New System.Drawing.Point(163, 338)
-        Me.ButShutter.Name = "ButShutter"
-        Me.ButShutter.Size = New System.Drawing.Size(66, 21)
-        Me.ButShutter.TabIndex = 33
-        Me.ButShutter.Text = "刷新"
-        Me.ButShutter.UseVisualStyleBackColor = True
-        '
         'CamShutter
         '
-        Me.CamShutter.Location = New System.Drawing.Point(74, 339)
+        Me.CamShutter.Location = New System.Drawing.Point(85, 338)
         Me.CamShutter.Name = "CamShutter"
-        Me.CamShutter.Size = New System.Drawing.Size(67, 21)
+        Me.CamShutter.Size = New System.Drawing.Size(75, 21)
         Me.CamShutter.TabIndex = 32
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(6, 342)
+        Me.Label3.Font = New System.Drawing.Font("宋体", 10.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
+        Me.Label3.Location = New System.Drawing.Point(16, 339)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(53, 12)
+        Me.Label3.Size = New System.Drawing.Size(63, 14)
         Me.Label3.TabIndex = 30
         Me.Label3.Text = "曝光时间"
         '
@@ -1311,6 +1315,17 @@ Partial Class Form1
         'Timer6
         '
         '
+        'Label54
+        '
+        Me.Label54.AutoSize = True
+        Me.Label54.ForeColor = System.Drawing.Color.Red
+        Me.Label54.Location = New System.Drawing.Point(184, 337)
+        Me.Label54.Name = "Label54"
+        Me.Label54.Size = New System.Drawing.Size(11, 12)
+        Me.Label54.TabIndex = 66
+        Me.Label54.Text = "*"
+        Me.Label54.Visible = False
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
@@ -1376,7 +1391,6 @@ Partial Class Form1
     Friend WithEvents ColumnHeader3 As System.Windows.Forms.ColumnHeader
     Friend WithEvents ColumnHeader4 As System.Windows.Forms.ColumnHeader
     Friend WithEvents CmbSelRoi As System.Windows.Forms.ComboBox
-    Friend WithEvents ButShutter As System.Windows.Forms.Button
     Friend WithEvents CamShutter As System.Windows.Forms.TextBox
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents BtnShowRoi As Button
@@ -1471,4 +1485,6 @@ Partial Class Form1
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents PictureBox3 As PictureBox
     Friend WithEvents PictureBox4 As PictureBox
+    Friend WithEvents Label53 As Label
+    Friend WithEvents Label54 As Label
 End Class
