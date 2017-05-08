@@ -236,8 +236,10 @@ Public Class Form1
                         hSherlock.VarSetDouble(variables(i), Val(textBoxes(i).Text))
                     End If
                 Next
-                nErr = hSherlock.VarSetDouble("EXPOSURE_TIME", Val(CamShutter.Text))
-                nErr = hSherlock.VarSetDouble("ExposureTime", Val(CamShutter.Text))
+                If btnSaveStete = True Then
+                    nErr = hSherlock.VarSetDouble("EXPOSURE_TIME", Val(CamShutter.Text))
+                    nErr = hSherlock.VarSetDouble("ExposureTime", Val(CamShutter.Text))
+                End If
                 nErr = hSherlock.InvSave(sNowSolutionPath)
             End If
             nErr = hSherlock.InvModeSet(IpeEngCtrlLib.I_MODE.I_EXE_MODE_HALT_AFTER_ITERATION)
