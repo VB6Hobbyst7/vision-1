@@ -1061,19 +1061,4 @@ Public Class Form1
 
     End Sub
 
-    'Private Sub ButShutter_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ButShutter.Click
-    '    ButShutter.Enabled = False
-    '    vbExposureTime = CDbl(CamShutter.Text)
-    '    nErr = hSherlock.VarSetDouble("ExposureTime", vbExposureTime)
-    '    nErr = hSherlock.EngExecuteSub("Ini")
-    '    ChkALive.CheckState = CheckState.Checked
-    '    AxIpeDspCtrl1.UpdateDisplay()
-    '    ButShutter.Enabled = True
-    '    BtnSave1.Enabled = True
-    '    If btnSaveStete = False Then
-    '        Timer6.Interval = 800
-    '        Timer6.Start()
-    '    End If
-    '    btnSaveStete = True
-    'End Sub
 End Class
