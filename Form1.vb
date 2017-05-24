@@ -684,14 +684,20 @@ Public Class Form1
     End Sub
 
     Private Sub CORNER_BREAKAGE_LEVEL_PIX_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Text9.KeyPress
-        Label25.ForeColor = Color.Red
-        Label25.Show()
-        buttonState = True
-        Button8.Enabled = True
-        state = True
-        If e.KeyChar = Chr(Keys.Enter) Then
-            nErr = hSherlock.VarSetDouble("CORNER_BREAKAGE_LEVEL_PIX", Val(Text9.Text) / F)
-            Label25.ForeColor = Color.Aqua
+        If Text9.MaskCompleted = False Then
+            MsgBox("没输完整", 3 + 48 + 0 + 0, "提示")
+        Else
+
+
+            Label25.ForeColor = Color.Red
+            Label25.Show()
+            buttonState = True
+            Button8.Enabled = True
+            state = True
+            If e.KeyChar = Chr(Keys.Enter) Then
+                nErr = hSherlock.VarSetDouble("CORNER_BREAKAGE_LEVEL_PIX", Val(Text9.Text) / F)
+                Label25.ForeColor = Color.Aqua
+            End If
         End If
     End Sub
 
