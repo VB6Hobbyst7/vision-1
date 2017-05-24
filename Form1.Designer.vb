@@ -29,6 +29,7 @@ Partial Class Form1
         Me.Btnparameter = New System.Windows.Forms.Button()
         Me.BtnEscInter = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Label54 = New System.Windows.Forms.Label()
         Me.Label53 = New System.Windows.Forms.Label()
         Me.BtnRun = New System.Windows.Forms.Button()
         Me.BtnModify = New System.Windows.Forms.Button()
@@ -140,7 +141,6 @@ Partial Class Form1
         Me.Timer5 = New System.Windows.Forms.Timer(Me.components)
         Me.AxIpeDspCtrl1 = New AxIpeDspCtrlLib.AxIpeDspCtrl()
         Me.Timer6 = New System.Windows.Forms.Timer(Me.components)
-        Me.Label54 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBoxSetVariable.SuspendLayout()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -211,6 +211,17 @@ Partial Class Form1
         Me.GroupBox1.TabIndex = 7
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "检测设定"
+        '
+        'Label54
+        '
+        Me.Label54.AutoSize = True
+        Me.Label54.ForeColor = System.Drawing.Color.Red
+        Me.Label54.Location = New System.Drawing.Point(184, 337)
+        Me.Label54.Name = "Label54"
+        Me.Label54.Size = New System.Drawing.Size(11, 12)
+        Me.Label54.TabIndex = 66
+        Me.Label54.Text = "*"
+        Me.Label54.Visible = False
         '
         'Label53
         '
@@ -1314,17 +1325,6 @@ Partial Class Form1
         '
         'Timer6
         '
-        '
-        'Label54
-        '
-        Me.Label54.AutoSize = True
-        Me.Label54.ForeColor = System.Drawing.Color.Red
-        Me.Label54.Location = New System.Drawing.Point(184, 337)
-        Me.Label54.Name = "Label54"
-        Me.Label54.Size = New System.Drawing.Size(11, 12)
-        Me.Label54.TabIndex = 66
-        Me.Label54.Text = "*"
-        Me.Label54.Visible = False
         '
         'Form1
         '
