@@ -47,6 +47,9 @@ Public Class Form1
         StartScreen.Close()
         Timer3.Interval = 1000
         Timer3.Start()
+        Label55.Text = Now.ToString("yyyy-MM-dd HH:mm:ss")
+        Timer7.Interval = 1000
+        Timer7.Start()
     End Sub
     Private Sub BtnSolutoon_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnSolutoon.Click
         OpenFileDialog1.Filter = "Sherlock Files" & "(*.ivs)|*.ivs"
@@ -440,15 +443,33 @@ Public Class Form1
                 AxIpeDspCtrl1.UseWaitCursor = True
                 Me.Cursor = Cursors.SizeAll
                 Timer1.Enabled = True
+                BtnSave1.Enabled = True
+                If btnSaveStete = False Then
+                    Timer6.Interval = 800
+                    Timer6.Start()
+                End If
+                btnSaveStete = True
             End If
             If (ROILTFlag = True Or ROIRDFlag = True Or ROIRTFlag = True Or ROILDFlag = True) Then
                 Timer2.Enabled = True
                 AxIpeDspCtrl1.UseWaitCursor = True
                 Me.Cursor = Cursors.SizeNWSE
+                BtnSave1.Enabled = True
+                If btnSaveStete = False Then
+                    Timer6.Interval = 800
+                    Timer6.Start()
+                End If
+                btnSaveStete = True
             End If
             If (ROIRotateFlag = True) Then
                 Call Rect_MouseMove(e.x, e.y)
                 hSherlock.RoiRotationSet(CmbSelRoi.Text, ROIAngle + tempIniRotateAngle)
+                BtnSave1.Enabled = True
+                If btnSaveStete = False Then
+                    Timer6.Interval = 800
+                    Timer6.Start()
+                End If
+                btnSaveStete = True
                 AxIpeDspCtrl1.UpdateDisplay()
             End If
         End If
@@ -865,6 +886,10 @@ Public Class Form1
 
     Private Sub PictureBox1_MouseEnter(sender As Object, e As EventArgs) Handles PictureBox1.MouseEnter
         PictureBox4.Show()
+    End Sub
+
+    Private Sub Timer7_Tick(sender As Object, e As EventArgs) Handles Timer7.Tick
+        Label55.Text = Now.ToString("yyyy-MM-dd HH:mm:ss")
     End Sub
 
     Private Sub PictureBox2_MouseEnter(sender As Object, e As EventArgs) Handles PictureBox2.MouseEnter

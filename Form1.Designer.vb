@@ -141,6 +141,8 @@ Partial Class Form1
         Me.Timer5 = New System.Windows.Forms.Timer(Me.components)
         Me.AxIpeDspCtrl1 = New AxIpeDspCtrlLib.AxIpeDspCtrl()
         Me.Timer6 = New System.Windows.Forms.Timer(Me.components)
+        Me.Label55 = New System.Windows.Forms.Label()
+        Me.Timer7 = New System.Windows.Forms.Timer(Me.components)
         Me.GroupBox1.SuspendLayout()
         Me.GroupBoxSetVariable.SuspendLayout()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -205,7 +207,7 @@ Partial Class Form1
         Me.GroupBox1.Controls.Add(Me.BtnSave1)
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Enabled = False
-        Me.GroupBox1.Location = New System.Drawing.Point(745, 87)
+        Me.GroupBox1.Location = New System.Drawing.Point(745, 80)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(246, 556)
         Me.GroupBox1.TabIndex = 7
@@ -367,7 +369,7 @@ Partial Class Form1
         'ChkALive
         '
         Me.ChkALive.AutoSize = True
-        Me.ChkALive.Location = New System.Drawing.Point(650, 93)
+        Me.ChkALive.Location = New System.Drawing.Point(650, 86)
         Me.ChkALive.Name = "ChkALive"
         Me.ChkALive.Size = New System.Drawing.Size(72, 16)
         Me.ChkALive.TabIndex = 11
@@ -468,7 +470,7 @@ Partial Class Form1
         Me.GroupBoxSetVariable.Controls.Add(Me.Label6)
         Me.GroupBoxSetVariable.Controls.Add(Me.Label4)
         Me.GroupBoxSetVariable.Controls.Add(Me.Label1)
-        Me.GroupBoxSetVariable.Location = New System.Drawing.Point(0, 87)
+        Me.GroupBoxSetVariable.Location = New System.Drawing.Point(0, 80)
         Me.GroupBoxSetVariable.Name = "GroupBoxSetVariable"
         Me.GroupBoxSetVariable.Size = New System.Drawing.Size(743, 556)
         Me.GroupBoxSetVariable.TabIndex = 14
@@ -1305,7 +1307,7 @@ Partial Class Form1
         Me.BtnSetZero.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGray
         Me.BtnSetZero.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Control
         Me.BtnSetZero.Image = Global.Vision.My.Resources.Resources.clockwise_arrow2
-        Me.BtnSetZero.Location = New System.Drawing.Point(100, 90)
+        Me.BtnSetZero.Location = New System.Drawing.Point(100, 83)
         Me.BtnSetZero.Name = "BtnSetZero"
         Me.BtnSetZero.Size = New System.Drawing.Size(23, 23)
         Me.BtnSetZero.TabIndex = 17
@@ -1317,13 +1319,26 @@ Partial Class Form1
         'AxIpeDspCtrl1
         '
         Me.AxIpeDspCtrl1.Enabled = True
-        Me.AxIpeDspCtrl1.Location = New System.Drawing.Point(0, 87)
+        Me.AxIpeDspCtrl1.Location = New System.Drawing.Point(0, 80)
         Me.AxIpeDspCtrl1.Name = "AxIpeDspCtrl1"
         Me.AxIpeDspCtrl1.OcxState = CType(resources.GetObject("AxIpeDspCtrl1.OcxState"), System.Windows.Forms.AxHost.State)
-        Me.AxIpeDspCtrl1.Size = New System.Drawing.Size(739, 556)
+        Me.AxIpeDspCtrl1.Size = New System.Drawing.Size(743, 556)
         Me.AxIpeDspCtrl1.TabIndex = 10
         '
         'Timer6
+        '
+        '
+        'Label55
+        '
+        Me.Label55.AutoSize = True
+        Me.Label55.Font = New System.Drawing.Font("宋体", 9.0!)
+        Me.Label55.Location = New System.Drawing.Point(3, 641)
+        Me.Label55.Name = "Label55"
+        Me.Label55.Size = New System.Drawing.Size(29, 12)
+        Me.Label55.TabIndex = 18
+        Me.Label55.Text = "Time"
+        '
+        'Timer7
         '
         '
         'Form1
@@ -1331,8 +1346,9 @@ Partial Class Form1
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Control
-        Me.ClientSize = New System.Drawing.Size(997, 655)
+        Me.ClientSize = New System.Drawing.Size(997, 658)
         Me.ControlBox = False
+        Me.Controls.Add(Me.Label55)
         Me.Controls.Add(Me.GroupBoxSetVariable)
         Me.Controls.Add(Me.BtnOnce)
         Me.Controls.Add(Me.ListBox1)
@@ -1487,4 +1503,6 @@ Partial Class Form1
     Friend WithEvents PictureBox4 As PictureBox
     Friend WithEvents Label53 As Label
     Friend WithEvents Label54 As Label
+    Friend WithEvents Label55 As Label
+    Friend WithEvents Timer7 As Timer
 End Class
